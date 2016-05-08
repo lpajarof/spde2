@@ -1,0 +1,96 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/Gentellela/css/select/select2.min.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+{% endblock %}
+
+{% block titulo %} 
+   Estudiantes
+{% endblock %}
+
+{% block sub_titulo %} 
+    
+{% endblock %}
+
+{% block contenido %}   
+    <div class="x_content">
+        <form class="form-horizontal form-label-left" novalidate method="POST" action="{{ path('estudiantesAdd') }}" >            
+            <span class="section">Agregar</span>
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo de Identificación</label>
+                    <div class="col-md-6 col-sm-9 col-xs-12">
+                        <select class="form-control" id="tipoIdentificacion" name="tipoIdentificacion">
+                          <option>Seleccione</option>
+                          <option>Tarjeta de identidad</option>
+                          <option>Cédula de ciudadanía</option>
+                          <option>Pasaporte</option>                          
+                        </select>
+                    </div>
+            </div>
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="identificacion">Identificación<span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="identificacion" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="identificacion" placeholder="Número de Identificación" required="required" type="text">
+                    </div>
+            </div>
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombres">Nombres<span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="nombres" name="nombres" data-validate-linked="nombres" required="required" class="form-control col-md-7 col-xs-12">
+                    </div>
+            </div>
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellidos">Apellidos<span class="required">*</span></label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="number" name="number" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
+                      </div>
+            </div>
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="codigo">Código<span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="codigo" name="codigo" required="required" placeholder="Código" class="form-control col-md-7 col-xs-12">
+                    </div>
+            </div>
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono">Teléfono<span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="telefono" type="text" name="telefono" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                    </div>
+            </div>            
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="direccion">Dirección<span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="direccion" name="direccion" required="required" data-validate-length-range="8,20" class="form-control col-md-7 col-xs-12">
+                    </div>
+            </div>
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-5">
+                    <button type="submit" class="btn btn-primary">Cancel</button>
+                    <button id="send" type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+        
+{% endblock %}
+
+{% block js_footer %}
+    {{ parent() }}
+        <script type="text/javascript">
+              $(document).ready(function() {
+                $('#datatable').dataTable();            
+              });
+              TableManageButtons.init();
+        </script>
+{% endblock %}
+    
