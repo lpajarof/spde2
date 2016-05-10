@@ -41,7 +41,16 @@ class TipousuarioRepository extends \Doctrine\ORM\EntityRepository
         for($i=0; $i<count($arrTipousuario); $i++){            
             $arrJSON=$arrJSON. '[';
             $arrJSON=$arrJSON.'"'.$arrTipousuario[$i]->getTipousuario().'",';
-            $arrJSON=$arrJSON.'"'.$arrTipousuario[$i]->getdescripcion().'"';            
+            $arrJSON=$arrJSON.'"'.$arrTipousuario[$i]->getdescripcion().'",';
+            $arrJSON=$arrJSON.'" '
+                    . '<button type=\"button\" id=\"btn\" class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#vm_actualizar\"'
+                    . 'data-tipousuario=\"'.$arrTipousuario[$i]->getTipousuario().'\"'
+                    . 'data-descripcion=\"'.$arrTipousuario[$i]->getdescripcion().'\"'
+                    . 'data-idtipousuario=\"'.$arrTipousuario[$i]->getIdtipousuario().'\"'
+                    . '>'
+                    . '<i class=\'glyphicon glyphicon-edit\'>'
+                    . '</i> Modificar'
+                    . '</button>"';
             
             if($i==count($arrTipousuario)-1){
                     $arrJSON=$arrJSON.']';
