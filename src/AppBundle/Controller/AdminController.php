@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Tipousuario;
 use AppBundle\Entity\TipousuarioRepository;
 
+/**
+ * Controlador funciones administrativas de la aplciación
+ */
 class AdminController extends Controller
 {
     /**
@@ -30,12 +33,11 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/admin/parametros", name="parametros")
+     * @Route("/admin/tipousuario", name="r_tipousuario")
      */
     public function parametrosAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('admin/parametros/parametros.html.twig');
+    {        
+        return $this->render('admin/tipousuario/vw_tipousuario.html.twig');
     }
     
     /**
@@ -53,31 +55,47 @@ class AdminController extends Controller
     }
     
     /**
-    * @Route("/admin/tipousuarios/add", name="tipousuariosAdd")
+    * @Route("/admin/tipousuario/add", name="tipousuarioAdd")
     */
-    public function tipousuariosAddAction(Request $request) {
-            
-        $v_tipousuario = new Tipousuario();
-                                   
-        $v_tipousuario->setTipousuario($request->request->get('tipoUsuario'));
-        $v_tipousuario->setDescripcion($request->request->get('descripcion'));
+    public function tipousuarioAddAction(Request $request) 
+    {
+        try{
         
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($v_tipousuario);
-        $em->flush();
+            $v_tipousuario = new Tipousuario();                                  
+            $v_tipousuario->setTipousuario($request->request->get('tipousuario'));
+            $v_tipousuario->setDescripcion($request->request->get('descripcion'));
 
-              
-        return $this->redirectToRoute('parametros');
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($v_tipousuario);
+            $em->flush();
+
+            return new Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido aregados satisfactoriamente'
+                                . '</div>');
+            
+        }  catch (\Exception $e) {
+            
+           
+        switch (get_class($e)) {
+            case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                return new Response('DBAL Exception<br/>');
+                
+            case 'Doctrine\DBA\DBAException':
+                return new Response('DBA Exception<br/>');               
+            default:
+                return new Response($e->getMessage().'--'.get_class($e));                
+        }
+    }
 
     }
     
     /**
      * Modifica datos de la entidad tipousuarios
-     * @Route("/admin/tipousuarios/mod", name="tipousuariosMod")
+     * @Route("/admin/tipousuarios/mod", name="tipousuarioMod")
      * 
-     * @author Leandro Pájaro Fuentes lpajarof@gmail.com
      */
-    public function tipousuariosModAction(Request $request) {
+    public function tipousuarioModAction(Request $request) 
+    {
                                                      
         $em = $this->getDoctrine()->getManager();
         $v_tipousuario = $em->getRepository('AppBundle:Tipousuario')->find($request->request->get('idtipousuario'));
@@ -88,13 +106,14 @@ class AdminController extends Controller
         $em->persist($v_tipousuario);
         $em->flush();
         
-        return new Response("Los datos han sido actualizados satisfactoriamente");
+        return new Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                            . 'Los datos han sido actualizados satisfactoriamente'
+                            . '</div>');
     }
     
-    
-     /**
-     * @Route("/admin/estudiantes/list", name="estudiantesList")
-     */
+    /**
+    * @Route("/admin/estudiantes/list", name="estudiantesList")
+    */
     public function estudiantesListAction(Request $request)
     {
         // replace this example code with whatever you need
@@ -102,32 +121,30 @@ class AdminController extends Controller
         //return $this->render('admin.html.twig');
     }
     
-        /**
-         * @Route("/admin/estudiantes/form", name="estudiantesForm")
-         */
-        public function estudiantesFormAction(Request $request)
-        {
-            // replace this example code with whatever you need
-            return $this->render('admin/estudiantes/estudiantesForm.html.twig');
-            //return $this->render('admin.html.twig');
-        }
+    /**
+    * @Route("/admin/estudiantes/form", name="estudiantesForm")
+    */
+    public function estudiantesFormAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('admin/estudiantes/estudiantesForm.html.twig');
+        //return $this->render('admin.html.twig');
+    }
         
-        /**
-         * @Route("/admin/estudiantes/add", name="estudiantesAdd")
-         */
-        public function estudiantesAddAction(Request $request)
-        {
-            
-            $v_estudiante = new Estudiante();
-                                   
-            echo 'tes '.$request->request->get('identificacion');
-           
-           $v_estudiante->setTipoidentificacion($request->request->get('tipoIdentificacion'));
-           $v_estudiante->setIdentificacion($request->request->get('identificacion'));
-           
+    /**
+    * @Route("/admin/estudiantes/add", name="estudiantesAdd")
+    */
+    public function estudiantesAddAction(Request $request)
+    {
 
-        }
-    
-    
-            
+        $v_estudiante = new Estudiante();
+
+        echo 'tes '.$request->request->get('identificacion');
+
+       $v_estudiante->setTipoidentificacion($request->request->get('tipoIdentificacion'));
+       $v_estudiante->setIdentificacion($request->request->get('identificacion'));
+
+
+    }
+        
 }

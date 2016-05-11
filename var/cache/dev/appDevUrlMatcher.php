@@ -115,26 +115,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AppBundle\\Controller\\AdminController::modeloAction',  '_route' => 'modelo',);
             }
 
-            // parametros
-            if ($pathinfo === '/admin/parametros') {
-                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::parametrosAction',  '_route' => 'parametros',);
-            }
-
             if (0 === strpos($pathinfo, '/admin/t')) {
+                // r_tipousuario
+                if ($pathinfo === '/admin/tipousuario') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::parametrosAction',  '_route' => 'r_tipousuario',);
+                }
+
                 // thdb_tipoUsuarios
                 if ($pathinfo === '/admin/thdb_tipoUsuarios') {
                     return array (  '_controller' => 'AppBundle\\Controller\\AdminController::tipoUsuariosTablaAction',  '_route' => 'thdb_tipoUsuarios',);
                 }
 
-                if (0 === strpos($pathinfo, '/admin/tipousuarios')) {
-                    // tipousuariosAdd
-                    if ($pathinfo === '/admin/tipousuarios/add') {
-                        return array (  '_controller' => 'AppBundle\\Controller\\AdminController::tipousuariosAddAction',  '_route' => 'tipousuariosAdd',);
+                if (0 === strpos($pathinfo, '/admin/tipousuario')) {
+                    // tipousuarioAdd
+                    if ($pathinfo === '/admin/tipousuario/add') {
+                        return array (  '_controller' => 'AppBundle\\Controller\\AdminController::tipousuarioAddAction',  '_route' => 'tipousuarioAdd',);
                     }
 
-                    // tipousuariosMod
+                    // tipousuarioMod
                     if ($pathinfo === '/admin/tipousuarios/mod') {
-                        return array (  '_controller' => 'AppBundle\\Controller\\AdminController::tipousuariosModAction',  '_route' => 'tipousuariosMod',);
+                        return array (  '_controller' => 'AppBundle\\Controller\\AdminController::tipousuarioModAction',  '_route' => 'tipousuarioMod',);
                     }
 
                 }
