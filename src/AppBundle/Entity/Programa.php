@@ -2,25 +2,40 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Programa
+ *
+ * @ORM\Table(name="programa")
+ * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProgramaRepository")
  */
 class Programa
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="codigo", type="string", length=45, nullable=false)
      */
     private $codigo;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="descripcion", type="string", length=45, nullable=false)
      */
     private $descripcion;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="idPrograma", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idprograma;
+
 
 
     /**
@@ -81,4 +96,3 @@ class Programa
         return $this->idprograma;
     }
 }
-

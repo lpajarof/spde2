@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Estudiante
  *
- * @ORM\Table(name="estudiante", uniqueConstraints={@ORM\UniqueConstraint(name="codigo", columns={"codigo"}), @ORM\UniqueConstraint(name="identificacion", columns={"identificacion"})}, indexes={@ORM\Index(name="fk_tipoIdentificacionEst", columns={"tipoIdentificacion"})})
+ * @ORM\Table(name="estudiante", uniqueConstraints={@ORM\UniqueConstraint(name="codigo", columns={"codigo"}), @ORM\UniqueConstraint(name="identificacion", columns={"identificacion"})}, indexes={@ORM\Index(name="fk_tipoIdentificacionEst", columns={"tipoIdentificacion"}), @ORM\Index(name="fk_programa", columns={"programa"})})
  * @ORM\Entity
  */
 class Estudiante
@@ -72,6 +72,16 @@ class Estudiante
      * })
      */
     private $tipoidentificacion;
+
+    /**
+     * @var \AppBundle\Entity\Programa
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Programa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="programa", referencedColumnName="idPrograma")
+     * })
+     */
+    private $programa;
 
 
 
@@ -252,11 +262,6 @@ class Estudiante
     {
         return $this->tipoidentificacion;
     }
-    /**
-     * @var \AppBundle\Entity\Programa
-     */
-    private $programa;
-
 
     /**
      * Set programa
