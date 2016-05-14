@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Usuariorol" table="usuariorol">
+    <indexes>
+      <index name="fk_idUsuario" columns="idUsuario"/>
+      <index name="fk_idRol" columns="idRol"/>
+    </indexes>
+    <id name="idusuariorol" type="integer" column="idUsuarioRol">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="idusuario" target-entity="Usuario" fetch="LAZY">
+      <join-columns>
+        <join-column name="idUsuario" referenced-column-name="idUsuario"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idrol" target-entity="Rol" fetch="LAZY">
+      <join-columns>
+        <join-column name="idRol" referenced-column-name="idRole"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

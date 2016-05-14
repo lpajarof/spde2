@@ -252,4 +252,33 @@ class Estudiante
     {
         return $this->tipoidentificacion;
     }
+    /**
+     * @var \AppBundle\Entity\Programa
+     */
+    private $programa;
+
+
+    /**
+     * Set programa
+     *
+     * @param \AppBundle\Entity\Programa $programa
+     *
+     * @return Estudiante
+     */
+    public function setPrograma(\AppBundle\Entity\Programa $programa = null)
+    {
+        $this->programa = $programa;
+
+        return $this;
+    }
+
+    /**
+     * Get programa
+     *
+     * @return \AppBundle\Entity\Programa
+     */
+    public function getPrograma()
+    {
+        return $this->programa;
+    }
 }

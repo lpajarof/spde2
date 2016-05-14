@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Clasificacion" table="clasificacion">
+    <indexes>
+      <index name="fk_idEstudiante" columns="idEstudiante"/>
+    </indexes>
+    <id name="idclasificacion" type="integer" column="idClasificacion">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="desertor" type="integer" column="desertor" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="anio" type="integer" column="anio" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="periodo" type="integer" column="periodo" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="idestudiante" target-entity="Estudiante" fetch="LAZY">
+      <join-columns>
+        <join-column name="idEstudiante" referenced-column-name="idEstudiante"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

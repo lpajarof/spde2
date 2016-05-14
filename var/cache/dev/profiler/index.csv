@@ -592,3 +592,7 @@ dad071,::1,GET,http://localhost:8080/spde2/web/app_dev.php/admin/tipousuario,146
 245300,::1,GET,http://localhost:8080/spde2/web/app_dev.php/admin/thdb_tipoUsuarios?_=1462937212959,1462937213,,200
 50a478,::1,POST,http://localhost:8080/spde2/web/app_dev.php/admin/tipousuario/add,1462937226,,200
 267193,::1,GET,http://localhost:8080/spde2/web/app_dev.php/admin/thdb_tipoUsuarios?_=1462937212960,1462937226,,200
+c05fb6,::1,POST,http://localhost:8080/spde2/web/app_dev.php/admin/tipousuarios/mod,1463187714,,200
+214491,::1,POST,http://localhost:8080/spde2/web/app_dev.php/admin/tipousuarios/mod,1463187713,,200
+3d56a8,::1,GET,http://localhost:8080/spde2/web/app_dev.php/admin/thdb_tipoUsuarios?_=1462937212961,1463187715,,200
+4cf38b,::1,GET,http://localhost:8080/spde2/web/app_dev.php/admin/thdb_tipoUsuarios?_=1462937212962,1463187715,,200
