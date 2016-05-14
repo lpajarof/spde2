@@ -27,20 +27,20 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5a900d7ab204b281279cedeeeb597f888c62cd8eae12cfb7210473622ceb47d8 = $this->env->getExtension("native_profiler");
-        $__internal_5a900d7ab204b281279cedeeeb597f888c62cd8eae12cfb7210473622ceb47d8->enter($__internal_5a900d7ab204b281279cedeeeb597f888c62cd8eae12cfb7210473622ceb47d8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/programas/vw_programas.html.twig"));
+        $__internal_b8925e70b9f9be6ad4928e639b7248d6e961e681c5979aca2f7953c7c7a4d1aa = $this->env->getExtension("native_profiler");
+        $__internal_b8925e70b9f9be6ad4928e639b7248d6e961e681c5979aca2f7953c7c7a4d1aa->enter($__internal_b8925e70b9f9be6ad4928e639b7248d6e961e681c5979aca2f7953c7c7a4d1aa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/programas/vw_programas.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5a900d7ab204b281279cedeeeb597f888c62cd8eae12cfb7210473622ceb47d8->leave($__internal_5a900d7ab204b281279cedeeeb597f888c62cd8eae12cfb7210473622ceb47d8_prof);
+        $__internal_b8925e70b9f9be6ad4928e639b7248d6e961e681c5979aca2f7953c7c7a4d1aa->leave($__internal_b8925e70b9f9be6ad4928e639b7248d6e961e681c5979aca2f7953c7c7a4d1aa_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_05cbb7c57733025ffd7b227a8530dc9acb06f32f0d26c7aeef7cb5604061935d = $this->env->getExtension("native_profiler");
-        $__internal_05cbb7c57733025ffd7b227a8530dc9acb06f32f0d26c7aeef7cb5604061935d->enter($__internal_05cbb7c57733025ffd7b227a8530dc9acb06f32f0d26c7aeef7cb5604061935d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_53b2b80d4ca2952159c8fa976f5544a41d8759657cb5a42f42d12756f8c9f78f = $this->env->getExtension("native_profiler");
+        $__internal_53b2b80d4ca2952159c8fa976f5544a41d8759657cb5a42f42d12756f8c9f78f->enter($__internal_53b2b80d4ca2952159c8fa976f5544a41d8759657cb5a42f42d12756f8c9f78f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
         echo "    ";
@@ -48,15 +48,15 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
         echo "
 ";
         
-        $__internal_05cbb7c57733025ffd7b227a8530dc9acb06f32f0d26c7aeef7cb5604061935d->leave($__internal_05cbb7c57733025ffd7b227a8530dc9acb06f32f0d26c7aeef7cb5604061935d_prof);
+        $__internal_53b2b80d4ca2952159c8fa976f5544a41d8759657cb5a42f42d12756f8c9f78f->leave($__internal_53b2b80d4ca2952159c8fa976f5544a41d8759657cb5a42f42d12756f8c9f78f_prof);
 
     }
 
     // line 7
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_91b6dc2f1170abeee636c2598e6aeb23a682fb0be6bfc7955249587d2b501e31 = $this->env->getExtension("native_profiler");
-        $__internal_91b6dc2f1170abeee636c2598e6aeb23a682fb0be6bfc7955249587d2b501e31->enter($__internal_91b6dc2f1170abeee636c2598e6aeb23a682fb0be6bfc7955249587d2b501e31_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_a3d59c968729b5b9bb5b602ec653ced7b929c6dbf7ef79d3b22c989cb8649614 = $this->env->getExtension("native_profiler");
+        $__internal_a3d59c968729b5b9bb5b602ec653ced7b929c6dbf7ef79d3b22c989cb8649614->enter($__internal_a3d59c968729b5b9bb5b602ec653ced7b929c6dbf7ef79d3b22c989cb8649614_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 8
         echo "    ";
@@ -64,15 +64,15 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
         echo "    
 ";
         
-        $__internal_91b6dc2f1170abeee636c2598e6aeb23a682fb0be6bfc7955249587d2b501e31->leave($__internal_91b6dc2f1170abeee636c2598e6aeb23a682fb0be6bfc7955249587d2b501e31_prof);
+        $__internal_a3d59c968729b5b9bb5b602ec653ced7b929c6dbf7ef79d3b22c989cb8649614->leave($__internal_a3d59c968729b5b9bb5b602ec653ced7b929c6dbf7ef79d3b22c989cb8649614_prof);
 
     }
 
     // line 11
     public function block_js($context, array $blocks = array())
     {
-        $__internal_5b3a85e1132cf31d0d17e9f750b214a9be03b725027bde627bbcf6d37fad9b72 = $this->env->getExtension("native_profiler");
-        $__internal_5b3a85e1132cf31d0d17e9f750b214a9be03b725027bde627bbcf6d37fad9b72->enter($__internal_5b3a85e1132cf31d0d17e9f750b214a9be03b725027bde627bbcf6d37fad9b72_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js"));
+        $__internal_211641f3cd142b7419f2c4cb540caeed308de5a9a4db380983dac5569b0bff96 = $this->env->getExtension("native_profiler");
+        $__internal_211641f3cd142b7419f2c4cb540caeed308de5a9a4db380983dac5569b0bff96->enter($__internal_211641f3cd142b7419f2c4cb540caeed308de5a9a4db380983dac5569b0bff96_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js"));
 
         // line 12
         echo "    ";
@@ -80,43 +80,43 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
         echo "
 ";
         
-        $__internal_5b3a85e1132cf31d0d17e9f750b214a9be03b725027bde627bbcf6d37fad9b72->leave($__internal_5b3a85e1132cf31d0d17e9f750b214a9be03b725027bde627bbcf6d37fad9b72_prof);
+        $__internal_211641f3cd142b7419f2c4cb540caeed308de5a9a4db380983dac5569b0bff96->leave($__internal_211641f3cd142b7419f2c4cb540caeed308de5a9a4db380983dac5569b0bff96_prof);
 
     }
 
     // line 15
     public function block_titulo($context, array $blocks = array())
     {
-        $__internal_ad54e5c2550e48c83c622acb95c5acfbf1728043d605c06b1f0bba7434a1024d = $this->env->getExtension("native_profiler");
-        $__internal_ad54e5c2550e48c83c622acb95c5acfbf1728043d605c06b1f0bba7434a1024d->enter($__internal_ad54e5c2550e48c83c622acb95c5acfbf1728043d605c06b1f0bba7434a1024d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "titulo"));
+        $__internal_41dbba90b54246cd90365c4f2afaecc66a11716efdcf8dcab8cf7751d3e39d27 = $this->env->getExtension("native_profiler");
+        $__internal_41dbba90b54246cd90365c4f2afaecc66a11716efdcf8dcab8cf7751d3e39d27->enter($__internal_41dbba90b54246cd90365c4f2afaecc66a11716efdcf8dcab8cf7751d3e39d27_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "titulo"));
 
         echo " 
     Configuraci&oacute;n
 ";
         
-        $__internal_ad54e5c2550e48c83c622acb95c5acfbf1728043d605c06b1f0bba7434a1024d->leave($__internal_ad54e5c2550e48c83c622acb95c5acfbf1728043d605c06b1f0bba7434a1024d_prof);
+        $__internal_41dbba90b54246cd90365c4f2afaecc66a11716efdcf8dcab8cf7751d3e39d27->leave($__internal_41dbba90b54246cd90365c4f2afaecc66a11716efdcf8dcab8cf7751d3e39d27_prof);
 
     }
 
     // line 19
     public function block_sub_titulo($context, array $blocks = array())
     {
-        $__internal_141690e1c07769b085548aabb2a5b4e84d7f2546035b9bb590f85426b3541d19 = $this->env->getExtension("native_profiler");
-        $__internal_141690e1c07769b085548aabb2a5b4e84d7f2546035b9bb590f85426b3541d19->enter($__internal_141690e1c07769b085548aabb2a5b4e84d7f2546035b9bb590f85426b3541d19_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sub_titulo"));
+        $__internal_ccee81f044347be8b4eecca3fe6c2a5a2780d90fccf6d2d7311af7642e31c90f = $this->env->getExtension("native_profiler");
+        $__internal_ccee81f044347be8b4eecca3fe6c2a5a2780d90fccf6d2d7311af7642e31c90f->enter($__internal_ccee81f044347be8b4eecca3fe6c2a5a2780d90fccf6d2d7311af7642e31c90f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sub_titulo"));
 
         echo " 
     
 ";
         
-        $__internal_141690e1c07769b085548aabb2a5b4e84d7f2546035b9bb590f85426b3541d19->leave($__internal_141690e1c07769b085548aabb2a5b4e84d7f2546035b9bb590f85426b3541d19_prof);
+        $__internal_ccee81f044347be8b4eecca3fe6c2a5a2780d90fccf6d2d7311af7642e31c90f->leave($__internal_ccee81f044347be8b4eecca3fe6c2a5a2780d90fccf6d2d7311af7642e31c90f_prof);
 
     }
 
     // line 23
     public function block_contenido($context, array $blocks = array())
     {
-        $__internal_3689cc87c26159f42d1293b0c4d8140229af06dcd48087ff506a87c04e8f1952 = $this->env->getExtension("native_profiler");
-        $__internal_3689cc87c26159f42d1293b0c4d8140229af06dcd48087ff506a87c04e8f1952->enter($__internal_3689cc87c26159f42d1293b0c4d8140229af06dcd48087ff506a87c04e8f1952_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
+        $__internal_6d0fdc54b638dae7f5b91794ea1a8d584be4cfa4590830a2b8bda44a352597b6 = $this->env->getExtension("native_profiler");
+        $__internal_6d0fdc54b638dae7f5b91794ea1a8d584be4cfa4590830a2b8bda44a352597b6->enter($__internal_6d0fdc54b638dae7f5b91794ea1a8d584be4cfa4590830a2b8bda44a352597b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
 
         echo "   
 <div class=\"col-md-12 col-sm-6 col-xs-12\">
@@ -139,7 +139,7 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
                             <div class=\"modal-content\">
                                 <div class=\"modal-header\">
                                     <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">×</span></button>
-                                        <h4 class=\"modal-title\" id=\"myModalLabel\">Agregar Tipo Usuario</h4>
+                                        <h4 class=\"modal-title\" id=\"myModalLabel\">Agregar Programas</h4>
                                 </div>
                                 ";
         // line 45
@@ -160,12 +160,12 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
                             <div class=\"modal-content\">
                                 <div class=\"modal-header\">
                                     <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">×</span></button>
-                                        <h4 class=\"modal-title\" id=\"myModalLabel\">Actualizar Tipo Usuario</h4>
+                                        <h4 class=\"modal-title\" id=\"myModalLabel\">Actualizar Programas</h4>
                                 </div>
                                 ";
         // line 60
         echo "                                ";
-        $this->loadTemplate("admin/tipousuario/fm_actualizar_tipousuario.html.twig", "admin/programas/vw_programas.html.twig", 60)->display($context);
+        $this->loadTemplate("admin/programas/fm_actualizar_programas.html.twig", "admin/programas/vw_programas.html.twig", 60)->display($context);
         echo " 
                                 ";
         // line 61
@@ -202,15 +202,15 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
 </div>
 ";
         
-        $__internal_3689cc87c26159f42d1293b0c4d8140229af06dcd48087ff506a87c04e8f1952->leave($__internal_3689cc87c26159f42d1293b0c4d8140229af06dcd48087ff506a87c04e8f1952_prof);
+        $__internal_6d0fdc54b638dae7f5b91794ea1a8d584be4cfa4590830a2b8bda44a352597b6->leave($__internal_6d0fdc54b638dae7f5b91794ea1a8d584be4cfa4590830a2b8bda44a352597b6_prof);
 
     }
 
     // line 90
     public function block_js_footer($context, array $blocks = array())
     {
-        $__internal_d3fcb8272f71c691c53ed25e2a3476fa7f4db9249001300ce48152d6ceb981ea = $this->env->getExtension("native_profiler");
-        $__internal_d3fcb8272f71c691c53ed25e2a3476fa7f4db9249001300ce48152d6ceb981ea->enter($__internal_d3fcb8272f71c691c53ed25e2a3476fa7f4db9249001300ce48152d6ceb981ea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js_footer"));
+        $__internal_f5abc67d6d001a9b55a2663e5afa2b6d694aebb43a18673ff0d36a149ccc4afd = $this->env->getExtension("native_profiler");
+        $__internal_f5abc67d6d001a9b55a2663e5afa2b6d694aebb43a18673ff0d36a149ccc4afd->enter($__internal_f5abc67d6d001a9b55a2663e5afa2b6d694aebb43a18673ff0d36a149ccc4afd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js_footer"));
 
         // line 91
         echo "    ";
@@ -277,34 +277,38 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
             \$('#vm_actualizar').on('show.bs.modal', function (event) {
                   \$(\"#respuesta_actualizar\").html(\"\");
 \t\t  var button = \$(event.relatedTarget) 
-                  var tipousuario = button.data('tipousuario') 
+                  var codigo = button.data('codigo') 
                   var descripcion = button.data('descripcion') 
-                  var idtipousuario = button.data('idtipousuario')
+                  var idprograma = button.data('idprograma')
                   var modal = \$(this)
-                  modal.find('.modal-body #tipousuario').val(tipousuario)
+                  modal.find('.modal-body #codigo').val(codigo)
                   modal.find('.modal-body #descripcion').val(descripcion)
-                  modal.find('.modal-body #idtipousuario').val(idtipousuario)
+                  modal.find('.modal-body #idprograma').val(idprograma)
 
             });
             /**
              * Envia datos del formulario a controlador que se encarga de 
              * realizar la operación de actualización
              */
-            \$( \"#frm_actualiza_tipousuario\" ).submit(function( event ) {\t\t
+            \$( \"#frm_actualiza_programas\" ).submit(function( event ) {\t\t
                 var parametros = \$(this).serialize();
 \t\t\$.ajax({
 \t\t\ttype: \"POST\",
 \t\t\turl: \"";
         // line 164
-        echo $this->env->getExtension('routing')->getPath("tipousuarioMod");
+        echo $this->env->getExtension('routing')->getPath("programasMod");
         echo "\",
 \t\t\tdata:   parametros,
-                                ";
-        // line 169
-        echo "\t\t\t\tsuccess: function(datos){
+                                beforeSend: function(){
+                                    \$(\"#respuesta_actualizar\").html(\"Mensaje: Cargando...\");
+\t\t\t\t},
+\t\t\t\tsuccess: function(datos){
                                     \$(\"#respuesta_actualizar\").html(datos);                  
                                       oTable.fnReloadAjax();
-\t\t\t\t}
+\t\t\t\t},
+                                error: function(datos){
+                                    \$(\"#respuesta_agregar\").html(datos);
+                                }
 \t\t\t});
 \t\t  event.preventDefault();
             });
@@ -312,7 +316,7 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
   </script>
 ";
         
-        $__internal_d3fcb8272f71c691c53ed25e2a3476fa7f4db9249001300ce48152d6ceb981ea->leave($__internal_d3fcb8272f71c691c53ed25e2a3476fa7f4db9249001300ce48152d6ceb981ea_prof);
+        $__internal_f5abc67d6d001a9b55a2663e5afa2b6d694aebb43a18673ff0d36a149ccc4afd->leave($__internal_f5abc67d6d001a9b55a2663e5afa2b6d694aebb43a18673ff0d36a149ccc4afd_prof);
 
     }
 
@@ -328,7 +332,7 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
 
     public function getDebugInfo()
     {
-        return array (  304 => 169,  299 => 164,  256 => 124,  225 => 96,  216 => 91,  210 => 90,  198 => 83,  195 => 81,  180 => 67,  178 => 66,  172 => 61,  167 => 60,  158 => 52,  156 => 51,  149 => 46,  146 => 45,  137 => 37,  133 => 34,  116 => 23,  102 => 19,  88 => 15,  78 => 12,  72 => 11,  62 => 8,  56 => 7,  46 => 4,  40 => 3,  11 => 1,);
+        return array (  299 => 164,  256 => 124,  225 => 96,  216 => 91,  210 => 90,  198 => 83,  195 => 81,  180 => 67,  178 => 66,  172 => 61,  167 => 60,  158 => 52,  156 => 51,  149 => 46,  146 => 45,  137 => 37,  133 => 34,  116 => 23,  102 => 19,  88 => 15,  78 => 12,  72 => 11,  62 => 8,  56 => 7,  46 => 4,  40 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin.html.twig' %}*/
@@ -372,7 +376,7 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
 /*                             <div class="modal-content">*/
 /*                                 <div class="modal-header">*/
 /*                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>*/
-/*                                         <h4 class="modal-title" id="myModalLabel">Agregar Tipo Usuario</h4>*/
+/*                                         <h4 class="modal-title" id="myModalLabel">Agregar Programas</h4>*/
 /*                                 </div>*/
 /*                                 {# Formulario agregar programas #}*/
 /*                                 {% include 'admin/programas/fm_agregar_programas.html.twig' %}*/
@@ -387,10 +391,10 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
 /*                             <div class="modal-content">*/
 /*                                 <div class="modal-header">*/
 /*                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>*/
-/*                                         <h4 class="modal-title" id="myModalLabel">Actualizar Tipo Usuario</h4>*/
+/*                                         <h4 class="modal-title" id="myModalLabel">Actualizar Programas</h4>*/
 /*                                 </div>*/
 /*                                 {# Formulario actualizar #}*/
-/*                                 {% include 'admin/tipousuario/fm_actualizar_tipousuario.html.twig' %} */
+/*                                 {% include 'admin/programas/fm_actualizar_programas.html.twig' %} */
 /*                                 {# Fin Formulario actualizar #}        */
 /*                             </div>*/
 /*                             </div>*/
@@ -477,32 +481,35 @@ class __TwigTemplate_da9c71e6c6dec4455172b918c46a3bb3819d26eb40d2632ca9ca76a96b2
 /*             $('#vm_actualizar').on('show.bs.modal', function (event) {*/
 /*                   $("#respuesta_actualizar").html("");*/
 /* 		  var button = $(event.relatedTarget) */
-/*                   var tipousuario = button.data('tipousuario') */
+/*                   var codigo = button.data('codigo') */
 /*                   var descripcion = button.data('descripcion') */
-/*                   var idtipousuario = button.data('idtipousuario')*/
+/*                   var idprograma = button.data('idprograma')*/
 /*                   var modal = $(this)*/
-/*                   modal.find('.modal-body #tipousuario').val(tipousuario)*/
+/*                   modal.find('.modal-body #codigo').val(codigo)*/
 /*                   modal.find('.modal-body #descripcion').val(descripcion)*/
-/*                   modal.find('.modal-body #idtipousuario').val(idtipousuario)*/
+/*                   modal.find('.modal-body #idprograma').val(idprograma)*/
 /* */
 /*             });*/
 /*             /***/
 /*              * Envia datos del formulario a controlador que se encarga de */
 /*              * realizar la operación de actualización*/
 /*              *//* */
-/*             $( "#frm_actualiza_tipousuario" ).submit(function( event ) {		*/
+/*             $( "#frm_actualiza_programas" ).submit(function( event ) {		*/
 /*                 var parametros = $(this).serialize();*/
 /* 		$.ajax({*/
 /* 			type: "POST",*/
-/* 			url: "{{ path('tipousuarioMod') }}",*/
+/* 			url: "{{ path('programasMod') }}",*/
 /* 			data:   parametros,*/
-/*                                 {#beforeSend: function(){*/
+/*                                 beforeSend: function(){*/
 /*                                     $("#respuesta_actualizar").html("Mensaje: Cargando...");*/
-/* 				},#}*/
+/* 				},*/
 /* 				success: function(datos){*/
 /*                                     $("#respuesta_actualizar").html(datos);                  */
 /*                                       oTable.fnReloadAjax();*/
-/* 				}*/
+/* 				},*/
+/*                                 error: function(datos){*/
+/*                                     $("#respuesta_agregar").html(datos);*/
+/*                                 }*/
 /* 			});*/
 /* 		  event.preventDefault();*/
 /*             });*/

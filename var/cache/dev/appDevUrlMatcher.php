@@ -151,9 +151,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AppBundle\\Controller\\AdminController::programasTablaAction',  '_route' => 'thdb_programas',);
             }
 
-            // programasAdd
-            if ($pathinfo === '/admin/programas/add') {
-                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::programasAddAction',  '_route' => 'programasAdd',);
+            if (0 === strpos($pathinfo, '/admin/programas')) {
+                // programasAdd
+                if ($pathinfo === '/admin/programas/add') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::programasAddAction',  '_route' => 'programasAdd',);
+                }
+
+                // programasMod
+                if ($pathinfo === '/admin/programas/mod') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::programasModAction',  '_route' => 'programasMod',);
+                }
+
             }
 
         }

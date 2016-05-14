@@ -39,7 +39,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Agregar Tipo Usuario</h4>
+                                        <h4 class="modal-title" id="myModalLabel">Agregar Programas</h4>
                                 </div>
                                 {# Formulario agregar programas #}
                                 {% include 'admin/programas/fm_agregar_programas.html.twig' %}
@@ -54,10 +54,10 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Actualizar Tipo Usuario</h4>
+                                        <h4 class="modal-title" id="myModalLabel">Actualizar Programas</h4>
                                 </div>
                                 {# Formulario actualizar #}
-                                {% include 'admin/tipousuario/fm_actualizar_tipousuario.html.twig' %} 
+                                {% include 'admin/programas/fm_actualizar_programas.html.twig' %} 
                                 {# Fin Formulario actualizar #}        
                             </div>
                             </div>
@@ -144,32 +144,35 @@
             $('#vm_actualizar').on('show.bs.modal', function (event) {
                   $("#respuesta_actualizar").html("");
 		  var button = $(event.relatedTarget) 
-                  var tipousuario = button.data('tipousuario') 
+                  var codigo = button.data('codigo') 
                   var descripcion = button.data('descripcion') 
-                  var idtipousuario = button.data('idtipousuario')
+                  var idprograma = button.data('idprograma')
                   var modal = $(this)
-                  modal.find('.modal-body #tipousuario').val(tipousuario)
+                  modal.find('.modal-body #codigo').val(codigo)
                   modal.find('.modal-body #descripcion').val(descripcion)
-                  modal.find('.modal-body #idtipousuario').val(idtipousuario)
+                  modal.find('.modal-body #idprograma').val(idprograma)
 
             });
             /**
              * Envia datos del formulario a controlador que se encarga de 
              * realizar la operación de actualización
              */
-            $( "#frm_actualiza_tipousuario" ).submit(function( event ) {		
+            $( "#frm_actualiza_programas" ).submit(function( event ) {		
                 var parametros = $(this).serialize();
 		$.ajax({
 			type: "POST",
-			url: "{{ path('tipousuarioMod') }}",
+			url: "{{ path('programasMod') }}",
 			data:   parametros,
-                                {#beforeSend: function(){
+                                beforeSend: function(){
                                     $("#respuesta_actualizar").html("Mensaje: Cargando...");
-				},#}
+				},
 				success: function(datos){
                                     $("#respuesta_actualizar").html(datos);                  
                                       oTable.fnReloadAjax();
-				}
+				},
+                                error: function(datos){
+                                    $("#respuesta_agregar").html(datos);
+                                }
 			});
 		  event.preventDefault();
             });

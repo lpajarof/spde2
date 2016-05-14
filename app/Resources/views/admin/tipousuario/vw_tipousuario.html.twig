@@ -163,9 +163,9 @@
 			type: "POST",
 			url: "{{ path('tipousuarioMod') }}",
 			data:   parametros,
-                                {#beforeSend: function(){
+                                beforeSend: function(){
                                     $("#respuesta_actualizar").html("Mensaje: Cargando...");
-				},#}
+				},
 				success: function(datos){
                                     $("#respuesta_actualizar").html(datos);                  
                                       oTable.fnReloadAjax();

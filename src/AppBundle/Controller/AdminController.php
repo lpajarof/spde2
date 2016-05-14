@@ -96,19 +96,31 @@ class AdminController extends Controller
      */
     public function tipousuarioModAction(Request $request) 
     {
-                                                     
-        $em = $this->getDoctrine()->getManager();
-        $v_tipousuario = $em->getRepository('AppBundle:Tipousuario')->find($request->request->get('idtipousuario'));
-        
-        $v_tipousuario->setTipousuario($request->request->get('tipousuario'));
-        $v_tipousuario->setDescripcion($request->request->get('descripcion'));
-        
-        $em->persist($v_tipousuario);
-        $em->flush();
-        
-        return new Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
-                            . 'Los datos han sido actualizados satisfactoriamente'
-                            . '</div>');
+         
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_tipousuario = $em->getRepository('AppBundle:Tipousuario')->find($request->request->get('idtipousuario'));
+
+            $v_tipousuario->setTipousuario($request->request->get('tipousuario'));
+            $v_tipousuario->setDescripcion($request->request->get('descripcion'));
+
+            $em->persist($v_tipousuario);
+            $em->flush();
+
+            return new Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido actualizados satisfactoriamente'
+                                . '</div>');
+        } catch (\Exception $e){
+             switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
     }
     
     /**
@@ -168,5 +180,38 @@ class AdminController extends Controller
         }
     }
 
+    }
+    
+     /**
+     * Modifica datos de la entidad programa
+     * @Route("/admin/programas/mod", name="programasMod")
+     * 
+     */
+    public function programasModAction(Request $request) 
+    {
+        try{                                             
+            $em = $this->getDoctrine()->getManager();
+            $v_programas = $em->getRepository('AppBundle:Programa')->find($request->request->get('idprograma'));
+
+            $v_programas->setCodigo($request->request->get('codigo'));
+            $v_programas->setDescripcion($request->request->get('descripcion'));
+
+            $em->persist($v_programas);
+            $em->flush();
+
+            return new Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido actualizados satisfactoriamente'
+                                . '</div>');
+        } catch (\Exception $e){
+             switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
     }
 }
