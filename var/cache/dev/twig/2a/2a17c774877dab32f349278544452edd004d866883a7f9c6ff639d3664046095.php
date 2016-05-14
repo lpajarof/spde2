@@ -15,8 +15,8 @@ class __TwigTemplate_63ee5a5dd50121c57d06d5cfd55394673f3b4af57cadaab4e0547999942
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_631b817ed7d0abb5700aeaabcce178545c75411eef604132788fbaea369a963d = $this->env->getExtension("native_profiler");
-        $__internal_631b817ed7d0abb5700aeaabcce178545c75411eef604132788fbaea369a963d->enter($__internal_631b817ed7d0abb5700aeaabcce178545c75411eef604132788fbaea369a963d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/tipousuario/fm_agregar_tipousuario.html.twig"));
+        $__internal_415fe7ee3afb83ebfac79999154ecd309e8dcf1e66ffe5d927c02dcef3fa97a7 = $this->env->getExtension("native_profiler");
+        $__internal_415fe7ee3afb83ebfac79999154ecd309e8dcf1e66ffe5d927c02dcef3fa97a7->enter($__internal_415fe7ee3afb83ebfac79999154ecd309e8dcf1e66ffe5d927c02dcef3fa97a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/tipousuario/fm_agregar_tipousuario.html.twig"));
 
         // line 1
         echo "<div class=\"modal-body\">     
@@ -48,7 +48,7 @@ class __TwigTemplate_63ee5a5dd50121c57d06d5cfd55394673f3b4af57cadaab4e0547999942
 </div> 
 ";
         
-        $__internal_631b817ed7d0abb5700aeaabcce178545c75411eef604132788fbaea369a963d->leave($__internal_631b817ed7d0abb5700aeaabcce178545c75411eef604132788fbaea369a963d_prof);
+        $__internal_415fe7ee3afb83ebfac79999154ecd309e8dcf1e66ffe5d927c02dcef3fa97a7->leave($__internal_415fe7ee3afb83ebfac79999154ecd309e8dcf1e66ffe5d927c02dcef3fa97a7_prof);
 
     }
 

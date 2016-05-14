@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Tipousuario;
-use AppBundle\Entity\TipousuarioRepository;
+use AppBundle\Entity\Programa;
 
 /**
  * Controlador funciones administrativas de la aplciación
@@ -35,7 +35,7 @@ class AdminController extends Controller
     /**
      * @Route("/admin/tipousuario", name="r_tipousuario")
      */
-    public function parametrosAction(Request $request)
+    public function tipousuarioAction(Request $request)
     {        
         return $this->render('admin/tipousuario/vw_tipousuario.html.twig');
     }
@@ -111,6 +111,62 @@ class AdminController extends Controller
                             . '</div>');
     }
     
-
+    /**
+     * Llama plantilla que visualiza listado de programas
+     * @Route("/admin/programas", name="r_programas")
+     */
+    public function programasAction(Request $request)
+    {        
+        return $this->render('admin/programas/vw_programas.html.twig');
+    }
+    
+     /**
+     * Devuelve en formato JSON tabla de datos 
+     * @Route("/admin/thdb_programas", name="thdb_programas")
+     * @author Leandro Pájaro Fuentes lpajarof@gmail.com
+     */
+    public function programasTablaAction()
+    {
+        $v_programas = $this->getDoctrine()
+                ->getRepository('AppBundle:Programa')
+                ->listaJSON();        
+       
+       return new Response($v_programas);
+    }
+    
+    /**
+    * Agrega programa en la tabla programas
+    * @Route("/admin/programas/add", name="programasAdd")
+    */
+    public function programasAddAction(Request $request) 
+    {
+        try{
         
+            $v_programas = new Programa();                                  
+            $v_programas->setCodigo($request->request->get('codigo'));
+            $v_programas->setDescripcion($request->request->get('descripcion'));
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($v_programas);
+            $em->flush();
+
+            return new Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido aregados satisfactoriamente'
+                                . '</div>');
+            
+        }  catch (\Exception $e) {
+            
+           
+        switch (get_class($e)) {
+            case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                return new Response('DBAL Exception<br/>');
+                
+            case 'Doctrine\DBA\DBAException':
+                return new Response('DBA Exception<br/>');               
+            default:
+                return new Response($e->getMessage().'--'.get_class($e));                
+        }
+    }
+
+    }
 }

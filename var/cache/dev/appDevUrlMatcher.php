@@ -118,7 +118,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (0 === strpos($pathinfo, '/admin/t')) {
                 // r_tipousuario
                 if ($pathinfo === '/admin/tipousuario') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::parametrosAction',  '_route' => 'r_tipousuario',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::tipousuarioAction',  '_route' => 'r_tipousuario',);
                 }
 
                 // thdb_tipoUsuarios
@@ -141,22 +141,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            if (0 === strpos($pathinfo, '/admin/estudiantes')) {
-                // estudiantesList
-                if ($pathinfo === '/admin/estudiantes/list') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::estudiantesListAction',  '_route' => 'estudiantesList',);
-                }
+            // r_programas
+            if ($pathinfo === '/admin/programas') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::programasAction',  '_route' => 'r_programas',);
+            }
 
-                // estudiantesForm
-                if ($pathinfo === '/admin/estudiantes/form') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::estudiantesFormAction',  '_route' => 'estudiantesForm',);
-                }
+            // thdb_programas
+            if ($pathinfo === '/admin/thdb_programas') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::programasTablaAction',  '_route' => 'thdb_programas',);
+            }
 
-                // estudiantesAdd
-                if ($pathinfo === '/admin/estudiantes/add') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::estudiantesAddAction',  '_route' => 'estudiantesAdd',);
-                }
-
+            // programasAdd
+            if ($pathinfo === '/admin/programas/add') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::programasAddAction',  '_route' => 'programasAdd',);
             }
 
         }

@@ -15,8 +15,8 @@ class __TwigTemplate_857bcb2ee2a8979c38dc1d7e9671ef5311409e366ffde2a4303d9b5aa8e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_27cf13b755eec6ab8e7f871ea2c960c125e899ecf21a81c8ea1be002333e0ea0 = $this->env->getExtension("native_profiler");
-        $__internal_27cf13b755eec6ab8e7f871ea2c960c125e899ecf21a81c8ea1be002333e0ea0->enter($__internal_27cf13b755eec6ab8e7f871ea2c960c125e899ecf21a81c8ea1be002333e0ea0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/tipousuario/fm_actualizar_tipousuario.html.twig"));
+        $__internal_537a26a124f5fe89737e67fc97cdf4532b7043f219d2ac071e0140e88aaa6de5 = $this->env->getExtension("native_profiler");
+        $__internal_537a26a124f5fe89737e67fc97cdf4532b7043f219d2ac071e0140e88aaa6de5->enter($__internal_537a26a124f5fe89737e67fc97cdf4532b7043f219d2ac071e0140e88aaa6de5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/tipousuario/fm_actualizar_tipousuario.html.twig"));
 
         // line 1
         echo " <div class=\"modal-body\">
@@ -49,7 +49,7 @@ class __TwigTemplate_857bcb2ee2a8979c38dc1d7e9671ef5311409e366ffde2a4303d9b5aa8e
 </div>    
 ";
         
-        $__internal_27cf13b755eec6ab8e7f871ea2c960c125e899ecf21a81c8ea1be002333e0ea0->leave($__internal_27cf13b755eec6ab8e7f871ea2c960c125e899ecf21a81c8ea1be002333e0ea0_prof);
+        $__internal_537a26a124f5fe89737e67fc97cdf4532b7043f219d2ac071e0140e88aaa6de5->leave($__internal_537a26a124f5fe89737e67fc97cdf4532b7043f219d2ac071e0140e88aaa6de5_prof);
 
     }
 
