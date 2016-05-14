@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="estudiante", uniqueConstraints={@ORM\UniqueConstraint(name="codigo", columns={"codigo"}), @ORM\UniqueConstraint(name="identificacion", columns={"identificacion"})}, indexes={@ORM\Index(name="fk_tipoIdentificacionEst", columns={"tipoIdentificacion"}), @ORM\Index(name="fk_programa", columns={"programa"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EstudianteRepository")
  */
 class Estudiante
 {
@@ -83,7 +84,13 @@ class Estudiante
      */
     private $programa;
 
-
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=50, nullable=false)
+     */
+    private $email;
 
     /**
      * Set codigo
@@ -285,5 +292,29 @@ class Estudiante
     public function getPrograma()
     {
         return $this->programa;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Estudiante
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }

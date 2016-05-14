@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Tipousuario;
 use AppBundle\Entity\Programa;
+use AppBundle\Entity\Estudiante;
 
 /**
  * Controlador funciones administrativas de la aplciación
@@ -33,6 +34,11 @@ class AdminController extends Controller
     }
 
     /**
+     * Tipousuario
+     */
+    
+    /**
+     * Llama a la plantilla de visualiza el listado de tipo de usuarios
      * @Route("/admin/tipousuario", name="r_tipousuario")
      */
     public function tipousuarioAction(Request $request)
@@ -55,6 +61,7 @@ class AdminController extends Controller
     }
     
     /**
+     * Argra regitros a la entidad tipousuario
     * @Route("/admin/tipousuario/add", name="tipousuarioAdd")
     */
     public function tipousuarioAddAction(Request $request) 
@@ -124,6 +131,10 @@ class AdminController extends Controller
     }
     
     /**
+     * Programas
+     */
+    
+    /**
      * Llama plantilla que visualiza listado de programas
      * @Route("/admin/programas", name="r_programas")
      */
@@ -132,7 +143,7 @@ class AdminController extends Controller
         return $this->render('admin/programas/vw_programas.html.twig');
     }
     
-     /**
+    /**
      * Devuelve en formato JSON tabla de datos 
      * @Route("/admin/thdb_programas", name="thdb_programas")
      * @author Leandro Pájaro Fuentes lpajarof@gmail.com
@@ -214,4 +225,32 @@ class AdminController extends Controller
             }
         }
     }
+    
+    /**
+     * Estudiante
+     */
+    
+    /**
+    * Llama plantilla que visualiza listado de estudiantes
+    * @Route("/admin/estudiantes", name="r_estudiantes")
+    */
+    public function estudiantesAction(Request $request)
+    {        
+        return $this->render('admin/estudiantes/vw_estudiantes.html.twig');
+    }
+    
+    /**
+    * Devuelve en formato JSON tabla de datos 
+    * @Route("/admin/thdb_estudiantes", name="thdb_estudiantes")
+    */
+    public function estudiantesTablaAction()
+    {
+        $v_estudiante = $this->getDoctrine()
+                ->getRepository('AppBundle:Estudiante')
+                ->listaJSON();        
+       
+       return new Response($v_estudiante);
+    }
+    
+    
 }

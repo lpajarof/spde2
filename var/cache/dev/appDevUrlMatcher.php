@@ -164,6 +164,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            // r_estudiantes
+            if ($pathinfo === '/admin/estudiantes') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::estudiantesAction',  '_route' => 'r_estudiantes',);
+            }
+
+            // thdb_estudiantes
+            if ($pathinfo === '/admin/thdb_estudiantes') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::estudiantesTablaAction',  '_route' => 'thdb_estudiantes',);
+            }
+
         }
 
         // app_default_admin
