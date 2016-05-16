@@ -33,7 +33,7 @@
                     {# Panel estudiantes #}
                     <div role="tabpanel" class="tab-pane fade active in" id="programas" aria-labelledby="home-tab">
                         <p class="text-right"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#vm_agregar">Agregar</button></p>                         
-                        {# Venta modal agregar tipo estudiante #}
+                        {# Venta modal agregar  estudiante #}
                         <div class="modal fade" id="vm_agregar" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
                             <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -41,9 +41,9 @@
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
                                         <h4 class="modal-title" id="myModalLabel">Agregar Estudiante</h4>
                                 </div>
-                                {# Formulario agregar programas #}
-                                {% include 'admin/estudiantes/fm_agregar_estudiante.html.twig' %}
-                                {# Fin Formulario agregar programas #}        
+                                {# Formulario agregar estudiante #}
+                                {{ include ('admin/estudiantes/fm_agregar_estudiante.html.twig',{'tipoidentificacion':tipoidentificacion,'programas':programas}) }}
+                                {# Fin Formulario agregar estudainte #}        
                             </div>
                             </div>
                         </div>
@@ -108,26 +108,32 @@
             });          
             /*
              * Cuando se activa ventana modal para agregar, se ejecuta
-             * este evento el cual coloca en blsnco todos los campos del
+             * este evento el cual coloca en blanco todos los campos del
              * formulario
              */
             $('#vm_agregar').on('show.bs.modal', function (event) {
                 $("#respuesta_agregar").html("");
 		var modal = $(this)
                 modal.find('.modal-body #codigo').val('')
-                modal.find('.modal-body #descripcion').val('')                
-
+                modal.find('.modal-body #programa').val('')
+                modal.find('.modal-body #tipoidentificacion').val('')
+                modal.find('.modal-body #identificacion').val('')
+                modal.find('.modal-body #nombres').val('')
+                modal.find('.modal-body #apellidos').val('')
+                modal.find('.modal-body #email').val('')
+                modal.find('.modal-body #telefono').val('')
+                modal.find('.modal-body #direccion').val('')                
             });           
 
             /**
              * Envia datos del formulario a controlador que se encarga de 
              * realizar la operación de creación
              */
-            $( "#frm_agregar_programas" ).submit(function( event ) {
+            $( "#frm_agregar_estudiante" ).submit(function( event ) {
 		var parametros = $(this).serialize();
 		$.ajax({
 			type: "POST",
-			url: "{{ path('programasAdd') }}",
+			url: "{{ path('estudiantesAdd') }}",
 			data:   parametros,
                                 beforeSend: function(){
                                     $("#respuesta_agregar").html("Mensaje: Cargando...");
