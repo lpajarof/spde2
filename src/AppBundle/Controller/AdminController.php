@@ -257,8 +257,7 @@ class AdminController extends Controller
        
        return new Response($v_estudiante);
     }
-    
-    
+       
     /**
      * Agrega estudiantes a la tabla estudiante
      * @Route("/admin/estudiantes/add", name="estudiantesAdd")
@@ -307,4 +306,51 @@ class AdminController extends Controller
         
     }
     
+    /**
+     * Modifica datos de estudiantes
+     * @Route("/admin/estudiantes/mod", name="estudiantesMod")
+     */
+    public function estudiantesMod(Request $request)
+    {
+        try{            
+            $em = $this->getDoctrine()->getManager();
+            
+            $v_programa = $em->getRepository('AppBundle:Programa')->find($request->request->get('programa'));
+            $v_tipoidentificacion = $em->getRepository('AppBundle:Tipoidentificacion')->find($request->request->get('tipoidentificacion'));
+            
+            $v_estudiante = $em->getRepository('AppBundle:Estudiante')->find($request->request->get('idestudiante'));
+            $v_estudiante->setCodigo($request->request->get('codigo'));
+            $v_estudiante->setPrograma($v_programa);
+            $v_estudiante->setTipoidentificacion($v_tipoidentificacion);
+            $v_estudiante->setIdentificacion($request->request->get('identificacion'));
+            $v_estudiante->setNombres($request->request->get('nombres'));
+            $v_estudiante->setApellidos($request->request->get('apellidos'));
+            $v_estudiante->setEmail($request->request->get('email'));
+            $v_estudiante->setTelefono($request->request->get('telefono'));
+            $v_estudiante->setDireccion($request->request->get('direccion'));
+            
+            $em->persist($v_estudiante);
+            $em->flush();
+
+            return new Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido actualizados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+    
+    
+    /**
+     * Caracteristicas
+     */
 }
