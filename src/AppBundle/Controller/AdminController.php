@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Tipousuario;
 use AppBundle\Entity\Programa;
 use AppBundle\Entity\Estudiante;
+use AppBundle\Entity\Caracteristica;
 use AppBundle\Entity\Tipoidentificacion;
 
 /**
@@ -353,4 +354,82 @@ class AdminController extends Controller
     /**
      * Caracteristicas
      */
+    
+    /**
+     * Llama a la plantilla que lista las caracteristias 
+     * @Route("/admin/caracterisiticas", name="r_caracteristicas")
+     */
+    
+    public function caracterisiticasAction()
+    {
+        return $this->render("admin/caracteristicas/vw_caracteristicas.html.twig");
+    }
+    
+    /**
+     * Devuelve en formato JSON tabla de datos 
+     * @Route("/admin/thdb_caracteristica",name="thdb_caracteristica")
+     */
+    
+    public function caracteristicasTablaAction()
+    {
+        $v_caracterisitica = $this->getDoctrine()
+                ->getRepository("AppBundle:Caracteristica")
+                ->listaJSON();
+        return new Response($v_caracterisitica);
+    }
+    
+    
+    /**
+    * Agrega nueva caracteristia
+    * @Route("/admin/caracteristicas/add", name="caracteristicasAdd")
+    */
+    public function caracteristicasAdd(Request $request)
+    {
+        try{
+            
+            $em = $this->getDoctrine()->getManager();
+                        
+            $v_caracteristica = new Caracteristica();
+            $v_caracteristica->setDescripcion($request->request->get('descripcion'));
+                        
+            $em->persist($v_caracteristica);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido aregados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+             switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+                
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                    
+                case 'PDOException':
+                    return new Response('DBA Exception<br/>'.$e->getMessage());
+                    
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+        
+    }
+    
+    /**
+     * Modifica datos de característica
+     * @Route("/admin/caracteristicas/mod",name="caracteristicasMod")
+     */
+    
+    /*public function caracteristicasModAction(Request $request)
+    {
+        try{
+            
+        } catch (\Exception $ex) {
+
+        }
+    }*/
+            
+    
 }

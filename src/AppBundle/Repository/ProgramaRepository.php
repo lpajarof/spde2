@@ -10,10 +10,10 @@ namespace AppBundle\Repository;
  */
 class ProgramaRepository extends \Doctrine\ORM\EntityRepository
 {
-     /**
-     * 
-     * Devuelve en formato JSON los datos de la tabla
-     */
+    /**
+    * 
+    * Devuelve en formato JSON los datos de la tabla
+    */
     
     public function listaJSON()
     {
