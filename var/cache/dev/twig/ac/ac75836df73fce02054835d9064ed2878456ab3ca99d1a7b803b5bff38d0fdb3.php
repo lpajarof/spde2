@@ -15,8 +15,8 @@ class __TwigTemplate_297d216f9f625f8f7add7fd8b821443aa5e33fe0eefd19b064a9a454c03
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8a6ff8ecd925390d31f598a7975a890894262ead2d1ea73a98f5d6556562382b = $this->env->getExtension("native_profiler");
-        $__internal_8a6ff8ecd925390d31f598a7975a890894262ead2d1ea73a98f5d6556562382b->enter($__internal_8a6ff8ecd925390d31f598a7975a890894262ead2d1ea73a98f5d6556562382b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/caracteristicas/fm_agregar_caracteristicas.html.twig"));
+        $__internal_3de403a5885bfe5a7e85d54934e60374c57e6ce8889274340dc9280bfedfe092 = $this->env->getExtension("native_profiler");
+        $__internal_3de403a5885bfe5a7e85d54934e60374c57e6ce8889274340dc9280bfedfe092->enter($__internal_3de403a5885bfe5a7e85d54934e60374c57e6ce8889274340dc9280bfedfe092_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/caracteristicas/fm_agregar_caracteristicas.html.twig"));
 
         // line 1
         echo "<div class=\"modal-body\">     
@@ -32,7 +32,7 @@ class __TwigTemplate_297d216f9f625f8f7add7fd8b821443aa5e33fe0eefd19b064a9a454c03
 
         <div class=\"form-group\">
             <div class=\"col-md-6 col-sm-6 col-xs-12 col-md-offset-3\">
-                <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Close</button>
+                <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Cancelar</button>
                 <button type=\"submit\" class=\"btn btn-success\">Agregar</button>
             </div>
         </div>                                      
@@ -40,7 +40,7 @@ class __TwigTemplate_297d216f9f625f8f7add7fd8b821443aa5e33fe0eefd19b064a9a454c03
 </div> 
 ";
         
-        $__internal_8a6ff8ecd925390d31f598a7975a890894262ead2d1ea73a98f5d6556562382b->leave($__internal_8a6ff8ecd925390d31f598a7975a890894262ead2d1ea73a98f5d6556562382b_prof);
+        $__internal_3de403a5885bfe5a7e85d54934e60374c57e6ce8889274340dc9280bfedfe092->leave($__internal_3de403a5885bfe5a7e85d54934e60374c57e6ce8889274340dc9280bfedfe092_prof);
 
     }
 
@@ -67,7 +67,7 @@ class __TwigTemplate_297d216f9f625f8f7add7fd8b821443aa5e33fe0eefd19b064a9a454c03
 /* */
 /*         <div class="form-group">*/
 /*             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">*/
-/*                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>*/
+/*                 <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>*/
 /*                 <button type="submit" class="btn btn-success">Agregar</button>*/
 /*             </div>*/
 /*         </div>                                      */

@@ -422,14 +422,60 @@ class AdminController extends Controller
      * @Route("/admin/caracteristicas/mod",name="caracteristicasMod")
      */
     
-    /*public function caracteristicasModAction(Request $request)
+    public function caracteristicasModAction(Request $request)
     {
         try{
+            $em = $this->getDoctrine()->getManager();
+            $v_caracteristica = $em->getRepository('AppBundle:Caracteristica')->find($request->request->get('idcaracteristica'));
+            $v_caracteristica->setDescripcion($request->request->get('descripcion'));
             
-        } catch (\Exception $ex) {
+            $em->persist($v_caracteristica);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido actualizados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
 
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
         }
-    }*/
-            
+    }
     
+    /**
+     * Elimina caraterística
+     * @Route("/admin/caracteristicas/del",name="caracteristicasDel")
+     */
+    public function caracteristicasDelAction(Request $request){
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_caracteristica = $em->getRepository('AppBundle:Caracteristica')->find($request->request->get('idcaracteristica'));
+            
+            $em->remove($v_caracteristica);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido eliminados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+                
 }

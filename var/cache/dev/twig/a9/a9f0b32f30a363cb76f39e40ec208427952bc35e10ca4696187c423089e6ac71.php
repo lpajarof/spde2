@@ -27,20 +27,20 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cd1a398bc40d793022d25e242f5674169a616780816754fa7aad6c2631e5a3df = $this->env->getExtension("native_profiler");
-        $__internal_cd1a398bc40d793022d25e242f5674169a616780816754fa7aad6c2631e5a3df->enter($__internal_cd1a398bc40d793022d25e242f5674169a616780816754fa7aad6c2631e5a3df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/caracteristicas/vw_caracteristicas.html.twig"));
+        $__internal_ac50327dd22fee020f0cb97bd0df5c27949dca94db946106e05aadab5bf79a75 = $this->env->getExtension("native_profiler");
+        $__internal_ac50327dd22fee020f0cb97bd0df5c27949dca94db946106e05aadab5bf79a75->enter($__internal_ac50327dd22fee020f0cb97bd0df5c27949dca94db946106e05aadab5bf79a75_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/caracteristicas/vw_caracteristicas.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_cd1a398bc40d793022d25e242f5674169a616780816754fa7aad6c2631e5a3df->leave($__internal_cd1a398bc40d793022d25e242f5674169a616780816754fa7aad6c2631e5a3df_prof);
+        $__internal_ac50327dd22fee020f0cb97bd0df5c27949dca94db946106e05aadab5bf79a75->leave($__internal_ac50327dd22fee020f0cb97bd0df5c27949dca94db946106e05aadab5bf79a75_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_a46c9565e7963fc10111d8e879d7f179cfd2ca41b809d9d9f5d35d68a6f29354 = $this->env->getExtension("native_profiler");
-        $__internal_a46c9565e7963fc10111d8e879d7f179cfd2ca41b809d9d9f5d35d68a6f29354->enter($__internal_a46c9565e7963fc10111d8e879d7f179cfd2ca41b809d9d9f5d35d68a6f29354_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_6b46581cb05281475d605d4cad438799065bd5eb0aa76a0e34a4ab36ac1ff7c5 = $this->env->getExtension("native_profiler");
+        $__internal_6b46581cb05281475d605d4cad438799065bd5eb0aa76a0e34a4ab36ac1ff7c5->enter($__internal_6b46581cb05281475d605d4cad438799065bd5eb0aa76a0e34a4ab36ac1ff7c5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
         echo "    ";
@@ -48,15 +48,15 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
         echo "
 ";
         
-        $__internal_a46c9565e7963fc10111d8e879d7f179cfd2ca41b809d9d9f5d35d68a6f29354->leave($__internal_a46c9565e7963fc10111d8e879d7f179cfd2ca41b809d9d9f5d35d68a6f29354_prof);
+        $__internal_6b46581cb05281475d605d4cad438799065bd5eb0aa76a0e34a4ab36ac1ff7c5->leave($__internal_6b46581cb05281475d605d4cad438799065bd5eb0aa76a0e34a4ab36ac1ff7c5_prof);
 
     }
 
     // line 7
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_b78eb353cd87a518d7eeb2ec8d6824ff38a53d4b60f864b916cceb8e7272d647 = $this->env->getExtension("native_profiler");
-        $__internal_b78eb353cd87a518d7eeb2ec8d6824ff38a53d4b60f864b916cceb8e7272d647->enter($__internal_b78eb353cd87a518d7eeb2ec8d6824ff38a53d4b60f864b916cceb8e7272d647_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_b015657d4f01df8445ffd4efeae3e1374d8818e9cfc1dc29e6cfe5a257319aac = $this->env->getExtension("native_profiler");
+        $__internal_b015657d4f01df8445ffd4efeae3e1374d8818e9cfc1dc29e6cfe5a257319aac->enter($__internal_b015657d4f01df8445ffd4efeae3e1374d8818e9cfc1dc29e6cfe5a257319aac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 8
         echo "    ";
@@ -64,15 +64,15 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
         echo "    
 ";
         
-        $__internal_b78eb353cd87a518d7eeb2ec8d6824ff38a53d4b60f864b916cceb8e7272d647->leave($__internal_b78eb353cd87a518d7eeb2ec8d6824ff38a53d4b60f864b916cceb8e7272d647_prof);
+        $__internal_b015657d4f01df8445ffd4efeae3e1374d8818e9cfc1dc29e6cfe5a257319aac->leave($__internal_b015657d4f01df8445ffd4efeae3e1374d8818e9cfc1dc29e6cfe5a257319aac_prof);
 
     }
 
     // line 11
     public function block_js($context, array $blocks = array())
     {
-        $__internal_2b2a70a529705ea7cb30303ee87a793a66faabf097d00b34fe7e7decd79e6d57 = $this->env->getExtension("native_profiler");
-        $__internal_2b2a70a529705ea7cb30303ee87a793a66faabf097d00b34fe7e7decd79e6d57->enter($__internal_2b2a70a529705ea7cb30303ee87a793a66faabf097d00b34fe7e7decd79e6d57_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js"));
+        $__internal_1336eec8d5e1858fa1e99f0336603f1deeecd0348576105d0cdaaf7577e58cfc = $this->env->getExtension("native_profiler");
+        $__internal_1336eec8d5e1858fa1e99f0336603f1deeecd0348576105d0cdaaf7577e58cfc->enter($__internal_1336eec8d5e1858fa1e99f0336603f1deeecd0348576105d0cdaaf7577e58cfc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js"));
 
         // line 12
         echo "    ";
@@ -80,43 +80,43 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
         echo "
 ";
         
-        $__internal_2b2a70a529705ea7cb30303ee87a793a66faabf097d00b34fe7e7decd79e6d57->leave($__internal_2b2a70a529705ea7cb30303ee87a793a66faabf097d00b34fe7e7decd79e6d57_prof);
+        $__internal_1336eec8d5e1858fa1e99f0336603f1deeecd0348576105d0cdaaf7577e58cfc->leave($__internal_1336eec8d5e1858fa1e99f0336603f1deeecd0348576105d0cdaaf7577e58cfc_prof);
 
     }
 
     // line 15
     public function block_titulo($context, array $blocks = array())
     {
-        $__internal_eb81669882591d58b772aa482fa2cc99c9bd6a73a42f1e9203df1a1803ffe504 = $this->env->getExtension("native_profiler");
-        $__internal_eb81669882591d58b772aa482fa2cc99c9bd6a73a42f1e9203df1a1803ffe504->enter($__internal_eb81669882591d58b772aa482fa2cc99c9bd6a73a42f1e9203df1a1803ffe504_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "titulo"));
+        $__internal_bb6e2fe70befe4c97af077b487b6625433d84b19f410d0e71565b27805124b66 = $this->env->getExtension("native_profiler");
+        $__internal_bb6e2fe70befe4c97af077b487b6625433d84b19f410d0e71565b27805124b66->enter($__internal_bb6e2fe70befe4c97af077b487b6625433d84b19f410d0e71565b27805124b66_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "titulo"));
 
         echo " 
     Modelo
 ";
         
-        $__internal_eb81669882591d58b772aa482fa2cc99c9bd6a73a42f1e9203df1a1803ffe504->leave($__internal_eb81669882591d58b772aa482fa2cc99c9bd6a73a42f1e9203df1a1803ffe504_prof);
+        $__internal_bb6e2fe70befe4c97af077b487b6625433d84b19f410d0e71565b27805124b66->leave($__internal_bb6e2fe70befe4c97af077b487b6625433d84b19f410d0e71565b27805124b66_prof);
 
     }
 
     // line 19
     public function block_sub_titulo($context, array $blocks = array())
     {
-        $__internal_593c51a8ac65e26fdaabc5abf3e674ff8c17cc5eafa8de7c416031d2079c4635 = $this->env->getExtension("native_profiler");
-        $__internal_593c51a8ac65e26fdaabc5abf3e674ff8c17cc5eafa8de7c416031d2079c4635->enter($__internal_593c51a8ac65e26fdaabc5abf3e674ff8c17cc5eafa8de7c416031d2079c4635_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sub_titulo"));
+        $__internal_418671b9e139d76045d6e4ca515abc6e7cedcf60afbc3ec5e21a9e8dff241ed2 = $this->env->getExtension("native_profiler");
+        $__internal_418671b9e139d76045d6e4ca515abc6e7cedcf60afbc3ec5e21a9e8dff241ed2->enter($__internal_418671b9e139d76045d6e4ca515abc6e7cedcf60afbc3ec5e21a9e8dff241ed2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sub_titulo"));
 
         echo " 
     
 ";
         
-        $__internal_593c51a8ac65e26fdaabc5abf3e674ff8c17cc5eafa8de7c416031d2079c4635->leave($__internal_593c51a8ac65e26fdaabc5abf3e674ff8c17cc5eafa8de7c416031d2079c4635_prof);
+        $__internal_418671b9e139d76045d6e4ca515abc6e7cedcf60afbc3ec5e21a9e8dff241ed2->leave($__internal_418671b9e139d76045d6e4ca515abc6e7cedcf60afbc3ec5e21a9e8dff241ed2_prof);
 
     }
 
     // line 23
     public function block_contenido($context, array $blocks = array())
     {
-        $__internal_40034c718c18f7829b8d3b3367279a189c1a2af1ee487d4a90383a252104086a = $this->env->getExtension("native_profiler");
-        $__internal_40034c718c18f7829b8d3b3367279a189c1a2af1ee487d4a90383a252104086a->enter($__internal_40034c718c18f7829b8d3b3367279a189c1a2af1ee487d4a90383a252104086a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
+        $__internal_b1fed1a53f74a44f7e53daa8ca2367c0622ea24b065336d50be7e960400828b6 = $this->env->getExtension("native_profiler");
+        $__internal_b1fed1a53f74a44f7e53daa8ca2367c0622ea24b065336d50be7e960400828b6->enter($__internal_b1fed1a53f74a44f7e53daa8ca2367c0622ea24b065336d50be7e960400828b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
 
         echo "   
 <div class=\"col-md-12 col-sm-6 col-xs-12\">
@@ -177,6 +177,28 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
         // line 66
         echo "                        ";
         // line 67
+        echo "                        <div class=\"modal fade\" id=\"vm_eliminar\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" data-keyboard=\"false\" data-backdrop=\"static\">
+                            <div class=\"modal-dialog modal-lg\">
+                            <div class=\"modal-content\">
+                                <div class=\"modal-header\">
+                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">×</span></button>
+                                        <h4 class=\"modal-title\" id=\"myModalLabel\">Eliminar Caracter&iacute;stica</h4>
+                                </div>
+                                ";
+        // line 75
+        echo "                                ";
+        $this->loadTemplate("admin/caracteristicas/fm_eliminar_caracteristicas.html.twig", "admin/caracteristicas/vw_caracteristicas.html.twig", 75)->display($context);
+        echo " 
+                                ";
+        // line 76
+        echo "        
+                            </div>
+                            </div>
+                        </div>
+                        ";
+        // line 81
+        echo "                        ";
+        // line 82
         echo "                        <div class=\"x_panel\">                            
                             <div class=\"x_content\">
                                 <table id=\"th_caracteristica\" class=\"table table-striped table-bordered\" width=\"100%\">
@@ -191,10 +213,10 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
                             </div>
                         </div>
                         ";
-        // line 81
+        // line 96
         echo "                    </div>
                     ";
-        // line 83
+        // line 98
         echo "                </div>
             </div>
         </div>
@@ -202,17 +224,17 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 </div>
 ";
         
-        $__internal_40034c718c18f7829b8d3b3367279a189c1a2af1ee487d4a90383a252104086a->leave($__internal_40034c718c18f7829b8d3b3367279a189c1a2af1ee487d4a90383a252104086a_prof);
+        $__internal_b1fed1a53f74a44f7e53daa8ca2367c0622ea24b065336d50be7e960400828b6->leave($__internal_b1fed1a53f74a44f7e53daa8ca2367c0622ea24b065336d50be7e960400828b6_prof);
 
     }
 
-    // line 90
+    // line 105
     public function block_js_footer($context, array $blocks = array())
     {
-        $__internal_53c2f24c6ae2a5a2d5770c33cc8b1541a1a318aeaec0bc5a219a49fd506569a3 = $this->env->getExtension("native_profiler");
-        $__internal_53c2f24c6ae2a5a2d5770c33cc8b1541a1a318aeaec0bc5a219a49fd506569a3->enter($__internal_53c2f24c6ae2a5a2d5770c33cc8b1541a1a318aeaec0bc5a219a49fd506569a3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js_footer"));
+        $__internal_ab6240f734af80286bbe68a2eb0d7f4a94a1c08515bc79786d770347e472fe38 = $this->env->getExtension("native_profiler");
+        $__internal_ab6240f734af80286bbe68a2eb0d7f4a94a1c08515bc79786d770347e472fe38->enter($__internal_ab6240f734af80286bbe68a2eb0d7f4a94a1c08515bc79786d770347e472fe38_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js_footer"));
 
-        // line 91
+        // line 106
         echo "    ";
         $this->displayParentBlock("js_footer", $context, $blocks);
         echo "   
@@ -221,7 +243,7 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
         \$(document).ready(function() {
           oTable =  \$('#th_caracteristica').dataTable({                
                 \"ajax\": \"";
-        // line 96
+        // line 111
         echo $this->env->getExtension('routing')->getPath("thdb_caracteristica");
         echo "\",
                 \"columns\": [
@@ -251,7 +273,7 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 \t\t\$.ajax({
 \t\t\ttype: \"POST\",
 \t\t\turl: \"";
-        // line 123
+        // line 138
         echo $this->env->getExtension('routing')->getPath("caracteristicasAdd");
         echo "\",
 \t\t\tdata:   parametros,
@@ -276,26 +298,23 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
             \$('#vm_actualizar').on('show.bs.modal', function (event) {
                   \$(\"#respuesta_actualizar\").html(\"\");
 \t\t  var button = \$(event.relatedTarget) 
-                  var codigo = button.data('codigo') 
                   var descripcion = button.data('descripcion') 
-                  var idprograma = button.data('idprograma')
+                  var idcaracteristica = button.data('idcaracteristica') 
                   var modal = \$(this)
-                  modal.find('.modal-body #codigo').val(codigo)
                   modal.find('.modal-body #descripcion').val(descripcion)
-                  modal.find('.modal-body #idprograma').val(idprograma)
-
+                  modal.find('.modal-body #idcaracteristica').val(idcaracteristica)
             });
             /**
              * Envia datos del formulario a controlador que se encarga de 
              * realizar la operación de actualización
              */
-            \$( \"#frm_actualiza_programas\" ).submit(function( event ) {\t\t
+            \$( \"#frm_actualiza_caracteristica\" ).submit(function( event ) {\t\t
                 var parametros = \$(this).serialize();
 \t\t\$.ajax({
 \t\t\ttype: \"POST\",
 \t\t\turl: \"";
-        // line 163
-        echo $this->env->getExtension('routing')->getPath("programasMod");
+        // line 175
+        echo $this->env->getExtension('routing')->getPath("caracteristicasMod");
         echo "\",
 \t\t\tdata:   parametros,
                                 beforeSend: function(){
@@ -306,16 +325,57 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
                                       oTable.fnReloadAjax();
 \t\t\t\t},
                                 error: function(datos){
-                                    \$(\"#respuesta_agregar\").html(datos);
+                                    \$(\"#respuesta_actualizar\").html(datos);
                                 }
 \t\t\t});
 \t\t  event.preventDefault();
             });
+            
+            /*
+             * Cuando se activa ventana modal para eliminar, se ejecuta
+             * este evento el cual llena campo oculto con id de la caracteristica
+             * a elimina
+             */
+            \$('#vm_eliminar').on('show.bs.modal', function (event) {
+                  \$(\"#respuesta_eliminar\").html(\"\");
+\t\t  var button = \$(event.relatedTarget) 
+                  var idcaracteristica = button.data('idcaracteristica') 
+                  var modal = \$(this)
+                  modal.find('.modal-body #idcaracteristica').val(idcaracteristica)
+            });
+            
+            
+            /**
+            * Envía datos al controlador para eliminr datos
+            */
+            \$( \"#frm_elimina_caracteristica\" ).submit(function( event ) {\t\t
+                var parametros = \$(this).serialize();
+\t\t\$.ajax({
+\t\t\ttype: \"POST\",
+\t\t\turl: \"";
+        // line 212
+        echo $this->env->getExtension('routing')->getPath("caracteristicasDel");
+        echo "\",
+\t\t\tdata:   parametros,
+                                beforeSend: function(){
+                                    \$(\"#respuesta_eliminar\").html(\"Mensaje: Cargando...\");
+\t\t\t\t},
+\t\t\t\tsuccess: function(datos){
+                                    \$(\"#respuesta_eliminar\").html(datos);                  
+                                      oTable.fnReloadAjax();
+\t\t\t\t},
+                                error: function(datos){
+                                    \$(\"#respuesta_eliminar\").html(datos);
+                                }
+\t\t\t});
+\t\t  event.preventDefault();
+            });
+            
         });   
   </script>
 ";
         
-        $__internal_53c2f24c6ae2a5a2d5770c33cc8b1541a1a318aeaec0bc5a219a49fd506569a3->leave($__internal_53c2f24c6ae2a5a2d5770c33cc8b1541a1a318aeaec0bc5a219a49fd506569a3_prof);
+        $__internal_ab6240f734af80286bbe68a2eb0d7f4a94a1c08515bc79786d770347e472fe38->leave($__internal_ab6240f734af80286bbe68a2eb0d7f4a94a1c08515bc79786d770347e472fe38_prof);
 
     }
 
@@ -331,7 +391,7 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 
     public function getDebugInfo()
     {
-        return array (  298 => 163,  255 => 123,  225 => 96,  216 => 91,  210 => 90,  198 => 83,  195 => 81,  180 => 67,  178 => 66,  172 => 61,  167 => 60,  158 => 52,  156 => 51,  149 => 46,  146 => 45,  137 => 37,  133 => 34,  116 => 23,  102 => 19,  88 => 15,  78 => 12,  72 => 11,  62 => 8,  56 => 7,  46 => 4,  40 => 3,  11 => 1,);
+        return array (  357 => 212,  317 => 175,  277 => 138,  247 => 111,  238 => 106,  232 => 105,  220 => 98,  217 => 96,  202 => 82,  200 => 81,  194 => 76,  189 => 75,  180 => 67,  178 => 66,  172 => 61,  167 => 60,  158 => 52,  156 => 51,  149 => 46,  146 => 45,  137 => 37,  133 => 34,  116 => 23,  102 => 19,  88 => 15,  78 => 12,  72 => 11,  62 => 8,  56 => 7,  46 => 4,  40 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin.html.twig' %}*/
@@ -399,6 +459,21 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 /*                             </div>*/
 /*                         </div>*/
 /*                         {# Fin Venta modal actualizar caracteristica#}*/
+/*                         {#Venta modal eliminar caracterisitica #}*/
+/*                         <div class="modal fade" id="vm_eliminar" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">*/
+/*                             <div class="modal-dialog modal-lg">*/
+/*                             <div class="modal-content">*/
+/*                                 <div class="modal-header">*/
+/*                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>*/
+/*                                         <h4 class="modal-title" id="myModalLabel">Eliminar Caracter&iacute;stica</h4>*/
+/*                                 </div>*/
+/*                                 {# Formulario actualizar  caracteristica #}*/
+/*                                 {% include 'admin/caracteristicas/fm_eliminar_caracteristicas.html.twig' %} */
+/*                                 {# Fin Formulario actualizar caracteristica #}        */
+/*                             </div>*/
+/*                             </div>*/
+/*                         </div>*/
+/*                         {# Fin Venta modal eliminar caracteristica#}*/
 /*                         {#Tabla caracteristica#}*/
 /*                         <div class="x_panel">                            */
 /*                             <div class="x_content">*/
@@ -479,24 +554,21 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 /*             $('#vm_actualizar').on('show.bs.modal', function (event) {*/
 /*                   $("#respuesta_actualizar").html("");*/
 /* 		  var button = $(event.relatedTarget) */
-/*                   var codigo = button.data('codigo') */
 /*                   var descripcion = button.data('descripcion') */
-/*                   var idprograma = button.data('idprograma')*/
+/*                   var idcaracteristica = button.data('idcaracteristica') */
 /*                   var modal = $(this)*/
-/*                   modal.find('.modal-body #codigo').val(codigo)*/
 /*                   modal.find('.modal-body #descripcion').val(descripcion)*/
-/*                   modal.find('.modal-body #idprograma').val(idprograma)*/
-/* */
+/*                   modal.find('.modal-body #idcaracteristica').val(idcaracteristica)*/
 /*             });*/
 /*             /***/
 /*              * Envia datos del formulario a controlador que se encarga de */
 /*              * realizar la operación de actualización*/
 /*              *//* */
-/*             $( "#frm_actualiza_programas" ).submit(function( event ) {		*/
+/*             $( "#frm_actualiza_caracteristica" ).submit(function( event ) {		*/
 /*                 var parametros = $(this).serialize();*/
 /* 		$.ajax({*/
 /* 			type: "POST",*/
-/* 			url: "{{ path('programasMod') }}",*/
+/* 			url: "{{ path('caracteristicasMod') }}",*/
 /* 			data:   parametros,*/
 /*                                 beforeSend: function(){*/
 /*                                     $("#respuesta_actualizar").html("Mensaje: Cargando...");*/
@@ -506,11 +578,49 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 /*                                       oTable.fnReloadAjax();*/
 /* 				},*/
 /*                                 error: function(datos){*/
-/*                                     $("#respuesta_agregar").html(datos);*/
+/*                                     $("#respuesta_actualizar").html(datos);*/
 /*                                 }*/
 /* 			});*/
 /* 		  event.preventDefault();*/
 /*             });*/
+/*             */
+/*             /**/
+/*              * Cuando se activa ventana modal para eliminar, se ejecuta*/
+/*              * este evento el cual llena campo oculto con id de la caracteristica*/
+/*              * a elimina*/
+/*              *//* */
+/*             $('#vm_eliminar').on('show.bs.modal', function (event) {*/
+/*                   $("#respuesta_eliminar").html("");*/
+/* 		  var button = $(event.relatedTarget) */
+/*                   var idcaracteristica = button.data('idcaracteristica') */
+/*                   var modal = $(this)*/
+/*                   modal.find('.modal-body #idcaracteristica').val(idcaracteristica)*/
+/*             });*/
+/*             */
+/*             */
+/*             /***/
+/*             * Envía datos al controlador para eliminr datos*/
+/*             *//* */
+/*             $( "#frm_elimina_caracteristica" ).submit(function( event ) {		*/
+/*                 var parametros = $(this).serialize();*/
+/* 		$.ajax({*/
+/* 			type: "POST",*/
+/* 			url: "{{ path('caracteristicasDel') }}",*/
+/* 			data:   parametros,*/
+/*                                 beforeSend: function(){*/
+/*                                     $("#respuesta_eliminar").html("Mensaje: Cargando...");*/
+/* 				},*/
+/* 				success: function(datos){*/
+/*                                     $("#respuesta_eliminar").html(datos);                  */
+/*                                       oTable.fnReloadAjax();*/
+/* 				},*/
+/*                                 error: function(datos){*/
+/*                                     $("#respuesta_eliminar").html(datos);*/
+/*                                 }*/
+/* 			});*/
+/* 		  event.preventDefault();*/
+/*             });*/
+/*             */
 /*         });   */
 /*   </script>*/
 /* {% endblock %}*/
