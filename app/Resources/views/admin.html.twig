@@ -15,6 +15,8 @@
     <link href="{{ asset('bundles/Gentellela/fonts/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bundles/Gentellela/css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bundles/Gentellela/css/select/select2.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('bundles/Gentellela/css/icheck/flat/green.css')}}" rel="stylesheet">
+    
 
     <!-- Custom styling plus plugins -->
     <link href="{{ asset('bundles/Gentellela/css/custom.css') }}" rel="stylesheet">
@@ -24,6 +26,7 @@
     <!-- Scripts -->
     <script src="{{ asset('bundles/Gentellela/js/jquery.min.js') }}"></script>
     <script src="{{ asset('bundles/Gentellela/js/nprogress.js') }}"></script>
+    <script src="{{ asset('bundles/Gentellela/js/icheck/icheck.min.js') }}"></script>
     
     {% endblock %}
 </head>
@@ -58,7 +61,7 @@
                                         <ul class="nav child_menu" style="display: none">
                                                 <li><a href="{{ path("r_caracteristicas")}}">Caracter&iacute;sticas</a>
                                                 </li>
-                                                <li><a href="#">Clasificaci&oacute;n</a>
+                                                <li><a href="{{ path('r_clasificacion')}}">Clasificaci&oacute;n</a>
                                                 </li>
                                                 <li><a href="#">Entrenamiento</a>
                                                 </li>

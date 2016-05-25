@@ -11,6 +11,7 @@ use AppBundle\Entity\Programa;
 use AppBundle\Entity\Estudiante;
 use AppBundle\Entity\Caracteristica;
 use AppBundle\Entity\Tipoidentificacion;
+use AppBundle\Entity\Clasificacion;
 
 /**
  * Controlador funciones administrativas de la aplciación
@@ -476,6 +477,78 @@ class AdminController extends Controller
                     return new Response($e->getMessage().'--'.get_class($e));                
             }
         }
+    }
+    
+    /**
+     * Clasificación
+     */
+    
+    /**
+     * LLama a plantilla que lista la clasificación de datos en desertores y no
+     * desertores
+     * @Route("/admin/clasificacion",name="r_clasificacion")
+     */
+    
+    public function clasificacionAction()
+    {
+        return $this->render("/admin/clasificacion/vw_clasificacion.html.twig");
+    }
+    
+    /**
+     * Devuelve en formarto JSON tabla de datos
+     * @Route("/admin/thdb_clasificacion",name="thdb_clasificacion")
+     */
+    public function clasificacionTablaAction()
+    {
+         $v_clasificacion = $this->getDoctrine()
+                ->getRepository("AppBundle:Clasificacion")
+                ->listaJSON();
+        return new Response($v_clasificacion);
+    }
+    
+    
+    /**
+     * Agrega un nuevo registro en tabla 
+     * @Route("/admin/clasificacion/clasificacionAdd", name="clasificacionAdd")
+     */
+    public function clasificacionAddAction(Request $request)
+    {
+         try{
+            
+            $em = $this->getDoctrine()->getManager();
+            
+            $v_estudiante = $em->getRepository('AppBundle:Estudiante')->findOneBy(array('codigo'=>$request->request->get('codigo')));
+               
+            $v_clasificacion = new Clasificacion();
+            
+            $v_clasificacion->setDesertor($request->request->get('desertor'));
+            $v_clasificacion->setAnio($request->request->get('anio'));
+            $v_clasificacion->setPeriodo($request->request->get('periodo'));
+            $v_clasificacion->setIdestudiante($v_estudiante);
+                        
+            $em->persist($v_clasificacion);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido aregados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+             switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+                
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                    
+                case 'PDOException':
+                    return new Response('DBA Exception<br/>'.$e->getMessage());
+                    
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+        
     }
                 
 }

@@ -45,7 +45,7 @@ class CaracteristicaRepository extends \Doctrine\ORM\EntityRepository
                     . 'data-idcaracteristica=\"'.$arrCaracteristica[$i]->getIdcaracteristica().'\"'                    
                     . '>'
                     . '<i class=\'glyphicon glyphicon-trash\'>'
-                    . '</i> Modificar'
+                    . '</i> Eliminar'
                     . '</button>'
                     . '"';             
             if($i==count($arrCaracteristica)-1){
