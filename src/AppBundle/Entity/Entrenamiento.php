@@ -9,13 +9,14 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="entrenamiento", indexes={@ORM\Index(name="fk_idClasificacion", columns={"idClasificacion"}), @ORM\Index(name="fk_idCaracteristica", columns={"idCaracteristica"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EntrenamientoRepository")
  */
 class Entrenamiento
 {
     /**
-     * @var integer
+     * @var float
      *
-     * @ORM\Column(name="valor", type="integer", nullable=false)
+     * @ORM\Column(name="valor", type="float", nullable=false)
      */
     private $valor;
 

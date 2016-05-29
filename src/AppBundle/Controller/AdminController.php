@@ -550,5 +550,100 @@ class AdminController extends Controller
         }
         
     }
-                
+    
+    /**
+     * Modifica datos de clasificación
+     * @Route("/admin/clasificacion/clasificacionMod",name="clasificacionMod")
+     */
+    public function clasificacionModAction(Request $request)
+    {
+        try{
+            $em = $this->getDoctrine()->getManager();   
+            $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->find($request->request->get('idclasificacion'));
+            $v_estudiante = $em->getRepository('AppBundle:Estudiante')->findOneBy(array('codigo'=>$request->request->get('codigo')));
+            $v_clasificacion->setIdestudiante($v_estudiante);
+            $v_clasificacion->setAnio($request->request->get('anio'));
+            $v_clasificacion->setPeriodo($request->request->get('periodo'));
+            $v_clasificacion->setDesertor($request->request->get('desertor'));
+            
+            $em->persist($v_clasificacion);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido actualizados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+    
+    /**
+     * Eimina una clasificacion
+     * @Route("/admin/clasificacion/clasificacionDel",name="clasificacionDel")
+     */
+    public function clasificacionDelAction(Request $request)
+    {
+        try{
+            $em = $this->getDoctrine()->getManager();   
+            $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->find($request->request->get('idclasificacion'));
+            
+            $em->remove($v_clasificacion);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido eliminados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+
+    /**
+     * Entrenamiento
+     */
+    
+    /**
+     * LLama a plantilla que lista entrenamiento del modelo
+     * @Route("/admin/entrenamiento",name="r_entrenamiento")
+     */
+    
+    public function entrenamientoAction()
+    {
+        return $this->render("/admin/entrenamiento/vw_entrenamiento.html.twig");
+    }
+    
+    /**
+     * Devuelve en formarto JSON tabla de datos
+     * @Route("/admin/thdb_entrenamiento",name="thdb_entrenamiento")
+     */
+    public function entrenamientoTablaAction()
+    {
+         $v_entrenamiento = $this->getDoctrine()
+                ->getRepository("AppBundle:Entrenamiento")
+                ->listaJSON();
+        return new Response($v_entrenamiento);
+    }
+    
+    
+    
+    
+    
 }

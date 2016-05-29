@@ -191,6 +191,19 @@ div.dataTables_scrollHead table.table-bordered {
     text-align: center; 
 }
 
+.table.dataTable th.dt-right,
+.table.dataTable td.dt-right,
+.table.dataTable td.dataTables_empty {
+    text-align: right; 
+}
+
+.table.dataTable th.dt-left,
+.table.dataTable td.dt-left,
+.table.dataTable td.dataTables_empty {
+    text-align: left; 
+}
+
+
 .table-striped.dataTable tbody tr.active:nth-child(odd) td,
 .table-striped.dataTable tbody tr.active:nth-child(odd) th {
 	background-color: #017ebc;
