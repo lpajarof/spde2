@@ -10,8 +10,8 @@ use AppBundle\Entity\Tipousuario;
 use AppBundle\Entity\Programa;
 use AppBundle\Entity\Estudiante;
 use AppBundle\Entity\Caracteristica;
-use AppBundle\Entity\Tipoidentificacion;
 use AppBundle\Entity\Clasificacion;
+use AppBundle\Entity\Entrenamiento;
 
 /**
  * Controlador funciones administrativas de la aplciación
@@ -508,7 +508,7 @@ class AdminController extends Controller
     
     
     /**
-     * Agrega un nuevo registro en tabla 
+     * Agrega un nuevo registro en tabla clasificación
      * @Route("/admin/clasificacion/clasificacionAdd", name="clasificacionAdd")
      */
     public function clasificacionAddAction(Request $request)
@@ -627,7 +627,11 @@ class AdminController extends Controller
     
     public function entrenamientoAction()
     {
-        return $this->render("/admin/entrenamiento/vw_entrenamiento.html.twig");
+        $em = $this->getDoctrine();
+        $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->findAll();
+        $v_caracteristicas = $em->getRepository('AppBundle:Caracteristica')->findAll();
+        
+        return $this->render('/admin/entrenamiento/vw_entrenamiento.html.twig',array('clasificacion'=>$v_clasificacion,'caracteristica'=>$v_caracteristicas));
     }
     
     /**
@@ -642,8 +646,109 @@ class AdminController extends Controller
         return new Response($v_entrenamiento);
     }
     
+    /**
+     * Agrega un nuevo registro a la tabla entrenamiento
+     * @Route("/admin/entrenamiento/entrenamientoAdd",name="entrenamientoAdd")
+     */
+    public function entrenamientoAddAction(Request $request)
+    {
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_entrenamiento = new Entrenamiento();
+            
+            $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->findOneBy(array('idclasificacion'=>$request->request->get('idclasificacion')));
+            $v_caracteristica = $em->getRepository('AppBundle:Caracteristica')->findOneBy(array('idcaracteristica'=>$request->request->get('idcaracteristica')));
+            
+            $v_entrenamiento->setIdclasificacion($v_clasificacion);
+            $v_entrenamiento->setIdcaracteristica($v_caracteristica);
+            $v_entrenamiento->setValor($request->request->get('valor'));
+            
+            $em->persist($v_entrenamiento);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido aregados satisfactoriamente'
+                                . '</div>');
+        } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('Registro Existente<br>DBAL Exception<br>');
+                
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                    
+                case 'PDOException':
+                    return new Response('DBA Exception<br/>'.$e->getMessage());
+                    
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
     
+    /**
+     * Modifica un registro de la tabla entrenamiento
+     * @Route("/admin/entrenamiento/entrenamientoMod",name="entrenamientoMod")
+     */
+    public function entrenamientoModAction(Request $request)
+    {
+        try{
+            $em  = $this->getDoctrine()->getManager();
+            
+            $v_entrenamiento = $em->getRepository('AppBundle:Entrenamiento')->find($request->request->get('identrenamiento'));
+            $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->find($request->request->get('idclasificacion'));
+            $v_caracteristica = $em->getRepository('AppBundle:Caracteristica')->find($request->request->get('idcaracteristica'));
+            $v_entrenamiento->setIdclasificacion($v_clasificacion);
+            $v_entrenamiento->setIdcaracteristica($v_caracteristica);
+            $v_entrenamiento->setValor($request->request->get('valor'));
+            
+            $em->persist($v_entrenamiento);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido actualizados satisfactoriamente'
+                                . '</div>');
+            
+            
+        } catch (Exception $ex) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
     
-    
+    /**
+     * Elimina un registro de la tabla entrenamiento
+     * @Route("/admin/entrenamiento/entrenamientoDel",name="entrenamientoDel")
+     */
+    public function entrenamientoDelAction(Request $reques)
+    {
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_entrenamiento = $em->getRepository('AppBundle:Entrenamiento')->find($reques->request->get('identrenamiento'));
+            
+            $em->remove($v_entrenamiento);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido eliminados satisfactoriamente'
+                                . '</div>');
+        } catch (Exception $ex) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
     
 }

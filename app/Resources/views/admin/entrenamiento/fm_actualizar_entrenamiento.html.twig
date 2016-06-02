@@ -1,45 +1,49 @@
-<div class="modal-body">
-<div id="respuesta_actualizar"></div>
-    <form id="frm_actualiza_clasificacion" data-parsley-validate class="form-horizontal form-label-left">
+<div class="modal-body">     
+    <div id="respuesta_actualizar"></div>
+    <form id="frm_actualiza_entrenamiento" data-parsley-validate class="form-horizontal form-label-left">
+        
         <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Estudiante">Estudiante<span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="clasificacion">Clasificaci&oacute;n<span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="codigo" name="codigo" required="required" class="form-control col-md-7 col-xs-12">
-                <input type="hidden" id="idclasificacion" name="idclasificacion">
-            </div>
+                <select id="idclasificacion" name="idclasificacion" class="form-control" required>
+                    <option value="">Seleccione</option>
+                    {% for c in clasificacion %}
+                        <option value="{{c.idclasificacion}}">{{ c.idEstudiante.codigo }}&nbsp;{{ c.idEstudiante.nombres }}&nbsp;{{ c.idEstudiante.apellidos }}</option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" class="form-control" id="identrenamiento" name="identrenamiento">
+            </div>               
         </div>
         
         <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="A&ntilde;o">A&ntilde;o<span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="caracteristica">Caracter&iacute;stica<span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="anio" name="anio" required="required" class="form-control col-md-7 col-xs-12">
-            </div>
+                <select id="idcaracteristica" name="idcaracteristica" class="form-control" required>
+                    <option value="">Seleccione</option>
+                    {% for car in caracteristica %}
+                        <option value="{{car.idcaracteristica}}">{{ car.descripcion}}</option>
+                    {% endfor %}
+                </select>
+            </div>               
         </div>
         
+        
         <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Periodo">Periodo<span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="valor">valor<span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="periodo" name="periodo" required="required" class="form-control col-md-7 col-xs-12">
+                <input type="text" id="valor" name="valor" required="required" class="form-control col-md-7 col-xs-12">
             </div>
         </div>        
-
-        <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Desertor</label>
-                <div class="col-md-6 col-sm-6 col-xs-12">  <br>                                     
-                    <p>S:<input type="radio" class="flat" name="desertor" id="desertors" value="1"/>
-                       N:<input type="radio" class="flat" name="desertor" id="desertorn" value="0"/>
-                    </p>
-                </div>
-        </div>
+       
 
         <div class="form-group">
             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-success">Agregar</button>
             </div>
-        </div>                                        
+        </div>                                      
     </form>
-</div>    
+</div> 

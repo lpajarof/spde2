@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2016 a las 06:44:33
+-- Tiempo de generación: 02-06-2016 a las 13:31:27
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -35,6 +35,24 @@ CREATE TABLE IF NOT EXISTS `accion` (
 -- --------------------------------------------------------
 
 --
+-- Estructura Stand-in para la vista `calmodelo`
+--
+CREATE TABLE IF NOT EXISTS `calmodelo` (
+`id` bigint(20)
+,`desertor` varchar(11)
+,`probabilidad` decimal(24,4)
+,`mediaC1` double
+,`varianzac1` double
+,`mediac2` double
+,`varianzac2` double
+,`mediac3` double
+,`varianzac3` double
+,`mediac4` double
+,`varianzac4` double
+);
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `caracteristica`
 --
 
@@ -50,11 +68,10 @@ CREATE TABLE IF NOT EXISTS `caracteristica` (
 --
 
 INSERT INTO `caracteristica` (`idCaracteristica`, `descripcion`) VALUES
-(3, 'Forma de pago'),
-(5, 'Porcentaje beca'),
+(4, 'Forma de pago (1 Contado, 2 Icetex, 3 cheque)'),
+(3, 'Número de asignaturas cursadas'),
 (1, 'Promedio'),
-(2, 'Semestre'),
-(4, 'Trabaja y estudia');
+(2, 'Semestre');
 
 -- --------------------------------------------------------
 
@@ -70,7 +87,128 @@ CREATE TABLE IF NOT EXISTS `clasificacion` (
   `idEstudiante` int(11) DEFAULT NULL,
   PRIMARY KEY (`idClasificacion`),
   KEY `fk_idEstudiante` (`idEstudiante`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=146 ;
+
+--
+-- Volcado de datos para la tabla `clasificacion`
+--
+
+INSERT INTO `clasificacion` (`idClasificacion`, `desertor`, `anio`, `periodo`, `idEstudiante`) VALUES
+(1, 0, 2015, 1, 202),
+(2, 1, 2015, 1, 203),
+(3, 0, 2015, 1, 204),
+(4, 1, 2015, 1, 206),
+(5, 0, 2015, 1, 207),
+(6, 0, 2015, 1, 208),
+(9, 1, 2015, 1, 219),
+(11, 0, 2015, 1, 220),
+(12, 0, 2015, 1, 221),
+(13, 0, 2015, 1, 222),
+(14, 0, 2015, 1, 223),
+(15, 0, 2015, 1, 224),
+(16, 0, 2015, 1, 225),
+(17, 0, 2015, 1, 226),
+(18, 0, 2015, 1, 227),
+(20, 1, 2015, 1, 228),
+(21, 1, 2015, 1, 229),
+(22, 1, 2015, 1, 230),
+(23, 1, 2015, 1, 231),
+(24, 1, 2015, 1, 232),
+(25, 1, 2015, 1, 233),
+(26, 1, 2015, 1, 234),
+(27, 1, 2015, 1, 235),
+(28, 1, 2015, 1, 236),
+(29, 1, 2015, 1, 237),
+(30, 1, 2015, 1, 238),
+(31, 1, 2015, 1, 239),
+(32, 1, 2015, 1, 240),
+(33, 1, 2015, 1, 241),
+(34, 1, 2015, 1, 242),
+(35, 1, 2015, 1, 243),
+(36, 1, 2015, 1, 244),
+(37, 1, 2015, 1, 245),
+(38, 1, 2015, 1, 246),
+(39, 1, 2015, 1, 247),
+(40, 1, 2015, 1, 248),
+(41, 1, 2015, 1, 249),
+(42, 1, 2015, 1, 250),
+(43, 1, 2015, 1, 251),
+(44, 1, 2015, 1, 252),
+(45, 1, 2015, 1, 253),
+(46, 1, 2015, 1, 254),
+(47, 1, 2015, 1, 255),
+(48, 1, 2015, 1, 256),
+(49, 1, 2015, 1, 257),
+(50, 1, 2015, 1, 258),
+(51, 1, 2015, 1, 259),
+(52, 1, 2015, 1, 260),
+(53, 1, 2015, 1, 261),
+(54, 1, 2015, 1, 262),
+(55, 1, 2015, 1, 263),
+(56, 1, 2015, 1, 264),
+(57, 1, 2015, 1, 265),
+(58, 1, 2015, 1, 266),
+(59, 1, 2015, 1, 267),
+(60, 1, 2015, 1, 268),
+(61, 1, 2015, 1, 269),
+(62, 1, 2015, 1, 270),
+(63, 1, 2015, 1, 271),
+(64, 1, 2015, 1, 272),
+(65, 1, 2015, 1, 273),
+(66, 1, 2015, 1, 274),
+(67, 1, 2015, 1, 275),
+(68, 1, 2015, 1, 276),
+(69, 1, 2015, 1, 277),
+(83, 0, 2015, 1, 278),
+(84, 0, 2015, 1, 279),
+(85, 0, 2015, 1, 280),
+(86, 0, 2015, 1, 281),
+(87, 0, 2015, 1, 282),
+(88, 0, 2015, 1, 283),
+(89, 0, 2015, 1, 284),
+(90, 0, 2015, 1, 285),
+(91, 0, 2015, 1, 286),
+(92, 0, 2015, 1, 287),
+(93, 0, 2015, 1, 288),
+(94, 0, 2015, 1, 289),
+(95, 0, 2015, 1, 290),
+(96, 0, 2015, 1, 291),
+(97, 0, 2015, 1, 292),
+(98, 0, 2015, 1, 293),
+(99, 0, 2015, 1, 294),
+(100, 0, 2015, 1, 295),
+(101, 0, 2015, 1, 296),
+(102, 0, 2015, 1, 297),
+(103, 0, 2015, 1, 298),
+(104, 0, 2015, 1, 299),
+(105, 0, 2015, 1, 300),
+(106, 0, 2015, 1, 301),
+(107, 0, 2015, 1, 302),
+(108, 0, 2015, 1, 303),
+(109, 0, 2015, 1, 304),
+(110, 0, 2015, 1, 305),
+(111, 0, 2015, 1, 306),
+(112, 0, 2015, 1, 307),
+(113, 0, 2015, 1, 308),
+(114, 0, 2015, 1, 309),
+(115, 0, 2015, 1, 310),
+(116, 0, 2015, 1, 311),
+(117, 0, 2015, 1, 312),
+(118, 0, 2015, 1, 313),
+(119, 0, 2015, 1, 314),
+(120, 0, 2015, 1, 315),
+(121, 0, 2015, 1, 316),
+(122, 0, 2015, 1, 317),
+(123, 0, 2015, 1, 318),
+(124, 0, 2015, 1, 319),
+(125, 0, 2015, 1, 320),
+(126, 0, 2015, 1, 321),
+(127, 0, 2015, 1, 322),
+(128, 0, 2015, 1, 323),
+(129, 0, 2015, 1, 324),
+(130, 0, 2015, 1, 325),
+(131, 0, 2015, 1, 326),
+(132, 0, 2015, 1, 327);
 
 -- --------------------------------------------------------
 
@@ -79,14 +217,30 @@ CREATE TABLE IF NOT EXISTS `clasificacion` (
 --
 
 CREATE TABLE IF NOT EXISTS `entrenamiento` (
-  `idEntrenamiento` int(11) NOT NULL AUTO_INCREMENT,
-  `idClasificacion` int(11) DEFAULT NULL,
-  `idCaracteristica` int(11) DEFAULT NULL,
-  `valor` int(11) NOT NULL,
-  PRIMARY KEY (`idEntrenamiento`),
-  KEY `fk_idClasificacion` (`idClasificacion`),
-  KEY `fk_idCaracteristica` (`idCaracteristica`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+  `identrenamiento` int(11) NOT NULL AUTO_INCREMENT,
+  `desertor` int(2) NOT NULL,
+  `c1` float DEFAULT NULL,
+  `c2` float DEFAULT NULL,
+  `c3` float DEFAULT NULL,
+  `c4` float DEFAULT NULL,
+  `idestudiante` int(11) DEFAULT NULL,
+  PRIMARY KEY (`identrenamiento`),
+  KEY `fk_idestudiante2` (`idestudiante`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+
+--
+-- Volcado de datos para la tabla `entrenamiento`
+--
+
+INSERT INTO `entrenamiento` (`identrenamiento`, `desertor`, `c1`, `c2`, `c3`, `c4`, `idestudiante`) VALUES
+(1, 1, 6, 180, 12, 1, 202),
+(2, 1, 5.92, 190, 11, 1, 203),
+(3, 1, 5.58, 170, 12, 1, 204),
+(4, 1, 5.92, 165, 10, 1, 205),
+(9, 0, 5, 100, 6, 1, 210),
+(10, 0, 5.5, 150, 8, 1, 211),
+(11, 0, 5.42, 130, 7, 1, 212),
+(12, 0, 5.75, 150, 9, 1, 213);
 
 -- --------------------------------------------------------
 
@@ -468,6 +622,15 @@ CREATE TABLE IF NOT EXISTS `usuariorol` (
   KEY `fk_idRol` (`idRol`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `calmodelo`
+--
+DROP TABLE IF EXISTS `calmodelo`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `calmodelo` AS select 1 AS `id`,if((`entrenamiento`.`desertor` = '1'),'Desertor',`entrenamiento`.`desertor`) AS `desertor`,(count(`entrenamiento`.`identrenamiento`) / (select count(`entrenamiento`.`identrenamiento`) from `entrenamiento`)) AS `probabilidad`,avg(`entrenamiento`.`c1`) AS `mediaC1`,var_samp(`entrenamiento`.`c1`) AS `varianzac1`,avg(`entrenamiento`.`c2`) AS `mediac2`,var_samp(`entrenamiento`.`c2`) AS `varianzac2`,avg(`entrenamiento`.`c3`) AS `mediac3`,var_samp(`entrenamiento`.`c3`) AS `varianzac3`,avg(`entrenamiento`.`c4`) AS `mediac4`,var_samp(`entrenamiento`.`c4`) AS `varianzac4` from `entrenamiento` where (`entrenamiento`.`desertor` = 1) union select 0 AS `id`,if((`entrenamiento`.`desertor` = '0'),'No Desertor',`entrenamiento`.`desertor`) AS `desertor`,(count(`entrenamiento`.`identrenamiento`) / (select count(`entrenamiento`.`identrenamiento`) from `entrenamiento`)) AS `probabilidad`,avg(`entrenamiento`.`c1`) AS `mediaC1`,var_samp(`entrenamiento`.`c1`) AS `varianzac1`,avg(`entrenamiento`.`c2`) AS `mediac2`,var_samp(`entrenamiento`.`c2`) AS `varianzac2`,avg(`entrenamiento`.`c3`) AS `mediac3`,var_samp(`entrenamiento`.`c3`) AS `varianzac3`,avg(`entrenamiento`.`c4`) AS `mediac4`,var_samp(`entrenamiento`.`c4`) AS `varianzac4` from `entrenamiento` where (`entrenamiento`.`desertor` = 0);
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -482,8 +645,7 @@ ALTER TABLE `clasificacion`
 -- Filtros para la tabla `entrenamiento`
 --
 ALTER TABLE `entrenamiento`
-  ADD CONSTRAINT `fk_idCaracteristica` FOREIGN KEY (`idCaracteristica`) REFERENCES `caracteristica` (`idCaracteristica`),
-  ADD CONSTRAINT `fk_idClasificacion` FOREIGN KEY (`idClasificacion`) REFERENCES `clasificacion` (`idClasificacion`);
+  ADD CONSTRAINT `fk_idestudiante2` FOREIGN KEY (`idestudiante`) REFERENCES `estudiante` (`idEstudiante`);
 
 --
 -- Filtros para la tabla `estudiante`
