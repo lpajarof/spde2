@@ -346,7 +346,7 @@ class Calmodelo
      */
     public function getVarianzaC4()
     {
-        return $this->varianzaC4;
+        return $this->varianzaC4;               
     }
     
     public function prediccion(){
