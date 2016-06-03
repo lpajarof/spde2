@@ -36,7 +36,7 @@ class Calmodelo
     private $desertor;
    
     /**
-     *
+     * Probabilidad de ser desertor o para no deserto
      * @var float
      * @ORM\Column(name="probabilidad",type="float")
      */
@@ -98,7 +98,7 @@ class Calmodelo
      */
     private $varianzaC4;
 
-
+    
     /**
      * Get id
      *
@@ -349,10 +349,17 @@ class Calmodelo
         return $this->varianzaC4;               
     }
     
-    public function prediccion(){
-        
-        
-        
-        return(1);
+    /**
+     * Función que devuelve la probabilidad de un atributo del cual se quiere 
+     * conocer su clasificación
+     */
+    public function priori($atributo1,$atributo2,$atributo3,$atributo4)
+    {
+        $probabilidad1 = (1/(sqrt(2*pi()*$this->varianzaC1)))*exp(-1*pow(($atributo1 - $this->mediaC1),2)/(2*$this->varianzaC1));
+        $probabilidad2 = (1/(sqrt(2*pi()*$this->varianzaC2)))*exp(-1*pow(($atributo2 - $this->mediaC2),2)/(2*$this->varianzaC2));
+        $probabilidad3 = (1/(sqrt(2*pi()*$this->varianzaC3)))*exp(-1*pow(($atributo3 - $this->mediaC3),2)/(2*$this->varianzaC3));
+//        $p2=exp(-1*pow(($atributo - $this->mediaC1),2)/(2*$this->varianzaC1));
+        return($probabilidad1*$probabilidad2*$probabilidad3*$this->probabilidad);
     }
+        
 }

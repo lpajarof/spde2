@@ -22,13 +22,23 @@ class ModeloController extends Controller
     {   
                              
         $v_calmodelo = new Calmodelo();
-        $v_calmodelo = $this->getDoctrine()
+        $v_calmodeloS = $this->getDoctrine()
+                ->getRepository("AppBundle:Calmodelo")
+                ->find(1);
+        
+        $v_calmodeloN = $this->getDoctrine()
                 ->getRepository("AppBundle:Calmodelo")
                 ->find(0);
         
-                        
+        if ($v_calmodeloS->priori(6,180,12,1) > $v_calmodeloN->priori(6,180,12,1))
+        {
+            $v_respuesta='Desertor';
+        }
+        else{
+            $v_respuesta='No es desertor';
+        }
         
-        return New Response('valor->'.$v_calmodelo->getMediaC1());
+        return New Response('valor->'.$v_respuesta);
         
     }
     
