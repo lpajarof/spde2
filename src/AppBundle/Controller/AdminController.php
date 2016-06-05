@@ -627,11 +627,11 @@ class AdminController extends Controller
     
     public function entrenamientoAction()
     {
-        $em = $this->getDoctrine();
-        $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->findAll();
+        $em = $this->getDoctrine();        
         $v_caracteristicas = $em->getRepository('AppBundle:Caracteristica')->findAll();
-        
-        return $this->render('/admin/entrenamiento/vw_entrenamiento.html.twig',array('clasificacion'=>$v_clasificacion,'caracteristica'=>$v_caracteristicas));
+        $v_estudiante = $em->getRepository('AppBundle:Estudiante')->findAll();
+                
+        return $this->render('/admin/entrenamiento/vw_entrenamiento.html.twig',array('caracteristica'=>$v_caracteristicas,'estudiante'=>$v_estudiante));
     }
     
     /**
@@ -656,12 +656,14 @@ class AdminController extends Controller
             $em = $this->getDoctrine()->getManager();
             $v_entrenamiento = new Entrenamiento();
             
-            $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->findOneBy(array('idclasificacion'=>$request->request->get('idclasificacion')));
-            $v_caracteristica = $em->getRepository('AppBundle:Caracteristica')->findOneBy(array('idcaracteristica'=>$request->request->get('idcaracteristica')));
+            $v_estudiante = $em->getRepository('AppBundle:Estudiante')->findOneBy(array('idestudiante'=>$request->request->get('idestudiante')));
             
-            $v_entrenamiento->setIdclasificacion($v_clasificacion);
-            $v_entrenamiento->setIdcaracteristica($v_caracteristica);
-            $v_entrenamiento->setValor($request->request->get('valor'));
+            $v_entrenamiento->setDesertor($request->request->get('desertor'));
+            $v_entrenamiento->setC1($request->request->get('c1'));
+            $v_entrenamiento->setC2($request->request->get('c2'));
+            $v_entrenamiento->setC3($request->request->get('c3'));
+            $v_entrenamiento->setC4($request->request->get('c4'));
+            $v_entrenamiento->setIdestudiante($v_estudiante);
             
             $em->persist($v_entrenamiento);
             $em->flush();
@@ -696,11 +698,14 @@ class AdminController extends Controller
             $em  = $this->getDoctrine()->getManager();
             
             $v_entrenamiento = $em->getRepository('AppBundle:Entrenamiento')->find($request->request->get('identrenamiento'));
-            $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->find($request->request->get('idclasificacion'));
-            $v_caracteristica = $em->getRepository('AppBundle:Caracteristica')->find($request->request->get('idcaracteristica'));
-            $v_entrenamiento->setIdclasificacion($v_clasificacion);
-            $v_entrenamiento->setIdcaracteristica($v_caracteristica);
-            $v_entrenamiento->setValor($request->request->get('valor'));
+            $v_estudiante = $em->getRepository('AppBundle:Estudiante')->find($request->request->get('idestudiante'));
+            
+            $v_entrenamiento->setDesertor($request->request->get('desertor'));
+            $v_entrenamiento->setC1($request->request->get('c1'));
+            $v_entrenamiento->setC2($request->request->get('c2'));
+            $v_entrenamiento->setC3($request->request->get('c3'));
+            $v_entrenamiento->setC4($request->request->get('c4'));
+            $v_entrenamiento->setIdestudiante($v_estudiante);
             
             $em->persist($v_entrenamiento);
             $em->flush();

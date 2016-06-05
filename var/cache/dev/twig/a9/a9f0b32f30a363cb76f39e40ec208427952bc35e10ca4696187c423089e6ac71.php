@@ -27,20 +27,20 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3adba402c201259700735ca6c29cb9c7bc81d59f831e82ea14d904d95392b1fc = $this->env->getExtension("native_profiler");
-        $__internal_3adba402c201259700735ca6c29cb9c7bc81d59f831e82ea14d904d95392b1fc->enter($__internal_3adba402c201259700735ca6c29cb9c7bc81d59f831e82ea14d904d95392b1fc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/caracteristicas/vw_caracteristicas.html.twig"));
+        $__internal_e9b41d243c8421725fc9fc7050ba812c1720631d7e38720069319817cd6a8768 = $this->env->getExtension("native_profiler");
+        $__internal_e9b41d243c8421725fc9fc7050ba812c1720631d7e38720069319817cd6a8768->enter($__internal_e9b41d243c8421725fc9fc7050ba812c1720631d7e38720069319817cd6a8768_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/caracteristicas/vw_caracteristicas.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3adba402c201259700735ca6c29cb9c7bc81d59f831e82ea14d904d95392b1fc->leave($__internal_3adba402c201259700735ca6c29cb9c7bc81d59f831e82ea14d904d95392b1fc_prof);
+        $__internal_e9b41d243c8421725fc9fc7050ba812c1720631d7e38720069319817cd6a8768->leave($__internal_e9b41d243c8421725fc9fc7050ba812c1720631d7e38720069319817cd6a8768_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_501666b7d6c84ba97a6bc1f517ad09d5538fd9208b6dbb38915f864dad29bb21 = $this->env->getExtension("native_profiler");
-        $__internal_501666b7d6c84ba97a6bc1f517ad09d5538fd9208b6dbb38915f864dad29bb21->enter($__internal_501666b7d6c84ba97a6bc1f517ad09d5538fd9208b6dbb38915f864dad29bb21_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_8cd11f4e480aa424e4ffb030ea1375f8d0ae05f8627397c062f35256615788ff = $this->env->getExtension("native_profiler");
+        $__internal_8cd11f4e480aa424e4ffb030ea1375f8d0ae05f8627397c062f35256615788ff->enter($__internal_8cd11f4e480aa424e4ffb030ea1375f8d0ae05f8627397c062f35256615788ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
         echo "    ";
@@ -48,15 +48,15 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
         echo "
 ";
         
-        $__internal_501666b7d6c84ba97a6bc1f517ad09d5538fd9208b6dbb38915f864dad29bb21->leave($__internal_501666b7d6c84ba97a6bc1f517ad09d5538fd9208b6dbb38915f864dad29bb21_prof);
+        $__internal_8cd11f4e480aa424e4ffb030ea1375f8d0ae05f8627397c062f35256615788ff->leave($__internal_8cd11f4e480aa424e4ffb030ea1375f8d0ae05f8627397c062f35256615788ff_prof);
 
     }
 
     // line 7
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_220e40b4a72551c95a424dd550f3f9fe9c9ce2ab9dec81ccc06e6d8e01a2b760 = $this->env->getExtension("native_profiler");
-        $__internal_220e40b4a72551c95a424dd550f3f9fe9c9ce2ab9dec81ccc06e6d8e01a2b760->enter($__internal_220e40b4a72551c95a424dd550f3f9fe9c9ce2ab9dec81ccc06e6d8e01a2b760_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_5f7c97ce138933821984d946585bdd21f04e510d88a88f0c4f0f0646cfb03f3e = $this->env->getExtension("native_profiler");
+        $__internal_5f7c97ce138933821984d946585bdd21f04e510d88a88f0c4f0f0646cfb03f3e->enter($__internal_5f7c97ce138933821984d946585bdd21f04e510d88a88f0c4f0f0646cfb03f3e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 8
         echo "    ";
@@ -64,15 +64,15 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
         echo "    
 ";
         
-        $__internal_220e40b4a72551c95a424dd550f3f9fe9c9ce2ab9dec81ccc06e6d8e01a2b760->leave($__internal_220e40b4a72551c95a424dd550f3f9fe9c9ce2ab9dec81ccc06e6d8e01a2b760_prof);
+        $__internal_5f7c97ce138933821984d946585bdd21f04e510d88a88f0c4f0f0646cfb03f3e->leave($__internal_5f7c97ce138933821984d946585bdd21f04e510d88a88f0c4f0f0646cfb03f3e_prof);
 
     }
 
     // line 11
     public function block_js($context, array $blocks = array())
     {
-        $__internal_48d7d9747bbfddb040923187eb4a9b74087bacc63e968c7a78a10dc6405b360c = $this->env->getExtension("native_profiler");
-        $__internal_48d7d9747bbfddb040923187eb4a9b74087bacc63e968c7a78a10dc6405b360c->enter($__internal_48d7d9747bbfddb040923187eb4a9b74087bacc63e968c7a78a10dc6405b360c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js"));
+        $__internal_4a75d48802d2a7f8f2361e6b5f6960993d1aed2ae765e481a0cd0dcc759bfaf7 = $this->env->getExtension("native_profiler");
+        $__internal_4a75d48802d2a7f8f2361e6b5f6960993d1aed2ae765e481a0cd0dcc759bfaf7->enter($__internal_4a75d48802d2a7f8f2361e6b5f6960993d1aed2ae765e481a0cd0dcc759bfaf7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js"));
 
         // line 12
         echo "    ";
@@ -80,43 +80,43 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
         echo "
 ";
         
-        $__internal_48d7d9747bbfddb040923187eb4a9b74087bacc63e968c7a78a10dc6405b360c->leave($__internal_48d7d9747bbfddb040923187eb4a9b74087bacc63e968c7a78a10dc6405b360c_prof);
+        $__internal_4a75d48802d2a7f8f2361e6b5f6960993d1aed2ae765e481a0cd0dcc759bfaf7->leave($__internal_4a75d48802d2a7f8f2361e6b5f6960993d1aed2ae765e481a0cd0dcc759bfaf7_prof);
 
     }
 
     // line 15
     public function block_titulo($context, array $blocks = array())
     {
-        $__internal_5ba664a3ca37b017bbc31070e2bc7dcdebcea724cd14848315d7778e7f554809 = $this->env->getExtension("native_profiler");
-        $__internal_5ba664a3ca37b017bbc31070e2bc7dcdebcea724cd14848315d7778e7f554809->enter($__internal_5ba664a3ca37b017bbc31070e2bc7dcdebcea724cd14848315d7778e7f554809_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "titulo"));
+        $__internal_767c5b6e1af81b8add2e9fc5959d82790adf6a406e5b1f690308ff75e3601b69 = $this->env->getExtension("native_profiler");
+        $__internal_767c5b6e1af81b8add2e9fc5959d82790adf6a406e5b1f690308ff75e3601b69->enter($__internal_767c5b6e1af81b8add2e9fc5959d82790adf6a406e5b1f690308ff75e3601b69_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "titulo"));
 
         echo " 
     Modelo
 ";
         
-        $__internal_5ba664a3ca37b017bbc31070e2bc7dcdebcea724cd14848315d7778e7f554809->leave($__internal_5ba664a3ca37b017bbc31070e2bc7dcdebcea724cd14848315d7778e7f554809_prof);
+        $__internal_767c5b6e1af81b8add2e9fc5959d82790adf6a406e5b1f690308ff75e3601b69->leave($__internal_767c5b6e1af81b8add2e9fc5959d82790adf6a406e5b1f690308ff75e3601b69_prof);
 
     }
 
     // line 19
     public function block_sub_titulo($context, array $blocks = array())
     {
-        $__internal_6ce07f83f31c6eb68780dc37ca1d59fbaa110a67baaea346943872800ca17ab3 = $this->env->getExtension("native_profiler");
-        $__internal_6ce07f83f31c6eb68780dc37ca1d59fbaa110a67baaea346943872800ca17ab3->enter($__internal_6ce07f83f31c6eb68780dc37ca1d59fbaa110a67baaea346943872800ca17ab3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sub_titulo"));
+        $__internal_ddb198576db72a73503f3a4cbf9c9794a21d2c96d532645c95bfb366bd418a2d = $this->env->getExtension("native_profiler");
+        $__internal_ddb198576db72a73503f3a4cbf9c9794a21d2c96d532645c95bfb366bd418a2d->enter($__internal_ddb198576db72a73503f3a4cbf9c9794a21d2c96d532645c95bfb366bd418a2d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sub_titulo"));
 
         echo " 
     
 ";
         
-        $__internal_6ce07f83f31c6eb68780dc37ca1d59fbaa110a67baaea346943872800ca17ab3->leave($__internal_6ce07f83f31c6eb68780dc37ca1d59fbaa110a67baaea346943872800ca17ab3_prof);
+        $__internal_ddb198576db72a73503f3a4cbf9c9794a21d2c96d532645c95bfb366bd418a2d->leave($__internal_ddb198576db72a73503f3a4cbf9c9794a21d2c96d532645c95bfb366bd418a2d_prof);
 
     }
 
     // line 23
     public function block_contenido($context, array $blocks = array())
     {
-        $__internal_64f289aaa16554e3fef4b7a508edb1f1900d85719114caff6b277628ca1f891e = $this->env->getExtension("native_profiler");
-        $__internal_64f289aaa16554e3fef4b7a508edb1f1900d85719114caff6b277628ca1f891e->enter($__internal_64f289aaa16554e3fef4b7a508edb1f1900d85719114caff6b277628ca1f891e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
+        $__internal_5780caddf35854597b04321030ea001c3ca89d7459d1bfb558689bcc70fea6e9 = $this->env->getExtension("native_profiler");
+        $__internal_5780caddf35854597b04321030ea001c3ca89d7459d1bfb558689bcc70fea6e9->enter($__internal_5780caddf35854597b04321030ea001c3ca89d7459d1bfb558689bcc70fea6e9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
 
         echo "   
 <div class=\"col-md-12 col-sm-6 col-xs-12\">
@@ -131,9 +131,11 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
                     ";
         // line 34
         echo "                    <div role=\"tabpanel\" class=\"tab-pane fade active in\" id=\"caracteristicas\" aria-labelledby=\"home-tab\">
-                        <p class=\"text-right\"><button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#vm_agregar\">Agregar</button></p>                         
-                        ";
+                        <p class=\"text-right\">
+";
         // line 37
+        echo "                        ";
+        // line 38
         echo "                        <div class=\"modal fade\" id=\"vm_agregar\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" data-keyboard=\"false\" data-backdrop=\"static\">
                             <div class=\"modal-dialog modal-lg\">
                             <div class=\"modal-content\">
@@ -142,19 +144,19 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
                                         <h4 class=\"modal-title\" id=\"myModalLabel\">Agregar Caracter&iacute;ticas</h4>
                                 </div>
                                 ";
-        // line 45
-        echo "                                ";
-        $this->loadTemplate("admin/caracteristicas/fm_agregar_caracteristicas.html.twig", "admin/caracteristicas/vw_caracteristicas.html.twig", 45)->display($context);
         // line 46
+        echo "                                ";
+        $this->loadTemplate("admin/caracteristicas/fm_agregar_caracteristicas.html.twig", "admin/caracteristicas/vw_caracteristicas.html.twig", 46)->display($context);
+        // line 47
         echo "                                ";
         echo "        
                             </div>
                             </div>
                         </div>
                         ";
-        // line 51
-        echo "                        ";
         // line 52
+        echo "                        ";
+        // line 53
         echo "                        <div class=\"modal fade\" id=\"vm_actualizar\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" data-keyboard=\"false\" data-backdrop=\"static\">
                             <div class=\"modal-dialog modal-lg\">
                             <div class=\"modal-content\">
@@ -163,20 +165,20 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
                                         <h4 class=\"modal-title\" id=\"myModalLabel\">Actualizar Caracter&iacute;stica</h4>
                                 </div>
                                 ";
-        // line 60
+        // line 61
         echo "                                ";
-        $this->loadTemplate("admin/caracteristicas/fm_actualizar_caracteristicas.html.twig", "admin/caracteristicas/vw_caracteristicas.html.twig", 60)->display($context);
+        $this->loadTemplate("admin/caracteristicas/fm_actualizar_caracteristicas.html.twig", "admin/caracteristicas/vw_caracteristicas.html.twig", 61)->display($context);
         echo " 
                                 ";
-        // line 61
+        // line 62
         echo "        
                             </div>
                             </div>
                         </div>
                         ";
-        // line 66
-        echo "                        ";
         // line 67
+        echo "                        ";
+        // line 68
         echo "                        <div class=\"modal fade\" id=\"vm_eliminar\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" data-keyboard=\"false\" data-backdrop=\"static\">
                             <div class=\"modal-dialog modal-lg\">
                             <div class=\"modal-content\">
@@ -185,20 +187,20 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
                                         <h4 class=\"modal-title\" id=\"myModalLabel\">Eliminar Caracter&iacute;stica</h4>
                                 </div>
                                 ";
-        // line 75
+        // line 76
         echo "                                ";
-        $this->loadTemplate("admin/caracteristicas/fm_eliminar_caracteristicas.html.twig", "admin/caracteristicas/vw_caracteristicas.html.twig", 75)->display($context);
+        $this->loadTemplate("admin/caracteristicas/fm_eliminar_caracteristicas.html.twig", "admin/caracteristicas/vw_caracteristicas.html.twig", 76)->display($context);
         echo " 
                                 ";
-        // line 76
+        // line 77
         echo "        
                             </div>
                             </div>
                         </div>
                         ";
-        // line 81
-        echo "                        ";
         // line 82
+        echo "                        ";
+        // line 83
         echo "                        <div class=\"x_panel\">                            
                             <div class=\"x_content\">
                                 <table id=\"th_caracteristica\" class=\"table table-striped table-bordered\" width=\"100%\">
@@ -213,10 +215,10 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
                             </div>
                         </div>
                         ";
-        // line 96
+        // line 97
         echo "                    </div>
                     ";
-        // line 98
+        // line 99
         echo "                </div>
             </div>
         </div>
@@ -224,17 +226,17 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 </div>
 ";
         
-        $__internal_64f289aaa16554e3fef4b7a508edb1f1900d85719114caff6b277628ca1f891e->leave($__internal_64f289aaa16554e3fef4b7a508edb1f1900d85719114caff6b277628ca1f891e_prof);
+        $__internal_5780caddf35854597b04321030ea001c3ca89d7459d1bfb558689bcc70fea6e9->leave($__internal_5780caddf35854597b04321030ea001c3ca89d7459d1bfb558689bcc70fea6e9_prof);
 
     }
 
-    // line 105
+    // line 106
     public function block_js_footer($context, array $blocks = array())
     {
-        $__internal_9706e5333484d79344d29e8f9b9d9c3d54064a5596f58b9a6db1ba65c91b0ff5 = $this->env->getExtension("native_profiler");
-        $__internal_9706e5333484d79344d29e8f9b9d9c3d54064a5596f58b9a6db1ba65c91b0ff5->enter($__internal_9706e5333484d79344d29e8f9b9d9c3d54064a5596f58b9a6db1ba65c91b0ff5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js_footer"));
+        $__internal_a93d54daf873176a79b88d63b262baa6bd45081523d5aca3ba811a0354a9496a = $this->env->getExtension("native_profiler");
+        $__internal_a93d54daf873176a79b88d63b262baa6bd45081523d5aca3ba811a0354a9496a->enter($__internal_a93d54daf873176a79b88d63b262baa6bd45081523d5aca3ba811a0354a9496a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js_footer"));
 
-        // line 106
+        // line 107
         echo "    ";
         $this->displayParentBlock("js_footer", $context, $blocks);
         echo "   
@@ -243,13 +245,13 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
         \$(document).ready(function() {
           oTable =  \$('#th_caracteristica').dataTable({                
                 \"ajax\": \"";
-        // line 111
+        // line 112
         echo $this->env->getExtension('routing')->getPath("thdb_caracteristica");
         echo "\",
                 \"columns\": [
                             { className: \"dt-center\",\"width\": \"5%\" },
                             null,
-                            { \"width\": \"20%\" }
+                            { className: \"dt-center\",\"width\": \"15%\" }
                           ]
             });          
             /*
@@ -273,7 +275,7 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 \t\t\$.ajax({
 \t\t\ttype: \"POST\",
 \t\t\turl: \"";
-        // line 138
+        // line 139
         echo $this->env->getExtension('routing')->getPath("caracteristicasAdd");
         echo "\",
 \t\t\tdata:   parametros,
@@ -313,7 +315,7 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 \t\t\$.ajax({
 \t\t\ttype: \"POST\",
 \t\t\turl: \"";
-        // line 175
+        // line 176
         echo $this->env->getExtension('routing')->getPath("caracteristicasMod");
         echo "\",
 \t\t\tdata:   parametros,
@@ -353,7 +355,7 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 \t\t\$.ajax({
 \t\t\ttype: \"POST\",
 \t\t\turl: \"";
-        // line 212
+        // line 213
         echo $this->env->getExtension('routing')->getPath("caracteristicasDel");
         echo "\",
 \t\t\tdata:   parametros,
@@ -375,7 +377,7 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
   </script>
 ";
         
-        $__internal_9706e5333484d79344d29e8f9b9d9c3d54064a5596f58b9a6db1ba65c91b0ff5->leave($__internal_9706e5333484d79344d29e8f9b9d9c3d54064a5596f58b9a6db1ba65c91b0ff5_prof);
+        $__internal_a93d54daf873176a79b88d63b262baa6bd45081523d5aca3ba811a0354a9496a->leave($__internal_a93d54daf873176a79b88d63b262baa6bd45081523d5aca3ba811a0354a9496a_prof);
 
     }
 
@@ -391,7 +393,7 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 
     public function getDebugInfo()
     {
-        return array (  357 => 212,  317 => 175,  277 => 138,  247 => 111,  238 => 106,  232 => 105,  220 => 98,  217 => 96,  202 => 82,  200 => 81,  194 => 76,  189 => 75,  180 => 67,  178 => 66,  172 => 61,  167 => 60,  158 => 52,  156 => 51,  149 => 46,  146 => 45,  137 => 37,  133 => 34,  116 => 23,  102 => 19,  88 => 15,  78 => 12,  72 => 11,  62 => 8,  56 => 7,  46 => 4,  40 => 3,  11 => 1,);
+        return array (  359 => 213,  319 => 176,  279 => 139,  249 => 112,  240 => 107,  234 => 106,  222 => 99,  219 => 97,  204 => 83,  202 => 82,  196 => 77,  191 => 76,  182 => 68,  180 => 67,  174 => 62,  169 => 61,  160 => 53,  158 => 52,  151 => 47,  148 => 46,  139 => 38,  137 => 37,  133 => 34,  116 => 23,  102 => 19,  88 => 15,  78 => 12,  72 => 11,  62 => 8,  56 => 7,  46 => 4,  40 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin.html.twig' %}*/
@@ -428,7 +430,8 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 /*                 <div id="myTabContent" class="tab-content">*/
 /*                     {# Panel caracterisiticas #}*/
 /*                     <div role="tabpanel" class="tab-pane fade active in" id="caracteristicas" aria-labelledby="home-tab">*/
-/*                         <p class="text-right"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#vm_agregar">Agregar</button></p>                         */
+/*                         <p class="text-right">*/
+/* {#                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#vm_agregar">Agregar</button></p>                         #}*/
 /*                         {# Venta modal agregar caracteristicas #}*/
 /*                         <div class="modal fade" id="vm_agregar" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">*/
 /*                             <div class="modal-dialog modal-lg">*/
@@ -508,7 +511,7 @@ class __TwigTemplate_3977267140f05e9e2893069cdfcb310295d75604b8f4fb502addfb80a62
 /*                 "columns": [*/
 /*                             { className: "dt-center","width": "5%" },*/
 /*                             null,*/
-/*                             { "width": "20%" }*/
+/*                             { className: "dt-center","width": "15%" }*/
 /*                           ]*/
 /*             });          */
 /*             /**/

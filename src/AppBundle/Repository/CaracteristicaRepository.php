@@ -41,12 +41,12 @@ class CaracteristicaRepository extends \Doctrine\ORM\EntityRepository
                     . '<i class=\'glyphicon glyphicon-edit\'>'
                     . '</i> Modificar'
                     . '</button>'
-                    . '<button type=\"button\" id=\"btn\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#vm_eliminar\"'
-                    . 'data-idcaracteristica=\"'.$arrCaracteristica[$i]->getIdcaracteristica().'\"'                    
-                    . '>'
-                    . '<i class=\'glyphicon glyphicon-trash\'>'
-                    . '</i> Eliminar'
-                    . '</button>'
+//                    . '<button type=\"button\" id=\"btn\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#vm_eliminar\"'
+//                    . 'data-idcaracteristica=\"'.$arrCaracteristica[$i]->getIdcaracteristica().'\"'                    
+//                    . '>'
+//                    . '<i class=\'glyphicon glyphicon-trash\'>'
+//                    . '</i> Eliminar'
+//                    . '</button>'
                     . '"';             
             if($i==count($arrCaracteristica)-1){
                     $arrJSON=$arrJSON.']';

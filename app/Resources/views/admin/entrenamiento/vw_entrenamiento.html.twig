@@ -42,7 +42,7 @@
                                         <h4 class="modal-title" id="myModalLabel">Agregar Entrenamiento</h4>
                                 </div>
                                 {# Formulario agregar entrenamiento #}
-                                {{ include ('admin/entrenamiento/fm_agregar_entrenamiento.html.twig',{'clasificacion':clasificacion,'caracteristica':caracteristica}) }}
+                                {{ include ('admin/entrenamiento/fm_agregar_entrenamiento.html.twig') }}
                                 {# Fin Formulario agregar entrenamiento #}        
                             </div>
                             </div>
@@ -57,7 +57,7 @@
                                         <h4 class="modal-title" id="myModalLabel">Actualizar Entrenamiento</h4>
                                 </div>
                                 {# Formulario actualizar  entrenamiento #}
-                                {{ include ('admin/entrenamiento/fm_actualizar_entrenamiento.html.twig',{'clasificacion':clasificacion,'caracteristica':caracteristica}) }} 
+                                {{ include ('admin/entrenamiento/fm_actualizar_entrenamiento.html.twig',{'caracteristica':caracteristica}) }} 
                                 {# Fin Formulario actualizar entrenamiento #}        
                             </div>
                             </div>
@@ -84,9 +84,13 @@
                                 <table id="th_entrenamiento" class="table table-striped table-bordered" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>Estudiante</th>
-                                            <th>Caracter&iacute;stica</th>
-                                            <th>Valor</th>                                             
+                                            <th>Id</th>
+                                            <th>Nombres</th>
+                                            <th>Desertor</th>
+                                            <th><div data-toggle="tooltip" data-placement="top" title="{{ caracteristica[0].descripcion }}">C1</div></th>                                             
+                                            <th><div data-toggle="tooltip" data-placement="top" title="{{ caracteristica[1].descripcion }}">C2</div></th> 
+                                            <th><div data-toggle="tooltip" data-placement="top" title="{{ caracteristica[2].descripcion }}">C3</div></th> 
+                                            <th><div data-toggle="tooltip" data-placement="top" title="{{ caracteristica[3].descripcion }}">C4</div></th> 
                                             <th>Acci&oacute;n</th> 
                                         </tr>
                                     </thead>                                        
@@ -114,7 +118,11 @@
                             { className: "dt-center","width": "5%" },
                             { className: "dt-left" },
                             { className: "dt-center" },
-                            { className: "dt-center","width": "20%" }
+                            { className: "dt-center" },
+                            { className: "dt-center" },
+                            { className: "dt-center" },
+                            { className: "dt-center" },
+                            { className: "dt-center" }
                           ]
             });          
             /*
@@ -125,11 +133,12 @@
             $('#vm_agregar').on('show.bs.modal', function () {
                 $("#respuesta_agregar").html("");
 		var modal = $(this)                
-                modal.find('.modal-body #idclasificacion').val('')                
-                modal.find('.modal-body #idcaracteristica').val('')                
-                modal.find('.modal-body #identrenamiento').val('')                
-                modal.find('.modal-body #valor').val('')                
-
+                modal.find('.modal-body #idestudiante').val('')           
+                modal.find('.modal-body #c1').val('')           
+                modal.find('.modal-body #c2').val('')                
+                modal.find('.modal-body #c3').val('')                
+                modal.find('.modal-body #c4').val('')                
+                modal.find('.modal-body #desertor').val('')                
             });           
 
             /**
@@ -164,14 +173,20 @@
                   $("#respuesta_actualizar").html("");
 		  var button = $(event.relatedTarget); 
                   var identrenamiento = button.data('identrenamiento'); 
-                  var idclasificacion = button.data('idclasificacion');
-                  var idcaracteristica = button.data('idcaracteristica');
-                  var valor = button.data('valor');
+                  var idestudiante = button.data('idestudiante'); 
+                  var c1 = button.data('c1'); 
+                  var c2 = button.data('c2'); 
+                  var c3 = button.data('c3'); 
+                  var c4 = button.data('c4'); 
+                  var desertor = button.data('desertor'); 
                   var modal = $(this);
                   modal.find('.modal-body #identrenamiento').val(identrenamiento);
-                  modal.find('.modal-body #idclasificacion').val(idclasificacion);
-                  modal.find('.modal-body #idcaracteristica').val(idcaracteristica);
-                  modal.find('.modal-body #valor').val(valor);
+                  modal.find('.modal-body #idestudiante').val(idestudiante);
+                  modal.find('.modal-body #c1').val(c1);
+                  modal.find('.modal-body #c2').val(c2);
+                  modal.find('.modal-body #c3').val(c3);
+                  modal.find('.modal-body #c4').val(c4);
+                  modal.find('.modal-body #desertor').val(desertor);
                                                     
             });
             /**

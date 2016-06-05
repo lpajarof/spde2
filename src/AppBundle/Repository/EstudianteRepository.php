@@ -10,10 +10,10 @@ namespace AppBundle\Repository;
  */
 class EstudianteRepository extends \Doctrine\ORM\EntityRepository
 {
-         /**
-     * 
-     * Devuelve en formato JSON los datos de la tabla
-     */
+    /**
+    * 
+    * Devuelve en formato JSON los datos de la tabla
+    */
     
     public function listaJSON()
     {
@@ -81,5 +81,10 @@ class EstudianteRepository extends \Doctrine\ORM\EntityRepository
         $arrJSON=$arrJSON.'}';
         
         return($arrJSON);
+    }
+    
+    public function findAll()
+    {
+        return $this->findBy(array(), array('apellidos' => 'ASC'));
     }
 }

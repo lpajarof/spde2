@@ -197,28 +197,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AppBundle\\Controller\\AdminController::caracteristicasTablaAction',  '_route' => 'thdb_caracteristica',);
             }
 
-            if (0 === strpos($pathinfo, '/admin/c')) {
-                if (0 === strpos($pathinfo, '/admin/caracteristicas')) {
-                    // caracteristicasAdd
-                    if ($pathinfo === '/admin/caracteristicas/add') {
-                        return array (  '_controller' => 'AppBundle\\Controller\\AdminController::caracteristicasAdd',  '_route' => 'caracteristicasAdd',);
-                    }
-
-                    // caracteristicasMod
-                    if ($pathinfo === '/admin/caracteristicas/mod') {
-                        return array (  '_controller' => 'AppBundle\\Controller\\AdminController::caracteristicasModAction',  '_route' => 'caracteristicasMod',);
-                    }
-
-                    // caracteristicasDel
-                    if ($pathinfo === '/admin/caracteristicas/del') {
-                        return array (  '_controller' => 'AppBundle\\Controller\\AdminController::caracteristicasDelAction',  '_route' => 'caracteristicasDel',);
-                    }
-
+            if (0 === strpos($pathinfo, '/admin/caracteristicas')) {
+                // caracteristicasAdd
+                if ($pathinfo === '/admin/caracteristicas/add') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::caracteristicasAdd',  '_route' => 'caracteristicasAdd',);
                 }
 
-                // r_clasificacion
-                if ($pathinfo === '/admin/clasificacion') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::clasificacionAction',  '_route' => 'r_clasificacion',);
+                // caracteristicasMod
+                if ($pathinfo === '/admin/caracteristicas/mod') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::caracteristicasModAction',  '_route' => 'caracteristicasMod',);
+                }
+
+                // caracteristicasDel
+                if ($pathinfo === '/admin/caracteristicas/del') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::caracteristicasDelAction',  '_route' => 'caracteristicasDel',);
                 }
 
             }
@@ -281,9 +273,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::adminAction',  '_route' => 'app_default_admin',);
         }
 
-        // r_cargaentrenamiento
-        if ($pathinfo === '/modelo/cargaentrenamiento') {
-            return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::cargaEntrenamientoAction',  '_route' => 'r_cargaentrenamiento',);
+        // r_clasificacion
+        if ($pathinfo === '/modelo/clasificacion') {
+            return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificacionAction',  '_route' => 'r_clasificacion',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

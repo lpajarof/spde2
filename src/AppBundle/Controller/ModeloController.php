@@ -16,12 +16,12 @@ class ModeloController extends Controller
 {
 
     /**
-    * @Route("/modelo/cargaentrenamiento", name="r_cargaentrenamiento")
+    * @Route("/modelo/clasificacion", name="r_clasificacion")
     */
-    public function cargaEntrenamientoAction()
+    public function clasificacionAction()
     {   
                              
-        $v_calmodelo = new Calmodelo();
+        
         $v_calmodeloS = $this->getDoctrine()
                 ->getRepository("AppBundle:Calmodelo")
                 ->find(1);
