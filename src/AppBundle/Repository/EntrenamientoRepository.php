@@ -33,7 +33,7 @@ class EntrenamientoRepository extends \Doctrine\ORM\EntityRepository
             $arrJSON=$arrJSON. '[';
             $arrJSON=$arrJSON.'"'.$arrEntrenamiento[$i]->getIdentrenamiento().'",';
             $arrJSON=$arrJSON.'"'.ucwords(strtolower($arrEntrenamiento[$i]->getIdestudiante()->getNombres().' '.$arrEntrenamiento[$i]->getIdestudiante()->getApellidos())).'",';
-            $arrJSON=$arrJSON.'"'.$arrEntrenamiento[$i]->getDesertor().'",';
+            $arrJSON=$arrJSON.'"'.($arrEntrenamiento[$i]->getDesertor()=='1'?'S':'N').'",';
             $arrJSON=$arrJSON.'"'.$arrEntrenamiento[$i]->getC1().'",';
             $arrJSON=$arrJSON.'"'.$arrEntrenamiento[$i]->getC2().'",';
             $arrJSON=$arrJSON.'"'.$arrEntrenamiento[$i]->getC3().'",';

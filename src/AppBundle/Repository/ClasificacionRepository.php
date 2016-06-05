@@ -18,16 +18,7 @@ class ClasificacionRepository extends \Doctrine\ORM\EntityRepository
     public function listaJSON()
     {
         $arrClasificacion=$this->getEntityManager()
-                                ->createQuery('SELECT c.idclasificacion'
-                                        . ' ,e.codigo'
-                                        . ' ,e.nombres'
-                                        . ' ,e.apellidos'
-                                        . ' ,c.anio'
-                                        . ' ,c.periodo'
-                                        . ' ,c.desertor'
-                                        . ' FROM AppBundle:Clasificacion c'
-                                        . ' JOIN AppBundle:Estudiante e'
-                                        . ' WITH c.idestudiante = e.idestudiante')
+                                ->createQuery('SELECT c FROM AppBundle:Clasificacion c')
                                 ->getResult();
         
         
@@ -40,27 +31,28 @@ class ClasificacionRepository extends \Doctrine\ORM\EntityRepository
         
         for($i=0; $i<count($arrClasificacion); $i++){            
             $arrJSON=$arrJSON. '[';
-            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]["idclasificacion"].'",';
-            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]["codigo"].'",';
-            $arrJSON=$arrJSON.'"'.ucwords(strtolower($arrClasificacion[$i]["nombres"])).'",';
-            $arrJSON=$arrJSON.'"'.ucwords(strtolower($arrClasificacion[$i]["apellidos"])).'",';
-            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]["anio"].'",';
-            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]["periodo"].'",';
-            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]["desertor"].'",';
+            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]->getIdclasificacion().'",';
+            $arrJSON=$arrJSON.'"'.ucwords(strtolower($arrClasificacion[$i]->getIdestudiante()->getNombres().' '.$arrClasificacion[$i]->getIdestudiante()->getApellidos())).'",';
+            $arrJSON=$arrJSON.'"'.($arrClasificacion[$i]->getDesertor()=='1'?'S':'N').'",';
+            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]->getC1().'",';
+            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]->getC2().'",';
+            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]->getC3().'",';
+            $arrJSON=$arrJSON.'"'.$arrClasificacion[$i]->getC4().'",';
             $arrJSON=$arrJSON.'" '
                     . '<button type=\"button\" id=\"btn\" class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#vm_actualizar\"'
-                    . 'data-idclasificacion=\"'.$arrClasificacion[$i]["idclasificacion"].'\"'
-                    . 'data-codigo=\"'.$arrClasificacion[$i]["codigo"].'\"'
-                    . 'data-anio=\"'.$arrClasificacion[$i]["anio"].'\"'
-                    . 'data-periodo=\"'.$arrClasificacion[$i]["periodo"].'\"'
-                    . 'data-desertors=\"'.$arrClasificacion[$i]["desertor"].'\"'
-                    . 'data-desertorn=\"0\"'
+                    . 'data-idclasificacion=\"'.$arrClasificacion[$i]->getIdclasificacion().'\"'
+                    . 'data-desertor=\"'.$arrClasificacion[$i]->getDesertor().'\"'
+                    . 'data-idestudiante=\"'.$arrClasificacion[$i]->getIdestudiante()->getIdestudiante().'\"'
+                    . 'data-c1=\"'.$arrClasificacion[$i]->getC1().'\"'
+                    . 'data-c2=\"'.$arrClasificacion[$i]->getC2().'\"'
+                    . 'data-c3=\"'.$arrClasificacion[$i]->getC3().'\"'
+                    . 'data-c4=\"'.$arrClasificacion[$i]->getC4().'\"'
                     . '>'
                     . '<i class=\'glyphicon glyphicon-edit\'>'
                     . '</i> Modificar'
                     . '</button>'
                     . '<button type=\"button\" id=\"btn\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#vm_eliminar\"'
-                    . 'data-idclasificacion=\"'.$arrClasificacion[$i]["idclasificacion"].'\"'                    
+                    . 'data-idclasificacion=\"'.$arrClasificacion[$i]->getIdclasificacion().'\"'                    
                     . '>'
                     . '<i class=\'glyphicon glyphicon-trash\'>'
                     . '</i> Eliminar'

@@ -23,20 +23,6 @@ class Clasificacion
     /**
      * @var integer
      *
-     * @ORM\Column(name="anio", type="integer", nullable=false)
-     */
-    private $anio;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="periodo", type="integer", nullable=false)
-     */
-    private $periodo;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="idClasificacion", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -53,7 +39,33 @@ class Clasificacion
      */
     private $idestudiante;
 
+        /**
+     *
+     * @var float
+     * @ORM\Column(name="c1",type="float")
+     */
+    private $c1;
+    
+    /**
+     *
+     * @var float
+     * @ORM\Column(name="c2",type="float")
+     */
+    private $c2;
+    
+    /**
+     *
+     * @var float
+     * @ORM\Column(name="c3",type="float")
+     */
+    private $c3;
 
+    /**
+     *
+     * @var float
+     * @ORM\Column(name="c4",type="float")
+     */
+    private $c4;
 
     /**
      * Set desertor
@@ -80,58 +92,10 @@ class Clasificacion
     }
 
     /**
-     * Set anio
-     *
-     * @param integer $anio
-     *
-     * @return Clasificacion
-     */
-    public function setAnio($anio)
-    {
-        $this->anio = $anio;
-
-        return $this;
-    }
-
-    /**
-     * Get anio
-     *
-     * @return integer
-     */
-    public function getAnio()
-    {
-        return $this->anio;
-    }
-
-    /**
-     * Set periodo
-     *
-     * @param integer $periodo
-     *
-     * @return Clasificacion
-     */
-    public function setPeriodo($periodo)
-    {
-        $this->periodo = $periodo;
-
-        return $this;
-    }
-
-    /**
-     * Get periodo
-     *
-     * @return integer
-     */
-    public function getPeriodo()
-    {
-        return $this->periodo;
-    }
-
-    /**
-     * Get idclasificacion
-     *
-     * @return integer
-     */
+    * Get idclasificacion
+    *
+    * @return integer
+    */
     public function getIdclasificacion()
     {
         return $this->idclasificacion;
@@ -159,5 +123,101 @@ class Clasificacion
     public function getIdestudiante()
     {
         return $this->idestudiante;
+    }
+
+    /**
+     * Set c1
+     *
+     * @param float $c1
+     *
+     * @return Clasificacion
+     */
+    public function setC1($c1)
+    {
+        $this->c1 = $c1;
+
+        return $this;
+    }
+
+    /**
+     * Get c1
+     *
+     * @return float
+     */
+    public function getC1()
+    {
+        return $this->c1;
+    }
+
+    /**
+     * Set c2
+     *
+     * @param float $c2
+     *
+     * @return Clasificacion
+     */
+    public function setC2($c2)
+    {
+        $this->c2 = $c2;
+
+        return $this;
+    }
+
+    /**
+     * Get c2
+     *
+     * @return float
+     */
+    public function getC2()
+    {
+        return $this->c2;
+    }
+
+    /**
+     * Set c3
+     *
+     * @param float $c3
+     *
+     * @return Clasificacion
+     */
+    public function setC3($c3)
+    {
+        $this->c3 = $c3;
+
+        return $this;
+    }
+
+    /**
+     * Get c3
+     *
+     * @return float
+     */
+    public function getC3()
+    {
+        return $this->c3;
+    }
+
+    /**
+     * Set c4
+     *
+     * @param float $c4
+     *
+     * @return Clasificacion
+     */
+    public function setC4($c4)
+    {
+        $this->c4 = $c4;
+
+        return $this;
+    }
+
+    /**
+     * Get c4
+     *
+     * @return float
+     */
+    public function getC4()
+    {
+        return $this->c4;
     }
 }

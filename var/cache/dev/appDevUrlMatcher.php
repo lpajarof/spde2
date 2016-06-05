@@ -215,29 +215,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            // thdb_clasificacion
-            if ($pathinfo === '/admin/thdb_clasificacion') {
-                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::clasificacionTablaAction',  '_route' => 'thdb_clasificacion',);
-            }
-
-            if (0 === strpos($pathinfo, '/admin/clasificacion/clasificacion')) {
-                // clasificacionAdd
-                if ($pathinfo === '/admin/clasificacion/clasificacionAdd') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::clasificacionAddAction',  '_route' => 'clasificacionAdd',);
-                }
-
-                // clasificacionMod
-                if ($pathinfo === '/admin/clasificacion/clasificacionMod') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::clasificacionModAction',  '_route' => 'clasificacionMod',);
-                }
-
-                // clasificacionDel
-                if ($pathinfo === '/admin/clasificacion/clasificacionDel') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::clasificacionDelAction',  '_route' => 'clasificacionDel',);
-                }
-
-            }
-
             // r_entrenamiento
             if ($pathinfo === '/admin/entrenamiento') {
                 return array (  '_controller' => 'AppBundle\\Controller\\AdminController::entrenamientoAction',  '_route' => 'r_entrenamiento',);
@@ -273,9 +250,40 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::adminAction',  '_route' => 'app_default_admin',);
         }
 
-        // r_clasificacion
-        if ($pathinfo === '/modelo/clasificacion') {
-            return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificacionAction',  '_route' => 'r_clasificacion',);
+        // r_clasifica
+        if ($pathinfo === '/modelo/clasifica') {
+            return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificaAction',  '_route' => 'r_clasifica',);
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // r_clasificacion
+            if ($pathinfo === '/admin/clasificacion') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificacionAction',  '_route' => 'r_clasificacion',);
+            }
+
+            // thdb_clasificacion
+            if ($pathinfo === '/admin/thdb_clasificacion') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificacionTablaAction',  '_route' => 'thdb_clasificacion',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/clasificacion/clasificacion')) {
+                // clasificacionAdd
+                if ($pathinfo === '/admin/clasificacion/clasificacionAdd') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificacionAddAction',  '_route' => 'clasificacionAdd',);
+                }
+
+                // clasificacionMod
+                if ($pathinfo === '/admin/clasificacion/clasificacionMod') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificacionModAction',  '_route' => 'clasificacionMod',);
+                }
+
+                // clasificacionDel
+                if ($pathinfo === '/admin/clasificacion/clasificacionDel') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificacionDelAction',  '_route' => 'clasificacionDel',);
+                }
+
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {
