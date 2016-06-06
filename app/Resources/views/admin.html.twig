@@ -70,7 +70,7 @@
                                         <ul class="nav child_menu" style="display: none">
                                                 <li><a href="{{ path('r_estudiantes')}}">Listar</a>
                                                 </li>
-                                                <li><a href="#">Seguimiento</a>
+                                                <li><a href="{{ path('r_seguimiento') }}">Seguimiento</a>
                                                 </li>
                                         </ul>
 				</li>
@@ -166,6 +166,10 @@
         <script src="{{ asset('bundles/Gentellela/js/datatables/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('bundles/Gentellela/js/datatables/dataTables.bootstrap.js') }}"></script>
         <script src="{{ asset('bundles/Gentellela/js/fnReloadAjax.js')}}"></script>
+        
+    <!-- Datepicker -->
+        <script src="{{ asset('bundles/Gentellela/js/moment/moment.min.js')}}"></script>
+        <script src="{{ asset('bundles/Gentellela/js/datepicker/daterangepicker.js')}}"></script>
    {% endblock %}
 </body>
 

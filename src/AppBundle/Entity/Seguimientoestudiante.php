@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="seguimientoestudiante", indexes={@ORM\Index(name="fk_idEstudianteSeg", columns={"idEstudiante"}), @ORM\Index(name="fk_idAccion", columns={"idAccion"}), @ORM\Index(name="fk_asignadoA", columns={"asignadoA"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\SeguimientoestudianteRepository")
  */
 class Seguimientoestudiante
 {
@@ -20,16 +21,16 @@ class Seguimientoestudiante
     private $observaciones;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="fechaInicio", type="datetime", nullable=false)
+     * @ORM\Column(name="fechaInicio", type="date", nullable=false)
      */
     private $fechainicio;
 
     /**
-     * @var string
+     * @var date
      *
-     * @ORM\Column(name="fechaFin", type="string", length=45, nullable=false)
+     * @ORM\Column(name="fechaFin", type="date", nullable=false)
      */
     private $fechafin;
 

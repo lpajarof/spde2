@@ -2464,6 +2464,7 @@ input.parsley-error, textarea.parsley-error, select.parsley-error {
 .daterangepicker.picker_1 {
   background: #34495E;
   color: #ECF0F1;
+  z-index: 100000;
 }
 .daterangepicker.picker_1 table.table-condensed thead tr:first-child {
   background: #1ABB9C;

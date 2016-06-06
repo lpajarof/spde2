@@ -271,6 +271,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            // r_seguimiento
+            if ($pathinfo === '/admin/seguimiento') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::seguimientoAction',  '_route' => 'r_seguimiento',);
+            }
+
+            // thdb_seguimiento
+            if ($pathinfo === '/admin/thdb_seguimiento') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::seguimientoTablaAction',  '_route' => 'thdb_seguimiento',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/seguimiento/seguimiento')) {
+                // seguimientoAdd
+                if ($pathinfo === '/admin/seguimiento/seguimientoAdd') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::seguimientoAddAction',  '_route' => 'seguimientoAdd',);
+                }
+
+                // seguimientoMod
+                if ($pathinfo === '/admin/seguimiento/seguimientoMod') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::seguimientoModAction',  '_route' => 'seguimientoMod',);
+                }
+
+                // seguimientoDel
+                if ($pathinfo === '/admin/seguimiento/seguimientoDel') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::seguimientoDelAction',  '_route' => 'seguimientoDel',);
+                }
+
+            }
+
         }
 
         // app_default_admin

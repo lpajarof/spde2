@@ -12,6 +12,7 @@ use AppBundle\Entity\Estudiante;
 use AppBundle\Entity\Caracteristica;
 use AppBundle\Entity\Accion;
 use AppBundle\Entity\Entrenamiento;
+use AppBundle\Entity\Seguimientoestudiante;
 
 /**
  * Controlador funciones administrativas de la aplciación
@@ -736,6 +737,151 @@ class AdminController extends Controller
                                 . '</div>');
             
         } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+    
+    
+    /**
+    * Seguimiento estudiante
+    */
+    
+    /**
+    * LLama a plantilla que lista entrenamiento del modelo
+    * @Route("/admin/seguimiento",name="r_seguimiento")
+    */
+    
+    public function seguimientoAction()
+    {
+        $em = $this->getDoctrine();        
+        $v_accion = $em->getRepository('AppBundle:Accion')->findAll();
+        $v_estudiante = $em->getRepository('AppBundle:Estudiante')->findAll();
+        $v_usuario = $em->getRepository('AppBundle:Usuario')->findAll();
+                
+        return $this->render('/admin/seguimiento/vw_seguimiento.html.twig',array('accion'=>$v_accion,'estudiante'=>$v_estudiante,'usuario'=>$v_usuario));
+    }
+    
+    /**
+     * Devuelve en formarto JSON tabla de datos
+     * @Route("/admin/thdb_seguimiento",name="thdb_seguimiento")
+     */
+    public function seguimientoTablaAction()
+    {
+         $v_seguimiento = $this->getDoctrine()
+                ->getRepository("AppBundle:Seguimientoestudiante")
+                ->listaJSON();
+        return new Response($v_seguimiento);
+    }
+    
+    /**
+     * Agrega un nuevo registro a la tabla seguimiento
+     * @Route("/admin/seguimiento/seguimientoAdd",name="seguimientoAdd")
+     */
+    public function seguimientoAddAction(Request $request)
+    {
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_seguimiento = new Seguimientoestudiante();
+            
+            $v_accion = $em->getRepository('AppBundle:Accion')->find($request->request->get('idaccion'));
+            $v_estudiante = $em->getRepository('AppBundle:Estudiante')->find($request->request->get('idestudiante'));
+            $v_asignadoa = $em->getRepository('AppBundle:Usuario')->find($request->request->get('asignadoa'));
+            
+            $v_seguimiento->setIdaccion($v_accion);
+            $v_seguimiento->setIdestudiante($v_estudiante);
+            $v_seguimiento->setObservaciones($request->request->get('observaciones'));
+            $v_seguimiento->setFechainicio(new \DateTime($request->request->get('fechainicio')));
+            $v_seguimiento->setFechafin(new \DateTime($request->request->get('fechafin')));
+            $v_seguimiento->setEstado($request->request->get('estado'));
+            $v_seguimiento->setAsignadoa($v_asignadoa);
+            
+            $em->persist($v_seguimiento);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido aregados satisfactoriamente'
+                                . '</div>');
+        } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('Registro Existente<br>DBAL Exception<br>');
+                
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                    
+                case 'PDOException':
+                    return new Response('DBA Exception<br/>'.$e->getMessage());
+                    
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+    
+    /**
+     * Modifica un registro de la tabla entrenamiento
+     * @Route("/admin/seguimiento/seguimientoMod",name="seguimientoMod")
+     */
+    public function seguimientoModAction(Request $request)
+    {
+        try{
+            $em  = $this->getDoctrine()->getManager();
+            
+            $v_entrenamiento = $em->getRepository('AppBundle:Entrenamiento')->find($request->request->get('identrenamiento'));
+            $v_estudiante = $em->getRepository('AppBundle:Estudiante')->find($request->request->get('idestudiante'));
+            
+            $v_entrenamiento->setDesertor($request->request->get('desertor'));
+            $v_entrenamiento->setC1($request->request->get('c1'));
+            $v_entrenamiento->setC2($request->request->get('c2'));
+            $v_entrenamiento->setC3($request->request->get('c3'));
+            $v_entrenamiento->setC4($request->request->get('c4'));
+            $v_entrenamiento->setIdestudiante($v_estudiante);
+            
+            $em->persist($v_entrenamiento);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido actualizados satisfactoriamente'
+                                . '</div>');
+            
+            
+        } catch (Exception $ex) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+    
+    /**
+     * Elimina un registro de la tabla seguimiento
+     * @Route("/admin/seguimiento/seguimientoDel",name="seguimientoDel")
+     */
+    public function seguimientoDelAction(Request $reques)
+    {
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_entrenamiento = $em->getRepository('AppBundle:Entrenamiento')->find($reques->request->get('identrenamiento'));
+            
+            $em->remove($v_entrenamiento);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido eliminados satisfactoriamente'
+                                . '</div>');
+        } catch (Exception $ex) {
             switch (get_class($e)) {
                 case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
                     return new Response('DBAL Exception<br/>');

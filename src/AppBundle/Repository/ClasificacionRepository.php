@@ -57,6 +57,12 @@ class ClasificacionRepository extends \Doctrine\ORM\EntityRepository
                     . '<i class=\'glyphicon glyphicon-trash\'>'
                     . '</i> Eliminar'
                     . '</button>'
+                    . ($arrClasificacion[$i]->getDesertor()=='1'?'<button type=\"button\" id=\"btn\" class=\"btn btn-primary btn-xs\" data-toggle=\"modal\" data-target=\"#vm_eliminar\"'
+                    . 'data-idclasificacion=\"'.$arrClasificacion[$i]->getIdclasificacion().'\"'                    
+                    . '>'
+                    . '<i class=\'glyphicon glyphicon-pencil\'>'
+                    . '</i> Seguir'
+                    . '</button>':'')
                     . '"';             
             if($i==count($arrClasificacion)-1){
                     $arrJSON=$arrJSON.']';
