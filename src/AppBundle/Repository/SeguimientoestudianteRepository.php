@@ -43,6 +43,7 @@ class SeguimientoestudianteRepository extends \Doctrine\ORM\EntityRepository
                     . 'data-fechainicio=\"'.$arrSeguimiento[$i]->getFechainicio()->format('m/d/Y').'\"'
                     . 'data-fechafin=\"'.$arrSeguimiento[$i]->getFechafin()->format('m/d/Y').'\"'
                     . 'data-asignadoa=\"'.$arrSeguimiento[$i]->getAsignadoa()->getIdusuario().'\"'
+                    . 'data-estado=\"'.$arrSeguimiento[$i]->getEstado().'\"'
                     . '>'
                     . '<i class=\'glyphicon glyphicon-edit\'>'
                     . '</i> Modificar'

@@ -763,10 +763,10 @@ class AdminController extends Controller
     {
         $em = $this->getDoctrine();        
         $v_accion = $em->getRepository('AppBundle:Accion')->findAll();
-        $v_estudiante = $em->getRepository('AppBundle:Estudiante')->findAll();
+        $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->findAll();
         $v_usuario = $em->getRepository('AppBundle:Usuario')->findAll();
                 
-        return $this->render('/admin/seguimiento/vw_seguimiento.html.twig',array('accion'=>$v_accion,'estudiante'=>$v_estudiante,'usuario'=>$v_usuario));
+        return $this->render('/admin/seguimiento/vw_seguimiento.html.twig',array('accion'=>$v_accion,'estudiante'=>$v_clasificacion,'usuario'=>$v_usuario));
     }
     
     /**
@@ -835,17 +835,22 @@ class AdminController extends Controller
         try{
             $em  = $this->getDoctrine()->getManager();
             
-            $v_entrenamiento = $em->getRepository('AppBundle:Entrenamiento')->find($request->request->get('identrenamiento'));
+            $em = $this->getDoctrine()->getManager();
+            
+            $v_seguimiento = $em->getRepository('AppBundle:Seguimientoestudiante')->find($request->request->get('idseguimientoestudiante'));
+            $v_accion = $em->getRepository('AppBundle:Accion')->find($request->request->get('idaccion'));
             $v_estudiante = $em->getRepository('AppBundle:Estudiante')->find($request->request->get('idestudiante'));
+            $v_asignadoa = $em->getRepository('AppBundle:Usuario')->find($request->request->get('asignadoa'));
             
-            $v_entrenamiento->setDesertor($request->request->get('desertor'));
-            $v_entrenamiento->setC1($request->request->get('c1'));
-            $v_entrenamiento->setC2($request->request->get('c2'));
-            $v_entrenamiento->setC3($request->request->get('c3'));
-            $v_entrenamiento->setC4($request->request->get('c4'));
-            $v_entrenamiento->setIdestudiante($v_estudiante);
+            $v_seguimiento->setIdaccion($v_accion);
+            $v_seguimiento->setIdestudiante($v_estudiante);
+            $v_seguimiento->setObservaciones($request->request->get('observaciones'));
+            $v_seguimiento->setFechainicio(new \DateTime($request->request->get('fechainicio')));
+            $v_seguimiento->setFechafin(new \DateTime($request->request->get('fechafin')));
+            $v_seguimiento->setEstado($request->request->get('estado'));
+            $v_seguimiento->setAsignadoa($v_asignadoa);
             
-            $em->persist($v_entrenamiento);
+            $em->persist($v_seguimiento);
             $em->flush();
             
             return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
@@ -873,9 +878,9 @@ class AdminController extends Controller
     {
         try{
             $em = $this->getDoctrine()->getManager();
-            $v_entrenamiento = $em->getRepository('AppBundle:Entrenamiento')->find($reques->request->get('identrenamiento'));
+            $v_seguimiento = $em->getRepository('AppBundle:Seguimientoestudiante')->find($reques->request->get('idseguimientoestudiante'));
             
-            $em->remove($v_entrenamiento);
+            $em->remove($v_seguimiento);
             $em->flush();
             
             return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'

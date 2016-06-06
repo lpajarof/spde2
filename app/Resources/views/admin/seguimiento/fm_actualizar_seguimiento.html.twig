@@ -1,6 +1,6 @@
 <div class="modal-body">     
     <div id="respuesta_actualizar"></div>
-    <form id="frm_actualiza_entrenamiento" data-parsley-validate class="form-horizontal form-label-left">        
+    <form id="frm_actualizar_seguimiento" data-parsley-validate class="form-horizontal form-label-left">        
         <div class="form-group">          
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estudiante">Estudiante<span class="required">*</span>
             </label>    
@@ -8,25 +8,73 @@
                 <select id="idestudiante" name="idestudiante" class="form-control" required>
                     <option value="">Seleccione</option>
                     {% for e in estudiante %}
-                        <option value="{{e.idestudiante}}">{{ e.codigo }}&nbsp;{{ e.apellidos }}&nbsp;{{ e.nombres }}</option>
+                         <option value="{{e.idestudiante.idestudiante}}">{{e.idestudiante.codigo }}&nbsp;{{e.idestudiante.nombres }}&nbsp;{{e.idestudiante.apellidos }}</option>
                     {% endfor %}
                 </select>
-                <input type="hidden" id="identrenamiento" name="identrenamiento">
+                <input type="hidden" class="form-control" id="idseguimientoestudiante" name="idseguimientoestudiante">
             </div>                    
-        </div>
-                                              
+        </div>        
         <div class="form-group">          
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="desertor">Desertor<span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estudiante">Acci&oacute;n<span class="required">*</span>
             </label>    
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <select id="desertor" name="desertor" class="form-control" required>
+                <select id="idaccion" name="idaccion" class="form-control" required>
                     <option value="">Seleccione</option>
-                        <option value="1">Si</option>
-                        <option value="0">No</option>
+                    {% for a in accion %}
+                        <option value="{{a.idaccion}}">{{ a.descripcion }}</option>
+                    {% endfor %}
                 </select>
             </div>                    
-        </div>    
-                        
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="observaciones">Observaciones<span class="required"></span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="text" id="observaciones" name="observaciones" required="required" class="form-control col-md-7 col-xs-12">
+            </div>
+        </div> 
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Fecha inicio</label>
+            <div class="col-xs-5 date">
+		<div class="input-group input-append date" >
+                    <input type="text" class="form-control" name="fechainicio" id="fechainicio"/>
+                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+		</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Fecha fin</label>
+            <div class="col-xs-5 date">
+		<div class="input-group input-append date" >
+                    <input type="text" class="form-control" name="fechafin" id="fechafin"/>
+                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+		</div>
+            </div>
+        </div>       
+        <div class="form-group">          
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estado">Estado<span class="required">*</span>
+            </label>    
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <select id="estado" name="estado" class="form-control" required>
+                    <option value="">Seleccione</option>                    
+                        <option value="1">Abierta</option>                    
+                        <option value="2">Cerrada</option>                    
+                </select>
+            </div>                    
+        </div>
+        <div class="form-group">          
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="usuario">Asignado a<span class="required">*</span>
+            </label>    
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <select id="asignadoa" name="asignadoa" class="form-control" required>
+                    <option value="">Seleccione</option>
+                    {% for u in usuario %}
+                        <option value="{{u.idusuario}}">{{ u.nombres }}&nbsp;{{ u.apellidos }}</option>
+                    {% endfor %}
+                </select>
+            </div>                    
+        </div>  
+
         <div class="form-group">
             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
@@ -35,3 +83,4 @@
         </div>                                      
     </form>
 </div> 
+               

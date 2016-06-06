@@ -140,6 +140,7 @@
                 modal.find('.modal-body #fechainicio').val('')                
                 modal.find('.modal-body #fechafin').val('')                
                 modal.find('.modal-body #asignadoa').val('')                
+                modal.find('.modal-body #estado').val('')                
             });           
 
             /**
@@ -173,32 +174,34 @@
             $('#vm_actualizar').on('show.bs.modal', function (event) {
                   $("#respuesta_actualizar").html("");
 		  var button = $(event.relatedTarget); 
-                  var identrenamiento = button.data('identrenamiento'); 
+                  var idseguimientoestudiante = button.data('idseguimientoestudiante'); 
                   var idestudiante = button.data('idestudiante'); 
-                  var c1 = button.data('c1'); 
-                  var c2 = button.data('c2'); 
-                  var c3 = button.data('c3'); 
-                  var c4 = button.data('c4'); 
-                  var desertor = button.data('desertor'); 
+                  var idaccion = button.data('idaccion'); 
+                  var observaciones = button.data('observaciones'); 
+                  var fechainicio = button.data('fechainicio'); 
+                  var fechafin = button.data('fechafin'); 
+                  var asignadoa = button.data('asignadoa'); 
+                  var estado = button.data('estado'); 
                   var modal = $(this);
-                  modal.find('.modal-body #identrenamiento').val(identrenamiento);
+                  modal.find('.modal-body #idseguimientoestudiante').val(idseguimientoestudiante);
                   modal.find('.modal-body #idestudiante').val(idestudiante);
-                  modal.find('.modal-body #c1').val(c1);
-                  modal.find('.modal-body #c2').val(c2);
-                  modal.find('.modal-body #c3').val(c3);
-                  modal.find('.modal-body #c4').val(c4);
-                  modal.find('.modal-body #desertor').val(desertor);
+                  modal.find('.modal-body #idaccion').val(idaccion);
+                  modal.find('.modal-body #observaciones').val(observaciones);
+                  modal.find('.modal-body #fechainicio').val(fechainicio);
+                  modal.find('.modal-body #fechafin').val(fechafin);
+                  modal.find('.modal-body #asignadoa').val(asignadoa);
+                  modal.find('.modal-body #estado').val(estado);
                                                     
             });
             /**
              * Envia datos del formulario a controlador que se encarga de 
              * realizar la operación de actualización
              */
-            $( "#frm_actualiza_entrenamiento" ).submit(function( event ) {		
+            $( "#frm_actualizar_seguimiento" ).submit(function( event ) {		
                 var parametros = $(this).serialize();
 		$.ajax({
 			type: "POST",
-			url: "{{ path('entrenamientoMod') }}",
+			url: "{{ path('seguimientoMod') }}",
 			data:   parametros,
                                 beforeSend: function(){
                                     $("#respuesta_actualizar").html("Mensaje: Cargando...");
@@ -222,20 +225,20 @@
             $('#vm_eliminar').on('show.bs.modal', function (event) {
                   $("#respuesta_eliminar").html("");
 		  var button = $(event.relatedTarget) 
-                  var identrenamiento = button.data('identrenamiento') 
+                  var idseguimientoestudiante = button.data('idseguimientoestudiante') 
                   var modal = $(this)
-                  modal.find('.modal-body #identrenamiento').val(identrenamiento)
+                  modal.find('.modal-body #idseguimientoestudiante').val(idseguimientoestudiante)
             });
             
             
             /**
             * Envía datos al controlador para eliminr datos
             */
-            $( "#frm_elimina_entrenamiento" ).submit(function( event ) {		
+            $( "#frm_elimina_seguimiento" ).submit(function( event ) {		
                 var parametros = $(this).serialize();
 		$.ajax({
 			type: "POST",
-			url: "{{ path('entrenamientoDel') }}",
+			url: "{{ path('seguimientoDel') }}",
 			data:   parametros,
                                 beforeSend: function(){
                                     $("#respuesta_eliminar").html("Mensaje: Cargando...");

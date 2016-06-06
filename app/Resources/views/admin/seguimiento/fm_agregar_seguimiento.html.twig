@@ -8,7 +8,7 @@
                 <select id="idestudiante" name="idestudiante" class="form-control" required>
                     <option value="">Seleccione</option>
                     {% for e in estudiante %}
-                        <option value="{{e.idestudiante}}">{{ e.codigo }}&nbsp;{{ e.apellidos }}&nbsp;{{ e.nombres }}</option>
+                        <option value="{{e.idestudiante.idestudiante}}">{{e.idestudiante.codigo }}&nbsp;{{e.idestudiante.nombres }}&nbsp;{{e.idestudiante.apellidos }}</option>
                     {% endfor %}
                 </select>
             </div>                    

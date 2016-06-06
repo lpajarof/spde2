@@ -15,8 +15,8 @@ class __TwigTemplate_5915ea218dcf360a848828da156b15ac0881afdf97240bc11c1b15e75e9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c0fb8408e86b9ebb62d01e32cfe5ea8bdffd01af374aa57c2262b5a1108654da = $this->env->getExtension("native_profiler");
-        $__internal_c0fb8408e86b9ebb62d01e32cfe5ea8bdffd01af374aa57c2262b5a1108654da->enter($__internal_c0fb8408e86b9ebb62d01e32cfe5ea8bdffd01af374aa57c2262b5a1108654da_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/seguimiento/fm_agregar_seguimiento.html.twig"));
+        $__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0 = $this->env->getExtension("native_profiler");
+        $__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0->enter($__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/seguimiento/fm_agregar_seguimiento.html.twig"));
 
         // line 1
         echo "<div class=\"modal-body\">     
@@ -35,13 +35,13 @@ class __TwigTemplate_5915ea218dcf360a848828da156b15ac0881afdf97240bc11c1b15e75e9
         foreach ($context['_seq'] as $context["_key"] => $context["e"]) {
             // line 11
             echo "                        <option value=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["e"], "idestudiante", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["e"], "idestudiante", array()), "idestudiante", array()), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["e"], "codigo", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["e"], "idestudiante", array()), "codigo", array()), "html", null, true);
             echo "&nbsp;";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["e"], "apellidos", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["e"], "idestudiante", array()), "nombres", array()), "html", null, true);
             echo "&nbsp;";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["e"], "nombres", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["e"], "idestudiante", array()), "apellidos", array()), "html", null, true);
             echo "</option>
                     ";
         }
@@ -153,7 +153,7 @@ class __TwigTemplate_5915ea218dcf360a848828da156b15ac0881afdf97240bc11c1b15e75e9
 </div> 
                ";
         
-        $__internal_c0fb8408e86b9ebb62d01e32cfe5ea8bdffd01af374aa57c2262b5a1108654da->leave($__internal_c0fb8408e86b9ebb62d01e32cfe5ea8bdffd01af374aa57c2262b5a1108654da_prof);
+        $__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0->leave($__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0_prof);
 
     }
 
@@ -182,7 +182,7 @@ class __TwigTemplate_5915ea218dcf360a848828da156b15ac0881afdf97240bc11c1b15e75e9
 /*                 <select id="idestudiante" name="idestudiante" class="form-control" required>*/
 /*                     <option value="">Seleccione</option>*/
 /*                     {% for e in estudiante %}*/
-/*                         <option value="{{e.idestudiante}}">{{ e.codigo }}&nbsp;{{ e.apellidos }}&nbsp;{{ e.nombres }}</option>*/
+/*                         <option value="{{e.idestudiante.idestudiante}}">{{e.idestudiante.codigo }}&nbsp;{{e.idestudiante.nombres }}&nbsp;{{e.idestudiante.apellidos }}</option>*/
 /*                     {% endfor %}*/
 /*                 </select>*/
 /*             </div>                    */

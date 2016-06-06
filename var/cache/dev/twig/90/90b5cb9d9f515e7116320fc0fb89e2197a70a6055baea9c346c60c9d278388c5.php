@@ -27,20 +27,20 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4fd8f7b34dbfc5e1a410182e89a2c1f8a8b41b758d69c7e9426758aa67c805b3 = $this->env->getExtension("native_profiler");
-        $__internal_4fd8f7b34dbfc5e1a410182e89a2c1f8a8b41b758d69c7e9426758aa67c805b3->enter($__internal_4fd8f7b34dbfc5e1a410182e89a2c1f8a8b41b758d69c7e9426758aa67c805b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "/admin/seguimiento/vw_seguimiento.html.twig"));
+        $__internal_fc1bd336b733450804e13435f53d983fb634fb30219e7ce4caad56ba0ea9ad32 = $this->env->getExtension("native_profiler");
+        $__internal_fc1bd336b733450804e13435f53d983fb634fb30219e7ce4caad56ba0ea9ad32->enter($__internal_fc1bd336b733450804e13435f53d983fb634fb30219e7ce4caad56ba0ea9ad32_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "/admin/seguimiento/vw_seguimiento.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_4fd8f7b34dbfc5e1a410182e89a2c1f8a8b41b758d69c7e9426758aa67c805b3->leave($__internal_4fd8f7b34dbfc5e1a410182e89a2c1f8a8b41b758d69c7e9426758aa67c805b3_prof);
+        $__internal_fc1bd336b733450804e13435f53d983fb634fb30219e7ce4caad56ba0ea9ad32->leave($__internal_fc1bd336b733450804e13435f53d983fb634fb30219e7ce4caad56ba0ea9ad32_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_e2462c044d796ebc4ac57e47bdf349b804a76db5453fa18b6f18d3b46b2a8840 = $this->env->getExtension("native_profiler");
-        $__internal_e2462c044d796ebc4ac57e47bdf349b804a76db5453fa18b6f18d3b46b2a8840->enter($__internal_e2462c044d796ebc4ac57e47bdf349b804a76db5453fa18b6f18d3b46b2a8840_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_7a91f1b5545226045e7f846dc04d680272580a336fc9b235a42e717efe826026 = $this->env->getExtension("native_profiler");
+        $__internal_7a91f1b5545226045e7f846dc04d680272580a336fc9b235a42e717efe826026->enter($__internal_7a91f1b5545226045e7f846dc04d680272580a336fc9b235a42e717efe826026_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
         echo "    ";
@@ -48,15 +48,15 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
         echo "
 ";
         
-        $__internal_e2462c044d796ebc4ac57e47bdf349b804a76db5453fa18b6f18d3b46b2a8840->leave($__internal_e2462c044d796ebc4ac57e47bdf349b804a76db5453fa18b6f18d3b46b2a8840_prof);
+        $__internal_7a91f1b5545226045e7f846dc04d680272580a336fc9b235a42e717efe826026->leave($__internal_7a91f1b5545226045e7f846dc04d680272580a336fc9b235a42e717efe826026_prof);
 
     }
 
     // line 7
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_d12e3f12230f3f50aff43746d6abb979a63e827a6bddd77e98042fe79d70f8cd = $this->env->getExtension("native_profiler");
-        $__internal_d12e3f12230f3f50aff43746d6abb979a63e827a6bddd77e98042fe79d70f8cd->enter($__internal_d12e3f12230f3f50aff43746d6abb979a63e827a6bddd77e98042fe79d70f8cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_bf1008ee15d1e3e3eedbc5a9e7525c811c36d75183ac825874a3e45c7f1c932a = $this->env->getExtension("native_profiler");
+        $__internal_bf1008ee15d1e3e3eedbc5a9e7525c811c36d75183ac825874a3e45c7f1c932a->enter($__internal_bf1008ee15d1e3e3eedbc5a9e7525c811c36d75183ac825874a3e45c7f1c932a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 8
         echo "    ";
@@ -64,15 +64,15 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
         echo "    
 ";
         
-        $__internal_d12e3f12230f3f50aff43746d6abb979a63e827a6bddd77e98042fe79d70f8cd->leave($__internal_d12e3f12230f3f50aff43746d6abb979a63e827a6bddd77e98042fe79d70f8cd_prof);
+        $__internal_bf1008ee15d1e3e3eedbc5a9e7525c811c36d75183ac825874a3e45c7f1c932a->leave($__internal_bf1008ee15d1e3e3eedbc5a9e7525c811c36d75183ac825874a3e45c7f1c932a_prof);
 
     }
 
     // line 11
     public function block_js($context, array $blocks = array())
     {
-        $__internal_5352d91c99e1dd4840f55c565b7d43369feaae119c983227551b4123b22e41b6 = $this->env->getExtension("native_profiler");
-        $__internal_5352d91c99e1dd4840f55c565b7d43369feaae119c983227551b4123b22e41b6->enter($__internal_5352d91c99e1dd4840f55c565b7d43369feaae119c983227551b4123b22e41b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js"));
+        $__internal_8287853f22b7a709bfb3b2bc8f4c725d26370b43ffa5676ab52319650eadd066 = $this->env->getExtension("native_profiler");
+        $__internal_8287853f22b7a709bfb3b2bc8f4c725d26370b43ffa5676ab52319650eadd066->enter($__internal_8287853f22b7a709bfb3b2bc8f4c725d26370b43ffa5676ab52319650eadd066_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js"));
 
         // line 12
         echo "    ";
@@ -80,43 +80,43 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
         echo "
 ";
         
-        $__internal_5352d91c99e1dd4840f55c565b7d43369feaae119c983227551b4123b22e41b6->leave($__internal_5352d91c99e1dd4840f55c565b7d43369feaae119c983227551b4123b22e41b6_prof);
+        $__internal_8287853f22b7a709bfb3b2bc8f4c725d26370b43ffa5676ab52319650eadd066->leave($__internal_8287853f22b7a709bfb3b2bc8f4c725d26370b43ffa5676ab52319650eadd066_prof);
 
     }
 
     // line 15
     public function block_titulo($context, array $blocks = array())
     {
-        $__internal_5df214e699f4101983b1993e7d866e66362aa1863d56975768a27f2403bace98 = $this->env->getExtension("native_profiler");
-        $__internal_5df214e699f4101983b1993e7d866e66362aa1863d56975768a27f2403bace98->enter($__internal_5df214e699f4101983b1993e7d866e66362aa1863d56975768a27f2403bace98_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "titulo"));
+        $__internal_78f6fc7e9f8de805c8c1237eb0eec4e3de5b7a3be9eb6ed726153687c8c5fc87 = $this->env->getExtension("native_profiler");
+        $__internal_78f6fc7e9f8de805c8c1237eb0eec4e3de5b7a3be9eb6ed726153687c8c5fc87->enter($__internal_78f6fc7e9f8de805c8c1237eb0eec4e3de5b7a3be9eb6ed726153687c8c5fc87_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "titulo"));
 
         echo " 
     Seguimiento
 ";
         
-        $__internal_5df214e699f4101983b1993e7d866e66362aa1863d56975768a27f2403bace98->leave($__internal_5df214e699f4101983b1993e7d866e66362aa1863d56975768a27f2403bace98_prof);
+        $__internal_78f6fc7e9f8de805c8c1237eb0eec4e3de5b7a3be9eb6ed726153687c8c5fc87->leave($__internal_78f6fc7e9f8de805c8c1237eb0eec4e3de5b7a3be9eb6ed726153687c8c5fc87_prof);
 
     }
 
     // line 19
     public function block_sub_titulo($context, array $blocks = array())
     {
-        $__internal_fc988b5891e9daa2e53b24113739d647fc22cf9cd1e425e2415154c125da5344 = $this->env->getExtension("native_profiler");
-        $__internal_fc988b5891e9daa2e53b24113739d647fc22cf9cd1e425e2415154c125da5344->enter($__internal_fc988b5891e9daa2e53b24113739d647fc22cf9cd1e425e2415154c125da5344_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sub_titulo"));
+        $__internal_db7bfd92bfd5cedcee047bb346dbc460b5f384f09aeec2eecc4c45b35db32608 = $this->env->getExtension("native_profiler");
+        $__internal_db7bfd92bfd5cedcee047bb346dbc460b5f384f09aeec2eecc4c45b35db32608->enter($__internal_db7bfd92bfd5cedcee047bb346dbc460b5f384f09aeec2eecc4c45b35db32608_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sub_titulo"));
 
         echo " 
     
 ";
         
-        $__internal_fc988b5891e9daa2e53b24113739d647fc22cf9cd1e425e2415154c125da5344->leave($__internal_fc988b5891e9daa2e53b24113739d647fc22cf9cd1e425e2415154c125da5344_prof);
+        $__internal_db7bfd92bfd5cedcee047bb346dbc460b5f384f09aeec2eecc4c45b35db32608->leave($__internal_db7bfd92bfd5cedcee047bb346dbc460b5f384f09aeec2eecc4c45b35db32608_prof);
 
     }
 
     // line 23
     public function block_contenido($context, array $blocks = array())
     {
-        $__internal_2df041409c2f19a953f2891f70abe7a1a2aeb8c1397852f4e567329ee33b9866 = $this->env->getExtension("native_profiler");
-        $__internal_2df041409c2f19a953f2891f70abe7a1a2aeb8c1397852f4e567329ee33b9866->enter($__internal_2df041409c2f19a953f2891f70abe7a1a2aeb8c1397852f4e567329ee33b9866_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
+        $__internal_fdf0fa74accd2d9db73b725a1b509605c88c9a01ce0fd3e20d5010fb9e6c2c53 = $this->env->getExtension("native_profiler");
+        $__internal_fdf0fa74accd2d9db73b725a1b509605c88c9a01ce0fd3e20d5010fb9e6c2c53->enter($__internal_fdf0fa74accd2d9db73b725a1b509605c88c9a01ce0fd3e20d5010fb9e6c2c53_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
 
         echo "   
 <div class=\"col-md-12 col-sm-6 col-xs-12\">
@@ -230,15 +230,15 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
 </div>
 ";
         
-        $__internal_2df041409c2f19a953f2891f70abe7a1a2aeb8c1397852f4e567329ee33b9866->leave($__internal_2df041409c2f19a953f2891f70abe7a1a2aeb8c1397852f4e567329ee33b9866_prof);
+        $__internal_fdf0fa74accd2d9db73b725a1b509605c88c9a01ce0fd3e20d5010fb9e6c2c53->leave($__internal_fdf0fa74accd2d9db73b725a1b509605c88c9a01ce0fd3e20d5010fb9e6c2c53_prof);
 
     }
 
     // line 110
     public function block_js_footer($context, array $blocks = array())
     {
-        $__internal_2bfbf40fd320dbdba1b2236a234edcb642e84bda3a8766cba48e5b88c2c93277 = $this->env->getExtension("native_profiler");
-        $__internal_2bfbf40fd320dbdba1b2236a234edcb642e84bda3a8766cba48e5b88c2c93277->enter($__internal_2bfbf40fd320dbdba1b2236a234edcb642e84bda3a8766cba48e5b88c2c93277_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js_footer"));
+        $__internal_966554fe61e75f03a11e4facef352ecd0cf88e281cf037de950244f970eae3f3 = $this->env->getExtension("native_profiler");
+        $__internal_966554fe61e75f03a11e4facef352ecd0cf88e281cf037de950244f970eae3f3->enter($__internal_966554fe61e75f03a11e4facef352ecd0cf88e281cf037de950244f970eae3f3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "js_footer"));
 
         // line 111
         echo "    ";
@@ -278,6 +278,7 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
                 modal.find('.modal-body #fechainicio').val('')                
                 modal.find('.modal-body #fechafin').val('')                
                 modal.find('.modal-body #asignadoa').val('')                
+                modal.find('.modal-body #estado').val('')                
             });           
 
             /**
@@ -289,7 +290,7 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
 \t\t\$.ajax({
 \t\t\ttype: \"POST\",
 \t\t\turl: \"";
-        // line 153
+        // line 154
         echo $this->env->getExtension('routing')->getPath("seguimientoAdd");
         echo "\",
 \t\t\tdata:   parametros,
@@ -314,34 +315,36 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
             \$('#vm_actualizar').on('show.bs.modal', function (event) {
                   \$(\"#respuesta_actualizar\").html(\"\");
 \t\t  var button = \$(event.relatedTarget); 
-                  var identrenamiento = button.data('identrenamiento'); 
+                  var idseguimientoestudiante = button.data('idseguimientoestudiante'); 
                   var idestudiante = button.data('idestudiante'); 
-                  var c1 = button.data('c1'); 
-                  var c2 = button.data('c2'); 
-                  var c3 = button.data('c3'); 
-                  var c4 = button.data('c4'); 
-                  var desertor = button.data('desertor'); 
+                  var idaccion = button.data('idaccion'); 
+                  var observaciones = button.data('observaciones'); 
+                  var fechainicio = button.data('fechainicio'); 
+                  var fechafin = button.data('fechafin'); 
+                  var asignadoa = button.data('asignadoa'); 
+                  var estado = button.data('estado'); 
                   var modal = \$(this);
-                  modal.find('.modal-body #identrenamiento').val(identrenamiento);
+                  modal.find('.modal-body #idseguimientoestudiante').val(idseguimientoestudiante);
                   modal.find('.modal-body #idestudiante').val(idestudiante);
-                  modal.find('.modal-body #c1').val(c1);
-                  modal.find('.modal-body #c2').val(c2);
-                  modal.find('.modal-body #c3').val(c3);
-                  modal.find('.modal-body #c4').val(c4);
-                  modal.find('.modal-body #desertor').val(desertor);
+                  modal.find('.modal-body #idaccion').val(idaccion);
+                  modal.find('.modal-body #observaciones').val(observaciones);
+                  modal.find('.modal-body #fechainicio').val(fechainicio);
+                  modal.find('.modal-body #fechafin').val(fechafin);
+                  modal.find('.modal-body #asignadoa').val(asignadoa);
+                  modal.find('.modal-body #estado').val(estado);
                                                     
             });
             /**
              * Envia datos del formulario a controlador que se encarga de 
              * realizar la operación de actualización
              */
-            \$( \"#frm_actualiza_entrenamiento\" ).submit(function( event ) {\t\t
+            \$( \"#frm_actualizar_seguimiento\" ).submit(function( event ) {\t\t
                 var parametros = \$(this).serialize();
 \t\t\$.ajax({
 \t\t\ttype: \"POST\",
 \t\t\turl: \"";
-        // line 201
-        echo $this->env->getExtension('routing')->getPath("entrenamientoMod");
+        // line 204
+        echo $this->env->getExtension('routing')->getPath("seguimientoMod");
         echo "\",
 \t\t\tdata:   parametros,
                                 beforeSend: function(){
@@ -366,22 +369,22 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
             \$('#vm_eliminar').on('show.bs.modal', function (event) {
                   \$(\"#respuesta_eliminar\").html(\"\");
 \t\t  var button = \$(event.relatedTarget) 
-                  var identrenamiento = button.data('identrenamiento') 
+                  var idseguimientoestudiante = button.data('idseguimientoestudiante') 
                   var modal = \$(this)
-                  modal.find('.modal-body #identrenamiento').val(identrenamiento)
+                  modal.find('.modal-body #idseguimientoestudiante').val(idseguimientoestudiante)
             });
             
             
             /**
             * Envía datos al controlador para eliminr datos
             */
-            \$( \"#frm_elimina_entrenamiento\" ).submit(function( event ) {\t\t
+            \$( \"#frm_elimina_seguimiento\" ).submit(function( event ) {\t\t
                 var parametros = \$(this).serialize();
 \t\t\$.ajax({
 \t\t\ttype: \"POST\",
 \t\t\turl: \"";
-        // line 238
-        echo $this->env->getExtension('routing')->getPath("entrenamientoDel");
+        // line 241
+        echo $this->env->getExtension('routing')->getPath("seguimientoDel");
         echo "\",
 \t\t\tdata:   parametros,
                                 beforeSend: function(){
@@ -417,7 +420,7 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
   </script>
 ";
         
-        $__internal_2bfbf40fd320dbdba1b2236a234edcb642e84bda3a8766cba48e5b88c2c93277->leave($__internal_2bfbf40fd320dbdba1b2236a234edcb642e84bda3a8766cba48e5b88c2c93277_prof);
+        $__internal_966554fe61e75f03a11e4facef352ecd0cf88e281cf037de950244f970eae3f3->leave($__internal_966554fe61e75f03a11e4facef352ecd0cf88e281cf037de950244f970eae3f3_prof);
 
     }
 
@@ -433,7 +436,7 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
 
     public function getDebugInfo()
     {
-        return array (  384 => 238,  344 => 201,  293 => 153,  253 => 116,  244 => 111,  238 => 110,  226 => 103,  223 => 101,  203 => 82,  201 => 81,  195 => 76,  190 => 75,  181 => 67,  179 => 66,  173 => 61,  168 => 60,  159 => 52,  157 => 51,  151 => 46,  146 => 45,  137 => 37,  133 => 34,  116 => 23,  102 => 19,  88 => 15,  78 => 12,  72 => 11,  62 => 8,  56 => 7,  46 => 4,  40 => 3,  11 => 1,);
+        return array (  387 => 241,  347 => 204,  294 => 154,  253 => 116,  244 => 111,  238 => 110,  226 => 103,  223 => 101,  203 => 82,  201 => 81,  195 => 76,  190 => 75,  181 => 67,  179 => 66,  173 => 61,  168 => 60,  159 => 52,  157 => 51,  151 => 46,  146 => 45,  137 => 37,  133 => 34,  116 => 23,  102 => 19,  88 => 15,  78 => 12,  72 => 11,  62 => 8,  56 => 7,  46 => 4,  40 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin.html.twig' %}*/
@@ -578,6 +581,7 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
 /*                 modal.find('.modal-body #fechainicio').val('')                */
 /*                 modal.find('.modal-body #fechafin').val('')                */
 /*                 modal.find('.modal-body #asignadoa').val('')                */
+/*                 modal.find('.modal-body #estado').val('')                */
 /*             });           */
 /* */
 /*             /***/
@@ -611,32 +615,34 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
 /*             $('#vm_actualizar').on('show.bs.modal', function (event) {*/
 /*                   $("#respuesta_actualizar").html("");*/
 /* 		  var button = $(event.relatedTarget); */
-/*                   var identrenamiento = button.data('identrenamiento'); */
+/*                   var idseguimientoestudiante = button.data('idseguimientoestudiante'); */
 /*                   var idestudiante = button.data('idestudiante'); */
-/*                   var c1 = button.data('c1'); */
-/*                   var c2 = button.data('c2'); */
-/*                   var c3 = button.data('c3'); */
-/*                   var c4 = button.data('c4'); */
-/*                   var desertor = button.data('desertor'); */
+/*                   var idaccion = button.data('idaccion'); */
+/*                   var observaciones = button.data('observaciones'); */
+/*                   var fechainicio = button.data('fechainicio'); */
+/*                   var fechafin = button.data('fechafin'); */
+/*                   var asignadoa = button.data('asignadoa'); */
+/*                   var estado = button.data('estado'); */
 /*                   var modal = $(this);*/
-/*                   modal.find('.modal-body #identrenamiento').val(identrenamiento);*/
+/*                   modal.find('.modal-body #idseguimientoestudiante').val(idseguimientoestudiante);*/
 /*                   modal.find('.modal-body #idestudiante').val(idestudiante);*/
-/*                   modal.find('.modal-body #c1').val(c1);*/
-/*                   modal.find('.modal-body #c2').val(c2);*/
-/*                   modal.find('.modal-body #c3').val(c3);*/
-/*                   modal.find('.modal-body #c4').val(c4);*/
-/*                   modal.find('.modal-body #desertor').val(desertor);*/
+/*                   modal.find('.modal-body #idaccion').val(idaccion);*/
+/*                   modal.find('.modal-body #observaciones').val(observaciones);*/
+/*                   modal.find('.modal-body #fechainicio').val(fechainicio);*/
+/*                   modal.find('.modal-body #fechafin').val(fechafin);*/
+/*                   modal.find('.modal-body #asignadoa').val(asignadoa);*/
+/*                   modal.find('.modal-body #estado').val(estado);*/
 /*                                                     */
 /*             });*/
 /*             /***/
 /*              * Envia datos del formulario a controlador que se encarga de */
 /*              * realizar la operación de actualización*/
 /*              *//* */
-/*             $( "#frm_actualiza_entrenamiento" ).submit(function( event ) {		*/
+/*             $( "#frm_actualizar_seguimiento" ).submit(function( event ) {		*/
 /*                 var parametros = $(this).serialize();*/
 /* 		$.ajax({*/
 /* 			type: "POST",*/
-/* 			url: "{{ path('entrenamientoMod') }}",*/
+/* 			url: "{{ path('seguimientoMod') }}",*/
 /* 			data:   parametros,*/
 /*                                 beforeSend: function(){*/
 /*                                     $("#respuesta_actualizar").html("Mensaje: Cargando...");*/
@@ -660,20 +666,20 @@ class __TwigTemplate_f96c6aa99e2cad1599aa2c5243b38dd65322935e7b1677978bbd252f7d8
 /*             $('#vm_eliminar').on('show.bs.modal', function (event) {*/
 /*                   $("#respuesta_eliminar").html("");*/
 /* 		  var button = $(event.relatedTarget) */
-/*                   var identrenamiento = button.data('identrenamiento') */
+/*                   var idseguimientoestudiante = button.data('idseguimientoestudiante') */
 /*                   var modal = $(this)*/
-/*                   modal.find('.modal-body #identrenamiento').val(identrenamiento)*/
+/*                   modal.find('.modal-body #idseguimientoestudiante').val(idseguimientoestudiante)*/
 /*             });*/
 /*             */
 /*             */
 /*             /***/
 /*             * Envía datos al controlador para eliminr datos*/
 /*             *//* */
-/*             $( "#frm_elimina_entrenamiento" ).submit(function( event ) {		*/
+/*             $( "#frm_elimina_seguimiento" ).submit(function( event ) {		*/
 /*                 var parametros = $(this).serialize();*/
 /* 		$.ajax({*/
 /* 			type: "POST",*/
-/* 			url: "{{ path('entrenamientoDel') }}",*/
+/* 			url: "{{ path('seguimientoDel') }}",*/
 /* 			data:   parametros,*/
 /*                                 beforeSend: function(){*/
 /*                                     $("#respuesta_eliminar").html("Mensaje: Cargando...");*/
