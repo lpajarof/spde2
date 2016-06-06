@@ -1,0 +1,232 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}    
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+{% endblock %}
+
+{% block titulo %} 
+    Configuraci&oacute;n
+{% endblock %}
+
+{% block sub_titulo %} 
+    
+{% endblock %}
+
+{% block contenido %}   
+<div class="col-md-12 col-sm-6 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#acciones" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Acciones</a>
+                    </li>                  
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    {# Panel Acciones #}
+                    <div role="tabpanel" class="tab-pane fade active in" id="acciones" aria-labelledby="home-tab">
+                        <p class="text-right">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#vm_agregar">Agregar</button></p>                         
+                        {# Venta modal agregar Acciones #}
+                        <div class="modal fade" id="vm_agregar" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+                            <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Agregar Acciones</h4>
+                                </div>
+                                {# Formulario agregar acciones #}
+                                {% include 'admin/acciones/fm_agregar_acciones.html.twig' %}
+                                {# Fin Formulario agregar acciones #}        
+                            </div>
+                            </div>
+                        </div>
+                        {# Fin Venta modal agregar acciones #}
+                        {#Venta modal actualizar acciones #}
+                        <div class="modal fade" id="vm_actualizar" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+                            <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Actualizar Acciones</h4>
+                                </div>
+                                {# Formulario actualizar  acciones #}
+                                {% include 'admin/acciones/fm_actualizar_acciones.html.twig' %} 
+                                {# Fin Formulario actualizar acciones #}        
+                            </div>
+                            </div>
+                        </div>
+                        {# Fin Venta modal actualizar acciones #}
+                        {#Ventana modal eliminar acciones #}
+                        <div class="modal fade" id="vm_eliminar" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+                            <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Eliminar Acci&oacute;n</h4>
+                                </div>
+                                {# Formulario eliminar  accion #}
+                                {% include 'admin/acciones/fm_eliminar_acciones.html.twig' %} 
+                                {# Fin Formulario eliminar acciones #}        
+                            </div>
+                            </div>
+                        </div>
+                        {# Fin Venta modal eliminar accion#}
+                        {#Tabla caracteristica#}
+                        <div class="x_panel">                            
+                            <div class="x_content">
+                                <table id="th_acciones" class="table table-striped table-bordered" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Acci&oacute;n</th>
+                                            <th>Acci&oacute;n</th> 
+                                        </tr>
+                                    </thead>                                        
+                                </table>
+                            </div>
+                        </div>
+                        {# Fin Tabla caracteristica#}
+                    </div>
+                    {#Fin Panel caracteristica #}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js_footer %}
+    {{ parent() }}   
+     <script type="text/javascript">
+        var oTable  
+        $(document).ready(function() {
+          oTable =  $('#th_acciones').dataTable({                
+                "ajax": "{{ path('thdb_acciones')}}",
+                "columns": [
+                            { className: "dt-center","width": "5%" },
+                            null,
+                            { className: "dt-center","width": "20%" }
+                          ]
+            });          
+            /*
+             * Cuando se activa ventana modal para agregar, se ejecuta
+             * este evento el cual coloca en blanco todos los campos del
+             * formulario
+             */
+            $('#vm_agregar').on('show.bs.modal', function () {
+                $("#respuesta_agregar").html("");
+		var modal = $(this)                
+                modal.find('.modal-body #descripcion').val('')                
+
+            });           
+
+            /**
+             * Envia datos del formulario a controlador que se encarga de 
+             * realizar la operación de creación
+             */
+            $( "#frm_agregar_acciones" ).submit(function( event ) {
+		var parametros = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: "{{ path('accionAdd') }}",
+			data:   parametros,
+                                beforeSend: function(){
+                                    $("#respuesta_agregar").html("Mensaje: Cargando...");
+				},
+				success: function(datos){
+                                    $("#respuesta_agregar").html(datos);                                       
+                                    oTable.fnReloadAjax();
+				},
+                                error: function(datos){
+                                    $("#respuesta_agregar").html(datos);
+                                }
+			});
+		  event.preventDefault();
+            });
+            /*
+             * Cuando se activa ventana modal para modificar, se ejecuta
+             * este evento el cual llena los campos del formulario con los
+             * datos a modificar
+             */
+            $('#vm_actualizar').on('show.bs.modal', function (event) {
+                  $("#respuesta_actualizar").html("");
+		  var button = $(event.relatedTarget) 
+                  var descripcion = button.data('descripcion') 
+                  var idaccion = button.data('idaccion') 
+                  var modal = $(this)
+                  modal.find('.modal-body #descripcion').val(descripcion)
+                  modal.find('.modal-body #idaccion').val(idaccion)
+            });
+            /**
+             * Envia datos del formulario a controlador que se encarga de 
+             * realizar la operación de actualización
+             */
+            $( "#frm_actualiza_accion" ).submit(function( event ) {		
+                var parametros = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: "{{ path('accionMod') }}",
+			data:   parametros,
+                                beforeSend: function(){
+                                    $("#respuesta_actualizar").html("Mensaje: Cargando...");
+				},
+				success: function(datos){
+                                    $("#respuesta_actualizar").html(datos);                  
+                                      oTable.fnReloadAjax();
+				},
+                                error: function(datos){
+                                    $("#respuesta_actualizar").html(datos);
+                                }
+			});
+		  event.preventDefault();
+            });
+            
+            /*
+             * Cuando se activa ventana modal para eliminar, se ejecuta
+             * este evento el cual llena campo oculto con id de la caracteristica
+             * a elimina
+             */
+            $('#vm_eliminar').on('show.bs.modal', function (event) {
+                  $("#respuesta_eliminar").html("");
+		  var button = $(event.relatedTarget) 
+                  var idaccion = button.data('idaccion') 
+                  var modal = $(this)
+                  modal.find('.modal-body #idaccion').val(idaccion)
+            });
+            
+            
+            /**
+            * Envía datos al controlador para eliminr datos
+            */
+            $( "#frm_elimina_caracteristica" ).submit(function( event ) {		
+                var parametros = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: "{{ path('accionDel') }}",
+			data:   parametros,
+                                beforeSend: function(){
+                                    $("#respuesta_eliminar").html("Mensaje: Cargando...");
+				},
+				success: function(datos){
+                                    $("#respuesta_eliminar").html(datos);                  
+                                      oTable.fnReloadAjax();
+				},
+                                error: function(datos){
+                                    $("#respuesta_eliminar").html(datos);
+                                }
+			});
+		  event.preventDefault();
+            });
+            
+        });   
+  </script>
+{% endblock %}
+    

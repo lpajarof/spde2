@@ -10,4 +10,55 @@ namespace AppBundle\Repository;
  */
 class AccionRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+    * 
+    * Devuelve en formato JSON los datos de la tabla
+    */
+    
+    public function listaJSON()
+    {
+        $arrAccion=$this->getEntityManager()
+                                ->createQuery('SELECT c FROM AppBundle:Accion c')
+                                ->getResult();
+        
+        
+        $arrJSON='{'
+                . '"draw":1,'
+                . '"recordsTotal": '.count($arrAccion).','
+                . '"recordsFiltered":'.count($arrAccion).','
+                . '"data": [';
+                
+        
+        for($i=0; $i<count($arrAccion); $i++){            
+            $arrJSON=$arrJSON. '[';
+            $arrJSON=$arrJSON.'"'.$arrAccion[$i]->getIdaccion().'",';
+            $arrJSON=$arrJSON.'"'.$arrAccion[$i]->getDescripcion().'",';
+            $arrJSON=$arrJSON.'" '
+                    . '<button type=\"button\" id=\"btn\" class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#vm_actualizar\"'
+                    . 'data-idaccion=\"'.$arrAccion[$i]->getIdaccion().'\"'
+                    . 'data-descripcion=\"'.$arrAccion[$i]->getDescripcion().'\"'
+                    . '>'
+                    . '<i class=\'glyphicon glyphicon-edit\'>'
+                    . '</i> Modificar'
+                    . '</button>'
+                    . '<button type=\"button\" id=\"btn\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#vm_eliminar\"'
+                    . 'data-idaccion=\"'.$arrAccion[$i]->getIdaccion().'\"'                    
+                    . '>'
+                    . '<i class=\'glyphicon glyphicon-trash\'>'
+                    . '</i> Eliminar'
+                    . '</button>'
+                    . '"';             
+            if($i==count($arrAccion)-1){
+                    $arrJSON=$arrJSON.']';
+            }
+            else{
+                $arrJSON=$arrJSON.'],';                           
+            }
+        }
+        $arrJSON=$arrJSON.']';
+        
+        $arrJSON=$arrJSON.'}';
+        
+        return($arrJSON);
+    }
 }

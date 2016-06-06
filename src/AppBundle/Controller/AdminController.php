@@ -10,7 +10,7 @@ use AppBundle\Entity\Tipousuario;
 use AppBundle\Entity\Programa;
 use AppBundle\Entity\Estudiante;
 use AppBundle\Entity\Caracteristica;
-use AppBundle\Entity\Clasificacion;
+use AppBundle\Entity\Accion;
 use AppBundle\Entity\Entrenamiento;
 
 /**
@@ -619,6 +619,136 @@ class AdminController extends Controller
             }
         }
     }
-       
+    
+    
+    /**
+    * Acciones
+    */
+    
+    /**
+     * Llama a la plantilla que lista las Acciones 
+     * @Route("/admin/acciones", name="r_acciones")
+     */
+    
+    public function accionesAction()
+    {
+        return $this->render("admin/acciones/vw_acciones.html.twig");
+    }
+    
+    /**
+     * Devuelve en formato JSON tabla de datos 
+     * @Route("/admin/thdb_acciones",name="thdb_acciones")
+     */
+    
+    public function accionesTablaAction()
+    {
+        $v_acciones = $this->getDoctrine()
+                ->getRepository("AppBundle:Accion")
+                ->listaJSON();
+        return new Response($v_acciones);
+    }
+    
+    
+    /**
+    * Agrega nueva accion
+    * @Route("/admin/acciones/add", name="accionAdd")
+    */
+    public function accionAdd(Request $request)
+    {
+        try{
+            
+            $em = $this->getDoctrine()->getManager();
+                        
+            $v_accion = new Accion();
+            $v_accion->setDescripcion($request->request->get('descripcion'));
+                        
+            $em->persist($v_accion);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido aregados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+             switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+                
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                    
+                case 'PDOException':
+                    return new Response('DBA Exception<br/>'.$e->getMessage());
+                    
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+        
+    }
+    
+    /**
+     * Modifica datos de una accion
+     * @Route("/admin/acciones/mod",name="accionMod")
+     */
+    
+    public function accionModAction(Request $request)
+    {
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_accion = $em->getRepository('AppBundle:Accion')->find($request->request->get('idaccion'));
+            $v_accion->setDescripcion($request->request->get('descripcion'));
+            
+            $em->persist($v_accion);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido actualizados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+    
+    /**
+     * Elimina acción
+     * @Route("/admin/acciones/del",name="accionDel")
+     */
+    public function accionDelAction(Request $request){
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_accion = $em->getRepository('AppBundle:Accion')->find($request->request->get('idaccion'));
+            
+            $em->remove($v_accion);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido eliminados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $e) {
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('DBAL Exception<br/>');
+
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+    
+    
+    
     
 }

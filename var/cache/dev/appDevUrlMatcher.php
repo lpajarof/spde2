@@ -243,6 +243,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            // r_acciones
+            if ($pathinfo === '/admin/acciones') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::accionesAction',  '_route' => 'r_acciones',);
+            }
+
+            // thdb_acciones
+            if ($pathinfo === '/admin/thdb_acciones') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::accionesTablaAction',  '_route' => 'thdb_acciones',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/acciones')) {
+                // accionAdd
+                if ($pathinfo === '/admin/acciones/add') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::accionAdd',  '_route' => 'accionAdd',);
+                }
+
+                // accionMod
+                if ($pathinfo === '/admin/acciones/mod') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::accionModAction',  '_route' => 'accionMod',);
+                }
+
+                // accionDel
+                if ($pathinfo === '/admin/acciones/del') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::accionDelAction',  '_route' => 'accionDel',);
+                }
+
+            }
+
         }
 
         // app_default_admin
