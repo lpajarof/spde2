@@ -13,12 +13,21 @@ use AppBundle\Entity\Caracteristica;
 use AppBundle\Entity\Accion;
 use AppBundle\Entity\Entrenamiento;
 use AppBundle\Entity\Seguimientoestudiante;
+use AppBundle\Entity\User;
 
 /**
  * Controlador funciones administrativas de la aplciación
  */
 class AdminController extends Controller
 {
+    /**
+     * @Route("/", name="inicio")
+     */
+    public function inicioAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('admin/index.html.twig');
+    }
     /**
      * @Route("/admin/", name="admin")
      */
@@ -832,8 +841,7 @@ class AdminController extends Controller
      */
     public function seguimientoModAction(Request $request)
     {
-        try{
-            $em  = $this->getDoctrine()->getManager();
+        try{            
             
             $em = $this->getDoctrine()->getManager();
             
@@ -900,6 +908,27 @@ class AdminController extends Controller
     }
     
     
-    
+    /**
+     * crea un usuario en la tabla
+     * @Route("/usuario",name="crea_usuario")
+     */
+    public function creauserAction()
+    {
+//        $user = new User();
+//        $plainPassword = 'usuario';
+//        $encoder = $this->container->get('security.password_encoder');
+//        $encoded = $encoder->encodePassword($user, $plainPassword);
+//        $user->setPassword($encoded);
+//        $user->setUsername('usuario');
+//        $user->setEmail('usuario@gmail.com');
+//        $user->setRol('ROLE_USER');
+//        $user->setIsActive(true);
+//        
+//        $em = $this->getDoctrine()->getManager();
+//        $em->persist($user);
+//        $em->flush();
+        
+        return new Response($this->getUser()->getUsername());
+    }
     
 }

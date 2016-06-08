@@ -17,7 +17,7 @@ class ModeloController extends Controller
 {
 
     /**
-    * @Route("/modelo/clasifica", name="r_clasifica")
+    * @Route("/admin/clasifica", name="r_clasifica")
     */
     public function clasificaAction()
     {   

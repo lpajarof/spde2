@@ -45,8 +45,8 @@
                             <img src="{{ asset('bundles/Gentellela/images/img.jpg') }}" alt="..." class="img-circle profile_img">
 			</div>
 			<div class="profile_info">
-                            <span>Welcome,</span>
-                            <h2>Leandro Pájaro F</h2>
+                            <span>Hola,</span>
+                            <h2>{{ app.user.nombres }}&nbsp;{{ app.user.apellidos }}</h2>
 			</div>
                     </div>
                     <!-- /menu prile quick info -->
@@ -59,8 +59,10 @@
                                 <li>
                                     <a><i class="fa fa-home"></i> Modelo <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">                                                
+                                                {% if is_granted('ROLE_ADMIN') %}
                                                 <li><a href="{{ path('r_entrenamiento') }}">Entrenamiento</a>
                                                 </li>
+                                                {% endif %}
                                                 <li><a href="{{ path('r_clasificacion')}}">Clasificaci&oacute;n</a>
                                                 </li>
                                         </ul>
@@ -74,6 +76,7 @@
                                                 </li>
                                         </ul>
 				</li>
+                                {% if is_granted('ROLE_ADMIN') %}
                                 <li>
                                     <a><i class="fa fa-edit"></i> Configuración <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
@@ -87,6 +90,7 @@
                                                 </li>
                                         </ul>
                                 </li>
+                                {% endif %}
                             </ul>
 			</div>
                     </div>
@@ -104,7 +108,7 @@
                         <ul class="nav navbar-nav navbar-right">
                           <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                              Leandro Pájaro Fuentes  <span class=" fa fa-angle-down"></span>
+                              {{ app.user.nombres }}&nbsp;{{ app.user.apellidos }} <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
                                 <li>

@@ -100,6 +100,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // inicio
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'inicio');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\AdminController::inicioAction',  '_route' => 'inicio',);
+        }
+
         if (0 === strpos($pathinfo, '/admin')) {
             // admin
             if (rtrim($pathinfo, '/') === '/admin') {
@@ -301,20 +310,28 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // crea_usuario
+        if ($pathinfo === '/usuario') {
+            return array (  '_controller' => 'AppBundle\\Controller\\AdminController::creauserAction',  '_route' => 'crea_usuario',);
+        }
+
         // app_default_admin
         if ($pathinfo === '/coordinador') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::adminAction',  '_route' => 'app_default_admin',);
         }
 
-        // r_clasifica
-        if ($pathinfo === '/modelo/clasifica') {
-            return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificaAction',  '_route' => 'r_clasifica',);
-        }
-
         if (0 === strpos($pathinfo, '/admin')) {
-            // r_clasificacion
-            if ($pathinfo === '/admin/clasificacion') {
-                return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificacionAction',  '_route' => 'r_clasificacion',);
+            if (0 === strpos($pathinfo, '/admin/clasifica')) {
+                // r_clasifica
+                if ($pathinfo === '/admin/clasifica') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificaAction',  '_route' => 'r_clasifica',);
+                }
+
+                // r_clasificacion
+                if ($pathinfo === '/admin/clasificacion') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ModeloController::clasificacionAction',  '_route' => 'r_clasificacion',);
+                }
+
             }
 
             // thdb_clasificacion
