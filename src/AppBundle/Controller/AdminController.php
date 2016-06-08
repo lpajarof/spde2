@@ -907,6 +907,23 @@ class AdminController extends Controller
         }
     }
     
+    /**
+    * LLama a plantilla que lista usuarios
+    * @Route("/admin/usuarios",name="r_usuario")
+    */
+    
+    public function usuarioAction()
+    {
+        $em = $this->getDoctrine();        
+        $v_accion = $em->getRepository('AppBundle:Accion')->findAll();
+        $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->findAll();
+        $v_usuario = $em->getRepository('AppBundle:Usuario')->findAll();
+                
+        return $this->render('/admin/usuarios/vw_usuarios.html.twig',array('accion'=>$v_accion,'estudiante'=>$v_clasificacion,'usuario'=>$v_usuario));
+    }
+    
+    
+    
     
     /**
      * crea un usuario en la tabla

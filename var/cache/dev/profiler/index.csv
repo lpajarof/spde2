@@ -1137,3 +1137,8 @@ f28774,::1,GET,http://localhost:8080/spde2/web/app_dev.php/login,1465354634,,200
 ff65ff,::1,POST,http://localhost:8080/spde2/web/app_dev.php/login,1465354642,,302
 28d630,::1,GET,http://localhost:8080/spde2/web/app_dev.php/admin/clasificacion,1465354643,,200
 b0873d,::1,GET,http://localhost:8080/spde2/web/app_dev.php/admin/thdb_clasificacion?_=1465354643144,1465354644,,200
+6cb573,::1,GET,http://localhost:8080/spde2/web/app_dev.php/logout,1465355416,,302
+ef0191,::1,GET,http://localhost:8080/spde2/web/app_dev.php/login,1465355416,,200
+ca008a,::1,POST,http://localhost:8080/spde2/web/app_dev.php/login,1465355422,,302
+2ee0cf,::1,GET,http://localhost:8080/spde2/web/app_dev.php/admin/clasificacion,1465355422,,200
+e156b5,::1,GET,http://localhost:8080/spde2/web/app_dev.php/admin/thdb_clasificacion?_=1465355423021,1465355423,,200

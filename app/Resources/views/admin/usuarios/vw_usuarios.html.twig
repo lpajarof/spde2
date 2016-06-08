@@ -1,0 +1,208 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}    
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+{% endblock %}
+
+{% block titulo %} 
+    Configuraci&oacute;n
+{% endblock %}
+
+{% block sub_titulo %} 
+    
+{% endblock %}
+
+{% block contenido %}   
+<div class="col-md-12 col-sm-6 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#estudiantes" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Estudiantes</a>
+                    </li>                  
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    {# Panel estudiantes #}
+                    <div role="tabpanel" class="tab-pane fade active in" id="programas" aria-labelledby="home-tab">
+                        <p class="text-right"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#vm_agregar">Agregar</button></p>                         
+                        {# Venta modal agregar  estudiante #}
+                        <div class="modal fade" id="vm_agregar" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+                            <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Agregar Estudiante</h4>
+                                </div>
+                                {# Formulario agregar estudiante #}
+                                {{ include ('admin/estudiantes/fm_agregar_estudiante.html.twig',{'tipoidentificacion':tipoidentificacion,'programas':programas}) }}
+                                {# Fin Formulario agregar estudainte #}        
+                            </div>
+                            </div>
+                        </div>
+                        {# Fin Venta modal agregar tipo usuario#}
+                        {#Venta modal actualizar tipo usuario#}
+                        <div class="modal fade" id="vm_actualizar" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+                            <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Actualizar Estudiante</h4>
+                                </div>
+                                {# Formulario actualizar #}
+                                {{ include ('admin/estudiantes/fm_actualizar_estudiante.html.twig',{'tipoidentificacion':tipoidentificacion,'programas':programas}) }} 
+                                {# Fin Formulario actualizar #}        
+                            </div>
+                            </div>
+                        </div>
+                        {# Fin Venta modal actualizar tipo usuario#}
+                        {#Tabla tipo de usuario#}
+                        <div class="x_panel">                            
+                            <div class="x_content">
+                                <table id="th_estudiantes" class="table table-striped table-bordered" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>C&oacute;digo</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>E-mail</th>
+                                            <th>Programa</th>
+                                            <th>Acci&oacute;n</th>
+                                        </tr>
+                                    </thead>                                        
+                                </table>
+                            </div>
+                        </div>
+                        {# Fin Tabla tipo de usuario#}
+                    </div>
+                    {#Fin Panel tipo usuarios #}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js_footer %}
+    {{ parent() }}   
+     <script type="text/javascript">
+        var oTable  
+        $(document).ready(function() {
+          oTable =  $('#th_estudiantes').dataTable({                
+                "ajax": "{{ path('thdb_estudiantes') }}",
+                "columns": [
+                            { "width": "5%" },
+                            { "width": "17%" },                           
+                            { "width": "18%" },
+                            { "width": "30%" },
+                            { "width": "25%" },
+                            { "width": "5%" },
+                          ]
+            });          
+            /*
+             * Cuando se activa ventana modal para agregar, se ejecuta
+             * este evento el cual coloca en blanco todos los campos del
+             * formulario
+             */
+            $('#vm_agregar').on('show.bs.modal', function (event) {
+                $("#respuesta_agregar").html("");
+		var modal = $(this)
+                modal.find('.modal-body #codigo').val('')
+                modal.find('.modal-body #programa').val('')
+                modal.find('.modal-body #tipoidentificacion').val('')
+                modal.find('.modal-body #identificacion').val('')
+                modal.find('.modal-body #nombres').val('')
+                modal.find('.modal-body #apellidos').val('')
+                modal.find('.modal-body #email').val('')
+                modal.find('.modal-body #telefono').val('')
+                modal.find('.modal-body #direccion').val('')                
+            });           
+
+            /**
+             * Envia datos del formulario a controlador que se encarga de 
+             * realizar la operación de creación
+             */
+            $( "#frm_agregar_estudiante" ).submit(function( event ) {
+		var parametros = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: "{{ path('estudiantesAdd') }}",
+			data:   parametros,
+                                beforeSend: function(){
+                                    $("#respuesta_agregar").html("Mensaje: Cargando...");
+				},
+				success: function(datos){
+                                    $("#respuesta_agregar").html(datos);                                       
+                                    oTable.fnReloadAjax();
+				},
+                                error: function(datos){
+                                    $("#respuesta_agregar").html(datos);
+                                }
+			});
+		  event.preventDefault();
+            });
+            /*
+             * Cuando se activa ventana modal para modificar, se ejecuta
+             * este evento el cual llena los campos del formulario con los
+             * datos a modificar
+             */
+            $('#vm_actualizar').on('show.bs.modal', function (event) {
+                  $("#respuesta_actualizar").html("");
+		  var button = $(event.relatedTarget);
+                  var codigo = button.data('codigo');
+                  var programa = button.data('programa');
+                  var tipoidentificacion = button.data('tipoidentificacion');
+                  var identificacion = button.data('identificacion');
+                  var nombres = button.data('nombres');
+                  var apellidos = button.data('apellidos');
+                  var email = button.data('email');
+                  var telefono = button.data('telefono');
+                  var direccion = button.data('direccion');
+                  var idestudiante = button.data('idestudiante');
+                  var modal = $(this);
+                  modal.find('.modal-body #codigo').val(codigo);
+                  modal.find('.modal-body #programa').val(programa);
+                  modal.find('.modal-body #tipoidentificacion').val(tipoidentificacion);
+                  modal.find('.modal-body #identificacion').val(identificacion);
+                  modal.find('.modal-body #nombres').val(nombres);
+                  modal.find('.modal-body #apellidos').val(apellidos);
+                  modal.find('.modal-body #email').val(email);
+                  modal.find('.modal-body #telefono').val(telefono);
+                  modal.find('.modal-body #direccion').val(direccion);
+                  modal.find('.modal-body #idestudiante').val(idestudiante);
+
+            });
+            /**
+             * Envia datos del formulario a controlador que se encarga de 
+             * realizar la operación de actualización
+             */
+            $( "#frm_actualiza_estudiante" ).submit(function( event ) {		
+                var parametros = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: "{{ path('estudiantesMod') }}",
+			data:   parametros,
+                                beforeSend: function(){
+                                    $("#respuesta_actualizar").html("Mensaje: Cargando...");
+				},
+				success: function(datos){
+                                    $("#respuesta_actualizar").html(datos);                  
+                                      oTable.fnReloadAjax();
+				},
+                                error: function(datos){
+                                    $("#respuesta_agregar").html(datos);
+                                }
+			});
+		  event.preventDefault();
+            });
+        });   
+  </script>
+{% endblock %}
+    
