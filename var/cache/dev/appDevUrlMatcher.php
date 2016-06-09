@@ -308,11 +308,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-        }
+            // r_usuarios
+            if ($pathinfo === '/admin/usuarios') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::usuarioAction',  '_route' => 'r_usuarios',);
+            }
 
-        // crea_usuario
-        if ($pathinfo === '/usuario') {
-            return array (  '_controller' => 'AppBundle\\Controller\\AdminController::creauserAction',  '_route' => 'crea_usuario',);
+            // thdb_usuarios
+            if ($pathinfo === '/admin/thdb_usuario') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::usuarioTablaAction',  '_route' => 'thdb_usuarios',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/usuarios/us')) {
+                // usuarioAdd
+                if ($pathinfo === '/admin/usuarios/usarioAdd') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::usuarioAddAction',  '_route' => 'usuarioAdd',);
+                }
+
+                // usuarioMod
+                if ($pathinfo === '/admin/usuarios/usuarioMod') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AdminController::usuarioModAction',  '_route' => 'usuarioMod',);
+                }
+
+            }
+
         }
 
         // app_default_admin

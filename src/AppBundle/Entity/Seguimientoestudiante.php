@@ -71,11 +71,11 @@ class Seguimientoestudiante
     private $idaccion;
 
     /**
-     * @var \AppBundle\Entity\Usuario
+     * @var \AppBundle\Entity\User
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Usuario")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="asignadoA", referencedColumnName="idUsuario")
+     *   @ORM\JoinColumn(name="asignadoA", referencedColumnName="iduser")
      * })
      */
     private $asignadoa;
@@ -239,11 +239,11 @@ class Seguimientoestudiante
     /**
      * Set asignadoa
      *
-     * @param \AppBundle\Entity\Usuario $asignadoa
+     * @param \AppBundle\Entity\User $asignadoa
      *
      * @return Seguimientoestudiante
      */
-    public function setAsignadoa(\AppBundle\Entity\Usuario $asignadoa = null)
+    public function setAsignadoa(\AppBundle\Entity\User $asignadoa = null)
     {
         $this->asignadoa = $asignadoa;
 
@@ -253,7 +253,7 @@ class Seguimientoestudiante
     /**
      * Get asignadoa
      *
-     * @return \AppBundle\Entity\Usuario
+     * @return \AppBundle\Entity\User
      */
     public function getAsignadoa()
     {

@@ -42,7 +42,7 @@ class SeguimientoestudianteRepository extends \Doctrine\ORM\EntityRepository
                     . 'data-observaciones=\"'.$arrSeguimiento[$i]->getObservaciones().'\"'
                     . 'data-fechainicio=\"'.$arrSeguimiento[$i]->getFechainicio()->format('m/d/Y').'\"'
                     . 'data-fechafin=\"'.$arrSeguimiento[$i]->getFechafin()->format('m/d/Y').'\"'
-                    . 'data-asignadoa=\"'.$arrSeguimiento[$i]->getAsignadoa()->getIdusuario().'\"'
+                    . 'data-asignadoa=\"'.$arrSeguimiento[$i]->getAsignadoa()->getIduser().'\"'
                     . 'data-estado=\"'.$arrSeguimiento[$i]->getEstado().'\"'
                     . '>'
                     . '<i class=\'glyphicon glyphicon-edit\'>'

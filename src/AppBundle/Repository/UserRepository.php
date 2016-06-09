@@ -30,23 +30,29 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
                 
         
         for($i=0; $i<count($arrUsuario); $i++){            
-            $arrJSON=$arrJSON. '[';
-            $arrJSON=$arrJSON.'"'.$arrUsuario[$i]->getUsername().'",';
+            $arrJSON=$arrJSON. '[';            
             $arrJSON=$arrJSON.'"'.$arrUsuario[$i]->getNombres().'",';
             $arrJSON=$arrJSON.'"'.$arrUsuario[$i]->getApellidos().'",';
             $arrJSON=$arrJSON.'"'.$arrUsuario[$i]->getIdentificacion().'",';
             $arrJSON=$arrJSON.'"'.$arrUsuario[$i]->getEmail().'",';
-            $arrJSON=$arrJSON.'"'.$arrUsuario[$i]->getRole().'",';
+            $arrJSON=$arrJSON.'"'.$arrUsuario[$i]->getUsername().'",';
+            $arrJSON=$arrJSON.'"'.$arrUsuario[$i]->getRol().'",';
             $arrJSON=$arrJSON.'" '
                     . '<button type=\"button\" id=\"btn\" class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#vm_actualizar\"'
-                    . 'data-id=\"'.$arrUsuario[$i]->getId().'\"'
+                    . 'data-iduser=\"'.$arrUsuario[$i]->getIduser().'\"'
                     . 'data-nombres=\"'.$arrUsuario[$i]->getNombres().'\"'
+                    . 'data-apellidos=\"'.$arrUsuario[$i]->getApellidos().'\"'
+                    . 'data-identificacion=\"'.$arrUsuario[$i]->getIdentificacion().'\"'
+                    . 'data-email=\"'.$arrUsuario[$i]->getEmail().'\"'
+                    . 'data-username=\"'.$arrUsuario[$i]->getUsername().'\"'
+                    . 'data-rol=\"'.$arrUsuario[$i]->getRol().'\"'
+                    . 'data-isactive=\"'.$arrUsuario[$i]->getIsactive().'\"'
                     . '>'
                     . '<i class=\'glyphicon glyphicon-edit\'>'
                     . '</i> Modificar'
                     . '</button>'
                     . '<button type=\"button\" id=\"btn\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#vm_eliminar\"'
-                    . 'data-id=\"'.$arrUsuario[$i]->getId().'\"'                    
+                    . 'data-id=\"'.$arrUsuario[$i]->getIduser().'\"'                    
                     . '>'
                     . '<i class=\'glyphicon glyphicon-trash\'>'
                     . '</i> Eliminar'

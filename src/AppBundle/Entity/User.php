@@ -12,11 +12,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface, \Serializable
 {
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="iduser",type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $iduser;
 
     /**
      * @ORM\Column(type="string", length=25, unique=true)
@@ -106,7 +106,7 @@ class User implements UserInterface, \Serializable
     public function serialize()
     {
         return serialize(array(
-            $this->id,
+            $this->iduser,
             $this->username,
             $this->password,
             // see section on salt below
@@ -118,7 +118,7 @@ class User implements UserInterface, \Serializable
     public function unserialize($serialized)
     {
         list (
-            $this->id,
+            $this->iduser,
             $this->username,
             $this->password,
             // see section on salt below
@@ -126,16 +126,7 @@ class User implements UserInterface, \Serializable
         ) = unserialize($serialized);
     }
 
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
+    
     /**
      * Set username
      *
@@ -330,5 +321,15 @@ class User implements UserInterface, \Serializable
     public function getIdtipoidentificacion()
     {
         return $this->idtipoidentificacion;
+    }
+
+    /**
+     * Get iduser
+     *
+     * @return integer
+     */
+    public function getIduser()
+    {
+        return $this->iduser;
     }
 }

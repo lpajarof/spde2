@@ -15,8 +15,8 @@ class __TwigTemplate_5915ea218dcf360a848828da156b15ac0881afdf97240bc11c1b15e75e9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0 = $this->env->getExtension("native_profiler");
-        $__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0->enter($__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/seguimiento/fm_agregar_seguimiento.html.twig"));
+        $__internal_40281fa08489bf69d05771bb3b404a80f60847dd20c1ec0dc148e6e2a8f57ede = $this->env->getExtension("native_profiler");
+        $__internal_40281fa08489bf69d05771bb3b404a80f60847dd20c1ec0dc148e6e2a8f57ede->enter($__internal_40281fa08489bf69d05771bb3b404a80f60847dd20c1ec0dc148e6e2a8f57ede_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/seguimiento/fm_agregar_seguimiento.html.twig"));
 
         // line 1
         echo "<div class=\"modal-body\">     
@@ -127,7 +127,7 @@ class __TwigTemplate_5915ea218dcf360a848828da156b15ac0881afdf97240bc11c1b15e75e9
         foreach ($context['_seq'] as $context["_key"] => $context["u"]) {
             // line 71
             echo "                        <option value=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "idusuario", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "iduser", array()), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "nombres", array()), "html", null, true);
             echo "&nbsp;";
@@ -153,7 +153,7 @@ class __TwigTemplate_5915ea218dcf360a848828da156b15ac0881afdf97240bc11c1b15e75e9
 </div> 
                ";
         
-        $__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0->leave($__internal_b75bbea07b129d9a7c5820c58ba6f89b1bc01e130737b2df3e6e4a4ea60d41b0_prof);
+        $__internal_40281fa08489bf69d05771bb3b404a80f60847dd20c1ec0dc148e6e2a8f57ede->leave($__internal_40281fa08489bf69d05771bb3b404a80f60847dd20c1ec0dc148e6e2a8f57ede_prof);
 
     }
 
@@ -242,7 +242,7 @@ class __TwigTemplate_5915ea218dcf360a848828da156b15ac0881afdf97240bc11c1b15e75e9
 /*                 <select id="asignadoa" name="asignadoa" class="form-control" required>*/
 /*                     <option value="">Seleccione</option>*/
 /*                     {% for u in usuario %}*/
-/*                         <option value="{{u.idusuario}}">{{ u.nombres }}&nbsp;{{ u.apellidos }}</option>*/
+/*                         <option value="{{u.iduser}}">{{ u.nombres }}&nbsp;{{ u.apellidos }}</option>*/
 /*                     {% endfor %}*/
 /*                 </select>*/
 /*             </div>                    */

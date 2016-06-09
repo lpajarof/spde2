@@ -773,7 +773,7 @@ class AdminController extends Controller
         $em = $this->getDoctrine();        
         $v_accion = $em->getRepository('AppBundle:Accion')->findAll();
         $v_clasificacion = $em->getRepository('AppBundle:Clasificacion')->findAll();
-        $v_usuario = $em->getRepository('AppBundle:Usuario')->findAll();
+        $v_usuario = $em->getRepository('AppBundle:User')->findAll();
                 
         return $this->render('/admin/seguimiento/vw_seguimiento.html.twig',array('accion'=>$v_accion,'estudiante'=>$v_clasificacion,'usuario'=>$v_usuario));
     }
@@ -802,7 +802,7 @@ class AdminController extends Controller
             
             $v_accion = $em->getRepository('AppBundle:Accion')->find($request->request->get('idaccion'));
             $v_estudiante = $em->getRepository('AppBundle:Estudiante')->find($request->request->get('idestudiante'));
-            $v_asignadoa = $em->getRepository('AppBundle:Usuario')->find($request->request->get('asignadoa'));
+            $v_asignadoa = $em->getRepository('AppBundle:User')->find($request->request->get('asignadoa'));
             
             $v_seguimiento->setIdaccion($v_accion);
             $v_seguimiento->setIdestudiante($v_estudiante);
@@ -848,7 +848,7 @@ class AdminController extends Controller
             $v_seguimiento = $em->getRepository('AppBundle:Seguimientoestudiante')->find($request->request->get('idseguimientoestudiante'));
             $v_accion = $em->getRepository('AppBundle:Accion')->find($request->request->get('idaccion'));
             $v_estudiante = $em->getRepository('AppBundle:Estudiante')->find($request->request->get('idestudiante'));
-            $v_asignadoa = $em->getRepository('AppBundle:Usuario')->find($request->request->get('asignadoa'));
+            $v_asignadoa = $em->getRepository('AppBundle:User')->find($request->request->get('asignadoa'));
             
             $v_seguimiento->setIdaccion($v_accion);
             $v_seguimiento->setIdestudiante($v_estudiante);
@@ -909,7 +909,7 @@ class AdminController extends Controller
     
     /**
     * LLama a plantilla que lista usuarios
-    * @Route("/admin/usuarios",name="r_usuario")
+    * @Route("/admin/usuarios",name="r_usuarios")
     */
     
     public function usuarioAction()
@@ -921,31 +921,115 @@ class AdminController extends Controller
                 
         return $this->render('/admin/usuarios/vw_usuarios.html.twig',array('accion'=>$v_accion,'estudiante'=>$v_clasificacion,'usuario'=>$v_usuario));
     }
+    /**
+    * Devuelve en formarto JSON tabla de datos
+     * @Route("/admin/thdb_usuario",name="thdb_usuarios")
+    */
     
-    
-    
+    public function usuarioTablaAction()
+    {
+        $v_usuario = $this->getDoctrine()
+                ->getRepository("AppBundle:User")
+                ->listaJSON();
+        return new Response($v_usuario);
+    }
     
     /**
-     * crea un usuario en la tabla
-     * @Route("/usuario",name="crea_usuario")
+     * Agrega usuario a la tabla user
+     * @Route("/admin/usuarios/usarioAdd",name="usuarioAdd")
      */
-    public function creauserAction()
+    public function usuarioAddAction(Request $request)
     {
-//        $user = new User();
-//        $plainPassword = 'usuario';
-//        $encoder = $this->container->get('security.password_encoder');
-//        $encoded = $encoder->encodePassword($user, $plainPassword);
-//        $user->setPassword($encoded);
-//        $user->setUsername('usuario');
-//        $user->setEmail('usuario@gmail.com');
-//        $user->setRol('ROLE_USER');
-//        $user->setIsActive(true);
-//        
-//        $em = $this->getDoctrine()->getManager();
-//        $em->persist($user);
-//        $em->flush();
-        
-        return new Response($this->getUser()->getUsername());
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_usuario = new User();
+
+            $v_usuario->setUsername($request->request->get('username'));       
+            //encriptacion de contraseña
+            $encoder = $this->container->get('security.password_encoder');
+            $encoded = $encoder->encodePassword($v_usuario, $request->request->get('password'));
+            $v_usuario->setPassword($encoded);
+            $v_usuario->setNombres($request->request->get('nombres'));
+            $v_usuario->setApellidos($request->request->get('apellidos'));
+            $v_usuario->setIdentificacion($request->request->get('identificacion'));
+            $v_usuario->setIdtipoidentificacion('1');
+            $v_usuario->setEmail($request->request->get('email'));
+            $v_usuario->setIsActive($request->request->get('isactive'));
+            $v_usuario->setRol($request->request->get('rol'));
+            
+            $em->persist($v_usuario);
+            $em->flush();
+            
+            return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido aregados satisfactoriamente'
+                                . '</div>');
+            
+        }  catch (\Exception $e){
+            
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('Registro Existente<br>DBAL Exception<br>');
+                
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                    
+                case 'PDOException':
+                    return new Response('DBA Exception<br/>'.$e->getMessage());
+                    
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+  
     }
+    
+    /**
+     * Modifica usuario de la tabla user
+     * @Route("/admin/usuarios/usuarioMod",name="usuarioMod")
+     */
+    public function usuarioModAction(Request $request)
+    {
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $v_usuario = $em->getRepository("AppBundle:User")->find($request->request->get('iduser'));
+            
+            $v_usuario->setUsername($request->request->get('username'));       
+            //encriptacion de contraseña
+            $encoder = $this->container->get('security.password_encoder');
+            $encoded = $encoder->encodePassword($v_usuario, $request->request->get('password'));
+            $v_usuario->setPassword($encoded);
+            $v_usuario->setNombres($request->request->get('nombres'));
+            $v_usuario->setApellidos($request->request->get('apellidos'));
+            $v_usuario->setIdentificacion($request->request->get('identificacion'));
+            $v_usuario->setIdtipoidentificacion('1');
+            $v_usuario->setEmail($request->request->get('email'));
+            $v_usuario->setIsActive($request->request->get('isactive'));
+            $v_usuario->setRol($request->request->get('rol'));
+            
+            $em->persist($v_usuario);
+            $em->flush();
+            
+             return New Response('<div class="alert alert-success alert-dismissible fade in" role="alert">'
+                                . 'Los datos han sido actualizados satisfactoriamente'
+                                . '</div>');
+            
+        } catch (\Exception $ex) {
+            
+            switch (get_class($e)) {
+                case 'Doctrine\DBAL\Exception\UniqueConstraintViolationException':
+                    return new Response('Registro Existente<br>DBAL Exception<br>');
+                
+                case 'Doctrine\DBA\DBAException':
+                    return new Response('DBA Exception<br/>');               
+                    
+                case 'PDOException':
+                    return new Response('DBA Exception<br/>'.$e->getMessage());
+                    
+                default:
+                    return new Response($e->getMessage().'--'.get_class($e));                
+            }
+        }
+    }
+    
     
 }

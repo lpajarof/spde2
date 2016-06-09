@@ -69,7 +69,7 @@
                 <select id="asignadoa" name="asignadoa" class="form-control" required>
                     <option value="">Seleccione</option>
                     {% for u in usuario %}
-                        <option value="{{u.idusuario}}">{{ u.nombres }}&nbsp;{{ u.apellidos }}</option>
+                        <option value="{{u.iduser}}">{{ u.nombres }}&nbsp;{{ u.apellidos }}</option>
                     {% endfor %}
                 </select>
             </div>                    
